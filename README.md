@@ -4,13 +4,138 @@ Simple, reliable tools for everyday tasks. A revenue-capable tools platform buil
 
 ## Tech Stack
 
-- **Framework:** Next.js 15.5.9 (App Router)
+- **Framework:** Next.js 16.1.1 (App Router + Turbopack)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide React
 - **Deployment:** Vercel
 - **Auth (planned):** Appwrite
 - **Payments (planned):** PayPal
+
+## Architecture
+
+### Three-Tier Access Model
+
+Toolset.cloud supports a seamless tier-based access system designed for rapid tool deployment:
+
+#### 1. PUBLIC (Free, No Login)
+- Most common/utility tools
+- No authentication required
+- Basic rate limiting (100 req/day per IP)
+- Tools run client-side when possible
+- **Examples:** Word Counter, JSON Formatter, Unit Converter
+
+#### 2. AUTH (Free Account Required)
+- Login via Gmail/GitHub OAuth
+- Increased rate limits (500 req/day)
+- Save tool history
+- Sync preferences across devices
+- AI-powered features (limited tokens)
+- **Examples:** AI Rephraser, Link Preview, Code Share
+
+#### 3. PAID (Pro Subscription)
+- Subscription via PayPal (Stripe-ready architecture)
+- Highest rate limits (10K req/day)
+- Full AI access (100K tokens/day)
+- Batch operations & API access
+- Priority support
+- **Examples:** Batch PDF processing, Advanced AI tools, API endpoints
+
+### System Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                     USER REQUEST                         │
+│                  (Browser / Client)                      │
+└────────────────────┬────────────────────────────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │    Next.js Frontend     │
+        │   (App Router / RSC)    │
+        └────────────┬────────────┘
+                     │
+        ┌────────────┴────────────────────────┐
+        │     Tool Registry (Metadata)        │
+        │  - ID, slug, name, description      │
+        │  - Category, tier, runtime          │
+        │  - Icon (string), iconColor         │
+        │  - SEO metadata                     │
+        └────────────┬────────────────────────┘
+                     │
+        ┌────────────┴──────────────────────────┐
+        │    Entitlement Gate Middleware        │
+        │  checkToolEntitlement(tool, session)  │
+        └────────────┬──────────────────────────┘
+                     │
+         ┌───────────┼───────────┐
+         │           │           │
+    PUBLIC?      AUTH?      PAID?
+         │           │           │
+         └───────────┴───────────┘
+                     │
+        ┌────────────┴────────────┐
+        │     Tool Runner          │
+        │  (Dynamic Lazy Load)     │
+        └────────────┬────────────┘
+                     │
+        ┌────────────┴────────────┐
+        │    Tool Component        │
+        │   src/tools/{id}/ui.tsx  │
+        │                          │
+        │   Calls logic.ts for     │
+        │   pure functions         │
+        └──────────────────────────┘
+
+┌──────────────────────────────────────────────────────────┐
+│               FUTURE INTEGRATIONS                        │
+├──────────────────────────────────────────────────────────┤
+│  Auth: Appwrite (OAuth + Sessions)                      │
+│  Payments: PayPal (swappable to Stripe)                 │
+│  Storage: Appwrite Storage (for file uploads)           │
+│  AI: OpenAI/Anthropic (abstracted via lib/ai/)         │
+│  Rate Limiting: Upstash Redis or Appwrite DB           │
+└──────────────────────────────────────────────────────────┘
+```
+
+### Design Patterns & Best Practices
+
+#### 1. Registry Pattern (SOLID - Single Responsibility)
+- `src/lib/tools/registry.ts` serves as single source of truth
+- All tool metadata centralized
+- Type-safe with TypeScript interfaces
+- Easy to add/remove/update tools without touching UI code
+
+#### 2. Factory Pattern (Tool Loading)
+- Dynamic lazy loading via React.lazy()
+- Only load tool code when actually needed
+- Reduces initial bundle size significantly
+- Scales to 100+ tools without performance impact
+
+#### 3. Strategy Pattern (Entitlements)
+- Different access strategies for PUBLIC/AUTH/PAID
+- `checkToolEntitlement()` determines access rights
+- Swappable auth providers (Appwrite/Clerk/Auth0)
+- Swappable payment providers (PayPal/Stripe)
+
+#### 4. Separation of Concerns (KISS & DRY)
+- **Logic** (`logic.ts`) - Pure functions, easily testable
+- **UI** (`ui.tsx`) - React components, no business logic
+- **Metadata** (registry) - Configuration as data
+- **Icons** - String names resolved client-side (Icon resolver pattern)
+
+#### 5. Dependency Inversion (SOLID)
+- UI depends on abstractions, not implementations
+- Icon resolver pattern prevents serialization issues
+- Payment/Auth interfaces not tied to specific providers
+- Easy to swap implementations without changing consumers
+
+### Code Quality Principles
+
+- **KISS:** Each tool = 2 files (logic + UI), no over-engineering
+- **DRY:** Shared utilities in lib/, reusable components
+- **SOLID:** Single responsibility, dependency inversion, interface segregation
+- **Testable:** Pure functions separated from UI, easy to unit test
+- **Scalable:** Registry pattern + lazy loading = infinite tools
 
 ## Getting Started
 
