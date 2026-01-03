@@ -1,5 +1,3 @@
-import type { LucideIcon } from 'lucide-react'
-
 /**
  * Tool access tier - determines who can use the tool
  */
@@ -40,17 +38,19 @@ export type CategoryId =
 
 /**
  * Category definition with metadata
+ * Note: icon is a string name, resolved to component client-side
  */
 export interface Category {
   id: CategoryId
   name: string
   description: string
-  icon: LucideIcon
+  icon: string // Icon name (e.g., 'FileText') - resolved client-side
   color: string // Tailwind color class for icon background
 }
 
 /**
  * Tool definition - the core metadata for each tool
+ * Note: icon is a string name, resolved to component client-side
  */
 export interface ToolDefinition {
   id: string
@@ -61,7 +61,7 @@ export interface ToolDefinition {
   tags: ToolTag[]
   tier: ToolTier
   runtime: ToolRuntime
-  icon: LucideIcon
+  icon: string // Icon name (e.g., 'FileText') - resolved client-side
   iconColor: string // Tailwind color class for icon background
   seo: {
     title: string

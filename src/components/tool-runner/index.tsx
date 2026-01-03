@@ -6,6 +6,7 @@ import { ArrowLeft, Lock, CreditCard } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 import { useSession, checkToolEntitlement } from '@/lib/entitlements'
 import type { ToolDefinition, Category } from '@/lib/tools/types'
@@ -24,9 +25,6 @@ interface ToolRunnerProps {
 export function ToolRunner({ tool, category }: ToolRunnerProps) {
   const session = useSession()
   const entitlement = checkToolEntitlement(tool, session)
-
-  const Icon = tool.icon
-  const CategoryIcon = category?.icon
 
   // Get the tool component
   const ToolComponent = toolComponents[tool.id]
@@ -48,7 +46,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
         {/* Tool header */}
         <div className="flex items-start gap-4 mb-8">
           <div className={cn('flex h-14 w-14 items-center justify-center rounded-lg shrink-0', tool.iconColor)}>
-            <Icon className="h-7 w-7" />
+            <Icon name={tool.icon} className="h-7 w-7" />
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
@@ -80,7 +78,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
             <p className="text-muted-foreground">{tool.description}</p>
             {category && (
               <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
-                {CategoryIcon && <CategoryIcon className="h-4 w-4" />}
+                <Icon name={category.icon} className="h-4 w-4" />
                 <span>{category.name}</span>
               </div>
             )}

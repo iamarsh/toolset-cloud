@@ -16,7 +16,7 @@ export type {
 export {
   categories,
   getCategoryById,
-  categoryMap,
+  getCategoriesWithTools,
 } from './categories'
 
 // Registry
@@ -27,10 +27,10 @@ export {
   getToolById,
   getToolsByCategory,
   getToolsByTag,
+  getToolsByTier,
   getPopularTools,
   getTrendingTools,
   getNewTools,
   searchTools,
-  getToolsGroupedByCategory,
-  getToolCount,
+  getCategoriesWithTools as getActiveCategoryIds,
 } from './registry'

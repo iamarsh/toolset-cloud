@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { ToolCard } from './tool-card'
+import { Icon } from '@/lib/icons'
 import type { Category, ToolDefinition } from '@/lib/tools/types'
 
 interface ToolSectionProps {
@@ -12,7 +15,6 @@ interface ToolSectionProps {
 
 export function ToolSection({ category, tools, maxTools = 8 }: ToolSectionProps) {
   const displayTools = tools.slice(0, maxTools)
-  const Icon = category.icon
 
   if (displayTools.length === 0) return null
 
@@ -23,7 +25,7 @@ export function ToolSection({ category, tools, maxTools = 8 }: ToolSectionProps)
         <div className="flex flex-col items-center text-center mb-10">
           <div className="flex items-center gap-3 mb-3">
             <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${category.color}`}>
-              <Icon className="h-5 w-5" />
+              <Icon name={category.icon} className="h-5 w-5" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold">{category.name}</h2>
           </div>

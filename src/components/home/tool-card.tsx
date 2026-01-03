@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, Star, TrendingUp, Sparkles } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 import type { ToolDefinition, ToolTag } from '@/lib/tools/types'
 
@@ -15,7 +18,6 @@ const tagConfig: Record<ToolTag, { icon: typeof Star; variant: 'popular' | 'tren
 }
 
 export function ToolCard({ tool }: ToolCardProps) {
-  const Icon = tool.icon
   const primaryTag = tool.tags[0]
   const tagInfo = primaryTag ? tagConfig[primaryTag] : null
 
@@ -40,7 +42,7 @@ export function ToolCard({ tool }: ToolCardProps) {
 
       {/* Icon */}
       <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg mb-4', tool.iconColor)}>
-        <Icon className="h-5 w-5" />
+        <Icon name={tool.icon} className="h-5 w-5" />
       </div>
 
       {/* Content */}

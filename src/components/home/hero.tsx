@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, FolderOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
-import { getToolCount } from '@/lib/tools'
+import { getAllTools } from '@/lib/tools'
 
 const metrics = [
   { value: '100+', label: 'TOOLS' },
@@ -11,7 +11,7 @@ const metrics = [
 ]
 
 export function Hero() {
-  const toolCount = getToolCount()
+  const tools = getAllTools()
   
   return (
     <section className="relative py-20 md:py-32">
@@ -27,7 +27,7 @@ export function Hero() {
           
           {/* Tagline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-balance">
-            Simple, reliable tools for everyday tasks. Access {toolCount}+ free utilities 
+            Simple, reliable tools for everyday tasks. Access {tools.length}+ free utilities 
             for text, images, PDFs, and more—no sign-up required.
           </p>
           
