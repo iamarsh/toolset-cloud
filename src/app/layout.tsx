@@ -29,17 +29,18 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://toolset.cloud'),
   title: {
-    default: 'Toolset.cloud — Browser tools, free to start',
+    default: 'Toolset.cloud — Practical tools, AI-powered where it helps',
     template: '%s | Toolset.cloud',
   },
   description:
-    'Toolset.cloud is a calm, browser-first tools platform. Start free with reliable utilities, with account and Pro-only access ready as new tools ship.',
+    'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
   keywords: [
     'online tools platform',
     'browser tools',
     'developer utilities',
     'productivity tools',
-    'file tools',
+    'AI-powered tools',
+    'free online tools',
   ],
   authors: [{ name: 'Toolset.cloud' }],
   creator: 'Toolset.cloud',
@@ -49,23 +50,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://toolset.cloud',
     siteName: 'Toolset.cloud',
-    title: 'Toolset.cloud — Browser tools, free to start',
+    title: 'Toolset.cloud — Practical tools, AI-powered where it helps',
     description:
-      'Toolset.cloud is a calm, browser-first tools platform. Start free with reliable utilities, with account and Pro-only access ready as new tools ship.',
+      'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Toolset.cloud — Browser tools, free to start',
+        alt: 'Toolset.cloud — Practical tools, AI-powered where it helps',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toolset.cloud — Browser tools, free to start',
+    title: 'Toolset.cloud — Practical tools, AI-powered where it helps',
     description:
-      'Toolset.cloud is a calm, browser-first tools platform. Start free with reliable utilities, with account and Pro-only access ready as new tools ship.',
+      'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
     images: ['/og-image.png'],
   },
   robots: {

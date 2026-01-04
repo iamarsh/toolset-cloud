@@ -13,15 +13,15 @@ export function PromoBanner() {
               <LayoutGrid className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="font-semibold">Explore Our Complete Toolkit</h3>
+              <h3 className="font-semibold">Practical tools that work</h3>
               <p className="text-sm text-muted-foreground">
-                Browse every live tool by category—more arriving soon
+                Most run instantly in your browser. Some use AI for more powerful results.
               </p>
             </div>
           </div>
           <Button asChild className="gap-2 whitespace-nowrap">
             <Link href="/tools">
-              View All Tools
+              Explore tools
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>

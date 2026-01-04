@@ -14,27 +14,24 @@ export type ToolRuntime = 'CLIENT' | 'SERVER'
 export type ToolTag = 'popular' | 'trending' | 'new'
 
 /**
- * Category identifier
+ * Category identifier (consolidated to 10 categories)
  */
 export type CategoryId =
-  | 'text'
-  | 'pdf'
-  | 'image'
-  | 'video'
-  | 'audio'
-  | 'url-web'
-  | 'qr-barcode'
-  | 'social'
-  | 'developer'
-  | 'ai'
-  | 'productivity'
-  | 'calculators'
-  | 'security'
-  | 'design'
-  | 'finance'
-  | 'data'
-  | 'utility'
-  | 'accessibility'
+  | 'text'        // Text manipulation tools
+  | 'developer'   // Code, JSON, data tools
+  | 'pdf'         // PDF & document tools
+  | 'image'       // Image editing & conversion
+  | 'media'       // Video & audio tools
+  | 'web'         // URL, QR, link tools
+  | 'productivity'// Timers, planners, notes
+  | 'calculators' // Math, finance, converters
+  | 'security'    // Password, verification
+  | 'ai'          // AI-powered tools
+
+/**
+ * Tool status - whether it's live or coming soon
+ */
+export type ToolStatus = 'live' | 'coming-soon'
 
 /**
  * Category definition with metadata
@@ -61,6 +58,7 @@ export interface ToolDefinition {
   tags: ToolTag[]
   tier: ToolTier
   runtime: ToolRuntime
+  status?: ToolStatus // 'live' or 'coming-soon' (defaults to 'coming-soon')
   icon: string // Icon name (e.g., 'FileText') - resolved client-side
   iconColor: string // Tailwind color class for icon background
   seo: {

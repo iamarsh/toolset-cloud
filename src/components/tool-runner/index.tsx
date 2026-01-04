@@ -38,6 +38,8 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
       : tool.tier === 'AUTH'
       ? 'Sign in to unlock'
       : 'Pro access'
+  const showStatus =
+    tool.runtime === 'SERVER' || tool.page?.about?.headline || tool.page?.features?.length
 
   // Get the tool component
   const ToolComponent = toolComponents[tool.id]
@@ -85,7 +87,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
             <Icon name={tool.icon} className="h-7 w-7" />
           </div>
           <ToolTitle title={tool.name} />
-          <ToolStatus />
+          {showStatus && <ToolStatus />}
           <p className="text-muted-foreground max-w-2xl">{tool.description}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">

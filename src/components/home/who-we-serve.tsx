@@ -20,7 +20,7 @@ const audiences = [
   {
     icon: Code,
     title: 'Developers',
-    description: 'JSON formatters, regex testers, hash generators, and other dev utilities.',
+    description: 'JSON formatters, regex testers, hash generators, and AI-powered code utilities.',
   },
 ]
 

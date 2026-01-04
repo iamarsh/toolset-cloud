@@ -8,9 +8,9 @@ import { BrandTitle } from '@/components/typography'
 export function Hero() {
   const tools = getAllTools()
   const metrics = [
-    { value: `${tools.length} live`, label: 'Tools available today' },
-    { value: 'Free to start', label: 'No card, no hurdle' },
-    { value: 'Built for scale', label: 'Auth & Pro ready' },
+    { value: `${tools.length}`, label: 'Tools & growing' },
+    { value: 'Start instantly', label: 'No signup needed' },
+    { value: 'AI-powered', label: 'Where it helps' },
   ]
   
   return (
@@ -23,23 +23,23 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
           <BrandTitle className="mb-8" />
           
-          {/* Tagline */}
+          {/* Tagline - from business-goals.md brand voice */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-balance">
-            A steady platform for everyday tools. Start free in the browser, with account-only and Pro-ready utilities rolling out as we grow.
+            Practical tools for everyday tasks. Most work instantly in your browser—some use AI for more.
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button asChild size="lg" className="gap-2">
               <Link href="/tools">
-                Start with free tools
+                Browse tools
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
               <Link href="/tools">
                 <FolderOpen className="h-4 w-4" />
-                Browse All Tools
+                View by category
               </Link>
             </Button>
           </div>

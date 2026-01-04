@@ -333,15 +333,15 @@ const passwordGenerator: ToolDefinition = {
   },
 }
 
-// QR Tools
+// QR Tools (Web & URL category)
 const qrGenerator: ToolDefinition = {
   id: 'qr-generator',
   slug: 'qr-generator',
   name: 'QR Code Generator',
   description: 'Generate QR codes from text or URLs',
-  category: 'qr-barcode',
+  category: 'web',
   icon: 'QrCode',
-  iconColor: 'bg-gray-500/10 text-gray-500',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -371,15 +371,15 @@ const bmiCalculator: ToolDefinition = {
   },
 }
 
-// Utility Tools
+// Calculators (Converters included)
 const unitConverter: ToolDefinition = {
   id: 'unit-converter',
   slug: 'unit-converter',
   name: 'Unit Converter',
   description: 'Convert between different units of measurement',
-  category: 'utility',
+  category: 'calculators',
   icon: 'ArrowLeftRight',
-  iconColor: 'bg-slate-500/10 text-slate-500',
+  iconColor: 'bg-teal-500/10 text-teal-500',
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],

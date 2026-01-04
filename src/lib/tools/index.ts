@@ -17,6 +17,7 @@ export {
   categories,
   getCategoryById,
   getCategoriesWithTools,
+  getDisplayCategories,
 } from './categories'
 
 // Registry
