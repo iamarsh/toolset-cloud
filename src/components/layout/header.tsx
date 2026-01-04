@@ -32,7 +32,7 @@ export function Header() {
             <Wrench className="h-6 w-6 text-primary" />
             <span>
               toolset
-              <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
+              <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
                 .cloud
               </span>
             </span>

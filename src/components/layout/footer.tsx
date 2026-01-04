@@ -25,16 +25,16 @@ export function Footer() {
               <Link
                 href="/"
                 className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight mb-4"
-                aria-label="toolset.cloud"
-              >
-                <Wrench className="h-6 w-6 text-primary" />
-                <span>
-                  toolset
-                  <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
-                    .cloud
-                  </span>
-                </span>
-              </Link>
+            aria-label="toolset.cloud"
+          >
+            <Wrench className="h-6 w-6 text-primary" />
+            <span>
+              toolset
+              <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
+                .cloud
+              </span>
+            </span>
+          </Link>
               <p className="text-muted-foreground text-sm mb-6 max-w-sm">
                 Simple, reliable tools for everyday tasks. Free to start today, with account and Pro options as they launch.
               </p>

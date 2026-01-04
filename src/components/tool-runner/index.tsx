@@ -38,8 +38,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
       : tool.tier === 'AUTH'
       ? 'Sign in to unlock'
       : 'Pro access'
-  const showStatus =
-    tool.runtime === 'SERVER' || tool.page?.about?.headline || tool.page?.features?.length
+  const showStatus = tool.tier !== 'PUBLIC'
 
   // Get the tool component
   const ToolComponent = toolComponents[tool.id]
@@ -83,9 +82,6 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
 
         {/* Tool header */}
         <div className="mb-8 flex flex-col items-center text-center gap-4">
-          <div className={cn('flex h-14 w-14 items-center justify-center rounded-lg', tool.iconColor)}>
-            <Icon name={tool.icon} className="h-7 w-7" />
-          </div>
           <ToolTitle title={tool.name} />
           {showStatus && <ToolStatus />}
           <p className="text-muted-foreground max-w-2xl">{tool.description}</p>
@@ -180,20 +176,20 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
         {/* About section */}
         {tool.page?.about && <ToolAboutSection tool={tool} />}
 
-        {/* Features */}
-        {tool.page?.features && tool.page.features.length > 0 && (
-          <ToolFeaturesSection
-            title={`Key features of ${tool.name}`}
-            features={tool.page.features}
-          />
-        )}
-
         {/* How to use */}
         {tool.page?.steps && tool.page.steps.length > 0 && (
           <ToolStepsSection
             title={`How to use ${tool.name}`}
             steps={tool.page.steps}
             proTips={tool.page.proTips}
+          />
+        )}
+
+        {/* Features */}
+        {tool.page?.features && tool.page.features.length > 0 && (
+          <ToolFeaturesSection
+            title={`Key features of ${tool.name}`}
+            features={tool.page.features}
           />
         )}
 

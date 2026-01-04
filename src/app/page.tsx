@@ -1,4 +1,4 @@
-import { Hero, ToolSection, PromoBanner, WhoWeServe } from '@/components/home'
+import { Hero, ToolSection, PromoBanner, WhoWeServe, WhyChoose } from '@/components/home'
 import { categories, getToolsByCategory, getAllTools, getCategoriesWithTools } from '@/lib/tools'
 
 export default function HomePage() {
@@ -10,6 +10,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <WhyChoose />
+      <WhoWeServe />
+      <PromoBanner />
       
       {categoriesToShow.map((category) => {
         const categoryTools = getToolsByCategory(category.id)
@@ -22,9 +25,6 @@ export default function HomePage() {
           />
         )
       })}
-      
-      <PromoBanner />
-      <WhoWeServe />
     </>
   )
 }

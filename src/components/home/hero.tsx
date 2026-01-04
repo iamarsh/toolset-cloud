@@ -1,15 +1,14 @@
 import Link from 'next/link'
-import { ArrowRight, FolderOpen } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { getAllTools } from '@/lib/tools'
-import { BrandTitle } from '@/components/typography'
 
 export function Hero() {
   const tools = getAllTools()
   const metrics = [
-    { value: `${tools.length}`, label: 'Tools & growing' },
-    { value: 'Start instantly', label: 'No signup needed' },
+    { value: `${tools.length}+`, label: 'Tools & growing' },
+    { value: 'Secure', label: 'Client-side first' },
     { value: 'AI-powered', label: 'Where it helps' },
   ]
   
@@ -21,25 +20,33 @@ export function Hero() {
       </div>
       <Container>
         <div className="flex flex-col items-center text-center">
-          <BrandTitle className="mb-8" />
+          <div className="flex flex-col items-center text-center mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold font-serif tracking-tight leading-[0.95]">
+              <span>toolset</span>
+              <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
+                .cloud
+              </span>
+            </h1>
+            <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" />
+          </div>
           
-          {/* Tagline - from business-goals.md brand voice */}
+          {/* Tagline - emphasizing one-stop, productivity, AI, security */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-balance">
-            Practical tools for everyday tasks. Most work instantly in your browser—some use AI for more.
+            Your one-stop toolkit for everyday productivity. Browser-based tools you can trust—AI-powered where it helps, secure by design.
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button asChild size="lg" className="gap-2">
               <Link href="/tools">
-                Browse tools
+                Browse all tools
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
-              <Link href="/tools">
-                <FolderOpen className="h-4 w-4" />
-                View by category
+              <Link href="/features">
+                <Sparkles className="h-4 w-4" />
+                How it works
               </Link>
             </Button>
           </div>

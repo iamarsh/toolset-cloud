@@ -7,19 +7,18 @@ interface ToolTitleProps {
 }
 
 export function ToolTitle({ title, accent, className }: ToolTitleProps) {
-  const hasAccent = accent && title.includes(accent)
+  const derivedAccent = accent ?? title.split(' ').slice(-1)[0]
+  const hasAccent = derivedAccent && title.includes(derivedAccent)
 
   return (
     <div className={cn('text-center', className)}>
-      <h1 className="font-serif tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.02] font-sans">
         {hasAccent ? (
           <>
-            {title.split(accent).map((segment, index, arr) => (
+            {title.split(derivedAccent).map((segment, index, arr) => (
               <span key={index}>
                 {segment}
-                {index < arr.length - 1 && (
-                  <Accent>{accent}</Accent>
-                )}
+                {index < arr.length - 1 && <Accent>{derivedAccent}</Accent>}
               </span>
             ))}
           </>
@@ -33,12 +32,22 @@ export function ToolTitle({ title, accent, className }: ToolTitleProps) {
 
 function Accent({ children }: { children: React.ReactNode }) {
   return (
-    <span className="relative inline-block px-1">
-      <span className="relative z-10">{children}</span>
-      <span
+    <span className="relative inline-block px-1 pr-[10px]">
+      <span className="relative z-10 text-primary">{children}</span>
+      <svg
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-1 h-2 rounded-full bg-gradient-to-r from-amber-200/60 via-amber-300/50 to-orange-400/60"
-      />
+        className="absolute -bottom-2 left-0 w-full text-primary"
+        height="12"
+        viewBox="0 0 200 12"
+        fill="none"
+      >
+        <path
+          d="M2 10C60 2 140 2 198 10"
+          stroke="currentColor"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </svg>
     </span>
   )
 }
