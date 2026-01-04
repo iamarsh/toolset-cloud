@@ -204,6 +204,78 @@ const base64Encoder: ToolDefinition = {
     description: 'Encode or decode Base64 strings instantly. Free online Base64 converter.',
     keywords: ['base64 encoder', 'base64 decoder', 'base64 converter'],
   },
+  page: {
+    about: {
+      headline: 'About Base64 Encoder/Decoder',
+      paragraphs: [
+        'Convert text to and from Base64 instantly in your browser. No uploads or servers involved—safe for snippets and configuration values.',
+        'Great for quick API testing, email-safe payloads, and troubleshooting encoding issues across environments.',
+      ],
+      stats: [
+        { value: 'Client-side', label: 'Privacy friendly', icon: 'ShieldCheck' },
+        { value: 'Two-way', label: 'Encode & decode', icon: 'ArrowLeftRight' },
+        { value: 'Copy ready', label: 'One-click output', icon: 'Copy' },
+        { value: 'Fast', label: 'Instant conversion', icon: 'Zap' },
+      ],
+    },
+    features: [
+      {
+        title: 'Encode & decode',
+        description: 'Switch modes to convert text to Base64 or back to plain text.',
+        icon: 'ArrowLeftRight',
+      },
+      {
+        title: 'Error feedback',
+        description: 'Graceful handling for invalid Base64 input when decoding.',
+        icon: 'HelpCircle',
+      },
+      {
+        title: 'Clipboard ready',
+        description: 'Copy output with one click to drop into tests or configs.',
+        icon: 'Copy',
+      },
+      {
+        title: 'Swap inputs',
+        description: 'Swap input/output fields to refine the result quickly.',
+        icon: 'RefreshCw',
+      },
+      {
+        title: 'Local only',
+        description: 'Runs entirely in-browser for privacy and speed.',
+        icon: 'ShieldCheck',
+      },
+      {
+        title: 'Mono-friendly',
+        description: 'Editor uses monospaced font for readability.',
+        icon: 'Code',
+      },
+    ],
+    steps: [
+      {
+        step: 1,
+        title: 'Choose mode',
+        description: 'Select encode or decode depending on your source.',
+        icon: 'Settings',
+      },
+      {
+        step: 2,
+        title: 'Paste content',
+        description: 'Add plain text or Base64 input and run conversion.',
+        icon: 'Send',
+      },
+      {
+        step: 3,
+        title: 'Copy output',
+        description: 'Copy the result or swap fields to iterate.',
+        icon: 'Copy',
+      },
+    ],
+    proTips: [
+      'Use decode to verify payloads coming from APIs or email-safe transfers.',
+      'Swap after decode to re-encode adjusted content without retyping.',
+      'Keep sensitive tokens local—nothing is sent over the network.',
+    ],
+  },
 }
 
 const uuidGenerator: ToolDefinition = {

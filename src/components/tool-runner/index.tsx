@@ -18,6 +18,7 @@ import type { ToolDefinition, Category } from '@/lib/tools/types'
 const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
   'json-formatter': lazy(() => import('@/tools/json-formatter/ui')),
   'word-counter': lazy(() => import('@/tools/word-counter/ui')),
+  'base64-encoder': lazy(() => import('@/tools/base64-encoder/ui')),
 }
 
 interface ToolRunnerProps {

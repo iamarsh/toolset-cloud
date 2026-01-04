@@ -29,6 +29,8 @@ import {
   ShieldCheck,
   Copy,
   Send,
+  RefreshCw,
+  Settings,
   HelpCircle,
   type LucideIcon,
 } from 'lucide-react'
@@ -66,6 +68,8 @@ const iconMap: Record<string, LucideIcon> = {
   ShieldCheck,
   Copy,
   Send,
+  RefreshCw,
+  Settings,
   HelpCircle,
 }
 

@@ -6,46 +6,16 @@ import { Container } from '@/components/ui/container'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
-const footerLinks = {
-  product: {
-    title: 'Product',
-    links: [
-      { href: '/tools', label: 'All Tools' },
-      { href: '/features', label: 'Features' },
-      { href: '/pricing', label: 'Pricing' },
-      { href: '/changelog', label: 'Changelog' },
-    ],
-  },
-  company: {
-    title: 'Company',
-    links: [
-      { href: '/about', label: 'About' },
-      { href: '/blog', label: 'Blog' },
-      { href: '/careers', label: 'Careers' },
-      { href: '/contact', label: 'Contact' },
-    ],
-  },
-  support: {
-    title: 'Support',
-    links: [
-      { href: '/help', label: 'Help Center' },
-      { href: '/faq', label: 'FAQ' },
-      { href: '/status', label: 'Status' },
-      { href: '/api', label: 'API Docs' },
-    ],
-  },
-  legal: {
-    title: 'Legal',
-    links: [
-      { href: '/privacy', label: 'Privacy' },
-      { href: '/terms', label: 'Terms' },
-      { href: '/cookies', label: 'Cookies' },
-      { href: '/licenses', label: 'Licenses' },
-    ],
-  },
-}
-
 export function Footer() {
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/tools', label: 'Tools' },
+    { href: '/features', label: 'Features' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/about', label: 'About' },
+  ]
+
   return (
     <footer className="border-t border-border bg-background">
       <Container>
@@ -53,9 +23,18 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Brand and newsletter */}
             <div className="lg:col-span-4">
-              <Link href="/" className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight mb-4">
+              <Link
+                href="/"
+                className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight mb-4"
+                aria-label="toolset.cloud"
+              >
                 <Wrench className="h-6 w-6 text-primary" />
-                <span>Toolset</span>
+                <span>
+                  toolset
+                  <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
+                    .cloud
+                  </span>
+                </span>
               </Link>
               <p className="text-muted-foreground text-sm mb-6 max-w-sm">
                 Simple, reliable tools for everyday tasks. Free to start today, with account and Pro options as they launch.
@@ -80,22 +59,15 @@ export function Footer() {
 
             {/* Links */}
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-                {Object.entries(footerLinks).map(([key, section]) => (
-                  <div key={key}>
-                    <h3 className="font-semibold text-sm mb-3">{section.title}</h3>
-                    <ul className="space-y-2">
-                      {section.links.map((link) => (
-                        <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+                {navLinks.map((link) => (
+                  <div key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </Link>
                   </div>
                 ))}
               </div>

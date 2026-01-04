@@ -24,12 +24,18 @@ export function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight"
+            aria-label="toolset.cloud"
           >
             <Wrench className="h-6 w-6 text-primary" />
-            <span>Toolset</span>
+            <span>
+              toolset
+              <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
+                .cloud
+              </span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

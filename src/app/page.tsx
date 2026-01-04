@@ -1,9 +1,11 @@
 import { Hero, ToolSection, PromoBanner, WhoWeServe } from '@/components/home'
-import { categories, getToolsByCategory } from '@/lib/tools'
+import { categories, getToolsByCategory, getAllTools, getCategoriesWithTools } from '@/lib/tools'
 
 export default function HomePage() {
-  // Get tools for the first few categories to display on home page
-  const categoriesToShow = categories.slice(0, 4)
+  const tools = getAllTools()
+  const activeCategories = getCategoriesWithTools(tools.map((tool) => tool.category))
+  // Show up to 6 categories that actually have tools
+  const categoriesToShow = activeCategories.slice(0, 6)
 
   return (
     <>
