@@ -17,6 +17,12 @@ const tagConfig: Record<ToolTag, { icon: typeof Star; variant: 'popular' | 'tren
   new: { icon: Sparkles, variant: 'new' },
 }
 
+const tierLabels: Record<ToolDefinition['tier'], string> = {
+  PUBLIC: 'Free to start',
+  AUTH: 'Sign in to unlock',
+  PAID: 'Pro access',
+}
+
 export function ToolCard({ tool }: ToolCardProps) {
   const primaryTag = tool.tags[0]
   const tagInfo = primaryTag ? tagConfig[primaryTag] : null
@@ -26,8 +32,8 @@ export function ToolCard({ tool }: ToolCardProps) {
       href={`/tools/${tool.slug}`}
       className={cn(
         'group relative flex flex-col p-6 rounded-lg border border-border bg-card',
-        'transition-all duration-200',
-        'hover:border-primary/20 hover:shadow-card-hover hover:-translate-y-0.5'
+        'transition-all duration-200 ease-out',
+        'hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]'
       )}
     >
       {/* Tag badge */}
@@ -48,6 +54,10 @@ export function ToolCard({ tool }: ToolCardProps) {
       {/* Content */}
       <h3 className="font-semibold mb-2">{tool.name}</h3>
       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{tool.description}</p>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary/60" aria-hidden="true" />
+        <span>{tierLabels[tool.tier]}</span>
+      </div>
 
       {/* Action */}
       <div className="mt-auto flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">

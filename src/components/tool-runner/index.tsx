@@ -2,13 +2,15 @@
 
 import { Suspense, lazy } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Lock, CreditCard } from 'lucide-react'
+import { ArrowRight, Lock, CreditCard } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 import { useSession, checkToolEntitlement } from '@/lib/entitlements'
+import { getToolsByCategory } from '@/lib/tools'
+import { ToolTitle, ToolStatus } from '@/components/typography'
 import type { ToolDefinition, Category } from '@/lib/tools/types'
 
 // Dynamic tool component imports
@@ -25,6 +27,15 @@ interface ToolRunnerProps {
 export function ToolRunner({ tool, category }: ToolRunnerProps) {
   const session = useSession()
   const entitlement = checkToolEntitlement(tool, session)
+  const relatedTools = getToolsByCategory(tool.category)
+    .filter((related) => related.id !== tool.id)
+    .slice(0, 3)
+  const accessLabel =
+    tool.tier === 'PUBLIC'
+      ? 'Free to start in-browser'
+      : tool.tier === 'AUTH'
+      ? 'Sign in to unlock'
+      : 'Pro access'
 
   // Get the tool component
   const ToolComponent = toolComponents[tool.id]
@@ -33,54 +44,69 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
     <div className="py-8">
       <Container>
         {/* Breadcrumb */}
-        <div className="mb-6">
-          <Link
-            href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to All Tools
-          </Link>
-        </div>
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
+            <li>
+              <Link href="/" className="hover:text-foreground transition-colors">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link href="/tools" className="hover:text-foreground transition-colors">
+                Tools
+              </Link>
+            </li>
+            {category && (
+              <>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <Link
+                    href={`/tools?category=${category.id}`}
+                    className="hover:text-foreground transition-colors"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              </>
+            )}
+            <li aria-hidden="true">/</li>
+            <li className="text-foreground font-medium" aria-current="page">
+              {tool.name}
+            </li>
+          </ol>
+        </nav>
 
         {/* Tool header */}
-        <div className="flex items-start gap-4 mb-8">
-          <div className={cn('flex h-14 w-14 items-center justify-center rounded-lg shrink-0', tool.iconColor)}>
+        <div className="mb-8 flex flex-col items-center text-center gap-4">
+          <div className={cn('flex h-14 w-14 items-center justify-center rounded-lg', tool.iconColor)}>
             <Icon name={tool.icon} className="h-7 w-7" />
           </div>
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2">
-              <h1 className="text-2xl md:text-3xl font-bold">{tool.name}</h1>
-              {tool.tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant={tag as 'popular' | 'trending' | 'new'}
-                >
-                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
-                </Badge>
-              ))}
-              {tool.tier !== 'PUBLIC' && (
-                <Badge variant="outline" className="gap-1">
-                  {tool.tier === 'AUTH' ? (
-                    <>
-                      <Lock className="h-3 w-3" />
-                      Login Required
-                    </>
-                  ) : (
-                    <>
-                      <CreditCard className="h-3 w-3" />
-                      Pro
-                    </>
-                  )}
-                </Badge>
-              )}
+          <ToolTitle title={tool.name} />
+          <ToolStatus />
+          <p className="text-muted-foreground max-w-2xl">{tool.description}</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-primary/70" aria-hidden="true" />
+              <span>{accessLabel}</span>
             </div>
-            <p className="text-muted-foreground">{tool.description}</p>
             {category && (
-              <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
                 <Icon name={category.icon} className="h-4 w-4" />
                 <span>{category.name}</span>
               </div>
+            )}
+            {tool.tier === 'AUTH' && (
+              <Badge variant="outline" className="gap-1">
+                <Lock className="h-3 w-3" />
+                Sign in required
+              </Badge>
+            )}
+            {tool.tier === 'PAID' && (
+              <Badge variant="outline" className="gap-1">
+                <CreditCard className="h-3 w-3" />
+                Pro
+              </Badge>
             )}
           </div>
         </div>
@@ -147,12 +173,50 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
           )}
         </div>
 
-        {/* Related tools section - placeholder */}
-        <div className="mt-12">
-          <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
-          <p className="text-muted-foreground text-sm">
-            More {category?.name || 'tools'} coming soon...
-          </p>
+        {/* Related tools section */}
+        <div className="mt-12 border-t border-border/80 pt-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold">Related tools</h2>
+            <Link
+              href={category ? `/tools?category=${category.id}` : '/tools'}
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              View all {category?.name || 'tools'}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          {relatedTools.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {relatedTools.map((related) => (
+                <Link
+                  key={related.id}
+                  href={`/tools/${related.slug}`}
+                  className="group flex items-start gap-3 rounded-lg border border-border bg-card/60 p-4 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 transition-colors"
+                >
+                  <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg', related.iconColor)}>
+                    <Icon name={related.icon} className="h-5 w-5" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <p className="font-semibold leading-tight group-hover:text-foreground">{related.name}</p>
+                      <Badge variant="secondary" className="text-[11px]">
+                        {related.tier === 'PUBLIC'
+                          ? 'Free to start'
+                          : related.tier === 'AUTH'
+                          ? 'Sign in'
+                          : 'Pro'}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground line-clamp-2">{related.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              More {category?.name || 'tools'} are on the way.
+            </p>
+          )}
         </div>
       </Container>
     </div>

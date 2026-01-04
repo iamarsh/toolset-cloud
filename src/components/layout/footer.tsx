@@ -53,12 +53,12 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Brand and newsletter */}
             <div className="lg:col-span-4">
-              <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
+              <Link href="/" className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight mb-4">
                 <Wrench className="h-6 w-6 text-primary" />
                 <span>Toolset</span>
               </Link>
               <p className="text-muted-foreground text-sm mb-6 max-w-sm">
-                Simple, reliable tools for everyday tasks. Free to use, no sign-up required.
+                Simple, reliable tools for everyday tasks. Free to start today, with account and Pro options as they launch.
               </p>
               
               {/* Newsletter */}

@@ -1,7 +1,7 @@
 {
-  "name": "Toolset - Free Online Tools",
+  "name": "Toolset.cloud — Browser tools",
   "short_name": "Toolset",
-  "description": "Simple, reliable tools for everyday tasks. Free to use, no sign-up required.",
+  "description": "Toolset.cloud is a calm, browser-first tools platform. Start free with reliable utilities, with account and Pro-only access ready as new tools ship.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0A0A0A",

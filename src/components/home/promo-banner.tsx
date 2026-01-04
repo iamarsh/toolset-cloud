@@ -15,7 +15,7 @@ export function PromoBanner() {
             <div>
               <h3 className="font-semibold">Explore Our Complete Toolkit</h3>
               <p className="text-sm text-muted-foreground">
-                Browse all 100+ tools organized by category
+                Browse every live tool by category—more arriving soon
               </p>
             </div>
           </div>

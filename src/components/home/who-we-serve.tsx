@@ -32,7 +32,7 @@ export function WhoWeServe() {
           <h2 className="text-sm font-semibold text-muted-foreground tracking-wider uppercase mb-3">
             WHO WE SERVE
           </h2>
-          <p className="text-2xl md:text-3xl font-bold max-w-2xl mx-auto">
+          <p className="text-2xl md:text-3xl font-semibold font-serif tracking-tight max-w-2xl mx-auto">
             Built for everyone who needs reliable tools
           </p>
         </div>

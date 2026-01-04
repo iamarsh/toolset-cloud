@@ -20,10 +20,27 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
     }
   }
 
+  const pageTitle = `${tool.seo.title} | Toolset.cloud`
+  const pageDescription = tool.seo.description
+  const keywords = tool.seo.keywords ? [...tool.seo.keywords, 'Toolset.cloud'] : ['Toolset.cloud']
+  const url = `https://toolset.cloud/tools/${tool.slug}`
+
   return {
-    title: tool.seo.title,
-    description: tool.seo.description,
-    keywords: tool.seo.keywords,
+    title: pageTitle,
+    description: pageDescription,
+    keywords,
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url,
+      siteName: 'Toolset.cloud',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: pageDescription,
+    },
   }
 }
 

@@ -88,9 +88,9 @@ export function ToolsDirectory() {
       <Container>
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">All Tools</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold font-serif tracking-tight mb-2">All Tools</h1>
           <p className="text-muted-foreground">
-            Browse and search through {allTools.length}+ free online tools
+            Browse and search through {allTools.length} live tools. Start free; account-only and Pro tools will be marked when they arrive.
           </p>
         </div>
 
@@ -129,8 +129,8 @@ export function ToolsDirectory() {
             className="h-10 rounded-lg border border-border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
           >
             <option value="all">All Access</option>
-            <option value="PUBLIC">Free (No Login)</option>
-            <option value="AUTH">Free Account</option>
+            <option value="PUBLIC">Free to start</option>
+            <option value="AUTH">Sign-in required</option>
             <option value="PAID">Pro</option>
           </select>
 

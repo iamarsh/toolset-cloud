@@ -19,15 +19,17 @@ export function ToolSection({ category, tools, maxTools = 8 }: ToolSectionProps)
   if (displayTools.length === 0) return null
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-14 md:py-20">
       <Container>
+        <div className="hidden md:block h-px w-full bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
+
         {/* Section header */}
         <div className="flex flex-col items-center text-center mb-10">
           <div className="flex items-center gap-3 mb-3">
             <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${category.color}`}>
               <Icon name={category.icon} className="h-5 w-5" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold">{category.name}</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold font-serif tracking-tight">{category.name}</h2>
           </div>
           <p className="text-muted-foreground max-w-lg">{category.description}</p>
         </div>
