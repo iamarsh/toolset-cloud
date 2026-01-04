@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 import { useSession, checkToolEntitlement } from '@/lib/entitlements'
 import { getToolsByCategory } from '@/lib/tools'
 import { ToolTitle, ToolStatus } from '@/components/typography'
+import { ToolAboutSection, ToolFeaturesSection, ToolStepsSection } from '@/components/tool/sections'
 import type { ToolDefinition, Category } from '@/lib/tools/types'
 
 // Dynamic tool component imports
@@ -172,6 +173,26 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
             </div>
           )}
         </div>
+
+        {/* About section */}
+        {tool.page?.about && <ToolAboutSection tool={tool} />}
+
+        {/* Features */}
+        {tool.page?.features && tool.page.features.length > 0 && (
+          <ToolFeaturesSection
+            title={`Key features of ${tool.name}`}
+            features={tool.page.features}
+          />
+        )}
+
+        {/* How to use */}
+        {tool.page?.steps && tool.page.steps.length > 0 && (
+          <ToolStepsSection
+            title={`How to use ${tool.name}`}
+            steps={tool.page.steps}
+            proTips={tool.page.proTips}
+          />
+        )}
 
         {/* Related tools section */}
         <div className="mt-12 border-t border-border/80 pt-8">

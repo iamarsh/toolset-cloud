@@ -24,6 +24,11 @@ import {
   Hash,
   KeyRound,
   ArrowLeftRight,
+  Users,
+  Zap,
+  ShieldCheck,
+  Copy,
+  Send,
   HelpCircle,
   type LucideIcon,
 } from 'lucide-react'
@@ -56,6 +61,11 @@ const iconMap: Record<string, LucideIcon> = {
   Hash,
   KeyRound,
   ArrowLeftRight,
+  Users,
+  Zap,
+  ShieldCheck,
+  Copy,
+  Send,
   HelpCircle,
 }
 

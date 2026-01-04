@@ -75,6 +75,37 @@ export interface ToolDefinition {
     maxFileSize?: number // in bytes
     supportedFormats?: string[]
   }
+  // Optional page content structure for reusable sections
+  page?: {
+    about?: {
+      headline?: string
+      paragraphs: string[]
+      stats?: ToolStat[]
+    }
+    features?: ToolFeatureCard[]
+    steps?: ToolStepCard[]
+    proTips?: string[]
+  }
+}
+
+export interface ToolStat {
+  value: string
+  label: string
+  icon?: string
+}
+
+export interface ToolFeatureCard {
+  title: string
+  description: string
+  icon: string
+  accent?: string
+}
+
+export interface ToolStepCard {
+  title: string
+  description: string
+  icon: string
+  step?: number
 }
 
 /**

@@ -22,6 +22,79 @@ const wordCounter: ToolDefinition = {
     description: 'Count words, characters, sentences, and paragraphs instantly. Free online word counter with reading time estimation.',
     keywords: ['word counter', 'character count', 'text analysis'],
   },
+  page: {
+    about: {
+      headline: 'About Word Counter',
+      paragraphs: [
+        'Toolset.cloud Word Counter is a fast, local-first analyzer for writers, students, and product teams. It reports words, characters, sentences, paragraphs, and reading time without sending your text to a server.',
+        'Use it to meet submission requirements, check pacing, or prep content for publishing. Highlight every nth word to inspect rhythm and keep drafts tidy with optional clean-on-paste.',
+      ],
+      stats: [
+        { value: 'Local only', label: 'Privacy-safe', icon: 'ShieldCheck' },
+        { value: '<10ms', label: 'Instant counts', icon: 'Zap' },
+        { value: 'Multi-lang', label: 'UTF-8 aware', icon: 'Code' },
+        { value: 'Auto-save', label: 'Stays in-browser', icon: 'Database' },
+      ],
+    },
+    features: [
+      {
+        title: 'Comprehensive counts',
+        description: 'Words, characters (with/without spaces), sentences, paragraphs, and reading time in one place.',
+        icon: 'Calculator',
+      },
+      {
+        title: 'Clean paste',
+        description: 'Strip formatting and whitespace when pasting to keep stats accurate.',
+        icon: 'Sparkles',
+      },
+      {
+        title: 'Rhythm checks',
+        description: 'Highlight every nth word to review pacing for scripts, speeches, or lyrics.',
+        icon: 'Clock',
+      },
+      {
+        title: 'Copy results',
+        description: 'Copy text or stats with one click to share or document.',
+        icon: 'Copy',
+      },
+      {
+        title: 'Local persistence',
+        description: 'Drafts stay in your browser so you can return without losing work.',
+        icon: 'Database',
+      },
+      {
+        title: 'Multi-device friendly',
+        description: 'Responsive layout for quick checks on desktop or mobile.',
+        icon: 'Wrench',
+      },
+    ],
+    steps: [
+      {
+        step: 1,
+        title: 'Add your text',
+        description: 'Type or paste content. Enable clean-on-paste for HTML or rich text.',
+        icon: 'Send',
+      },
+      {
+        step: 2,
+        title: 'Review metrics',
+        description: 'Counts update instantly as you edit, including reading time.',
+        icon: 'Calculator',
+      },
+      {
+        step: 3,
+        title: 'Export or iterate',
+        description: 'Copy your text or stats, adjust highlighting cadence, and continue writing.',
+        icon: 'ArrowLeftRight',
+      },
+    ],
+    proTips: [
+      'Use highlight-every to spot long runs or repeated structures.',
+      'Reading time assumes ~200 wpm; adjust your content if technical.',
+      'Keep clean-on-paste on when moving from docs or CMS exports.',
+      'Counts stay local—refreshing the page preserves your current session.',
+    ],
+  },
 }
 
 // Developer Tools
@@ -40,6 +113,78 @@ const jsonFormatter: ToolDefinition = {
     title: 'JSON Formatter - Free Online JSON Beautifier',
     description: 'Format, validate, and beautify JSON data instantly. Free online JSON formatter with syntax highlighting.',
     keywords: ['json formatter', 'json beautifier', 'json validator'],
+  },
+  page: {
+    about: {
+      headline: 'About JSON Formatter',
+      paragraphs: [
+        'Toolset.cloud JSON Formatter validates and beautifies JSON entirely in the browser. It is built for engineers who need quick readability without shipping data off-box.',
+        'Use it to debug payloads, prep docs, or share snippets with teammates. Indentation and validation help catch issues before they reach your APIs.',
+      ],
+      stats: [
+        { value: 'Local only', label: 'Never leaves browser', icon: 'ShieldCheck' },
+        { value: 'Pretty + minify', label: 'Two-way views', icon: 'ArrowLeftRight' },
+        { value: 'Copy clean', label: 'Ready for code', icon: 'Copy' },
+        { value: 'Fast', label: 'Handles large payloads', icon: 'Zap' },
+      ],
+    },
+    features: [
+      {
+        title: 'Validate & beautify',
+        description: 'Instant formatting with clear errors for malformed JSON.',
+        icon: 'Braces',
+      },
+      {
+        title: 'Copy-friendly output',
+        description: 'Copy prettified or minified JSON directly into your IDE or docs.',
+        icon: 'Copy',
+      },
+      {
+        title: 'Client-side only',
+        description: 'No uploads—payloads remain in your browser for privacy.',
+        icon: 'ShieldCheck',
+      },
+      {
+        title: 'Indent control',
+        description: 'Choose indentation levels to match your project style.',
+        icon: 'Wrench',
+      },
+      {
+        title: 'Error feedback',
+        description: 'Pinpoint parsing issues quickly to unblock debugging.',
+        icon: 'HelpCircle',
+      },
+      {
+        title: 'Responsive layout',
+        description: 'Comfortable editing on desktop or mobile for quick checks.',
+        icon: 'Link',
+      },
+    ],
+    steps: [
+      {
+        step: 1,
+        title: 'Paste or type JSON',
+        description: 'Drop in your payload from logs, responses, or files.',
+        icon: 'Send',
+      },
+      {
+        step: 2,
+        title: 'Format & review',
+        description: 'Beautify to inspect structure or minify for compact transport.',
+        icon: 'Braces',
+      },
+      {
+        step: 3,
+        title: 'Copy & share',
+        description: 'Copy formatted output for PRs, tickets, or API tests.',
+        icon: 'Copy',
+      },
+    ],
+    proTips: [
+      'Keep sensitive payloads safe—nothing is sent over the network.',
+      'Use minify before embedding JSON in configs or query params.',
+      'Set indentation to mirror your repo to avoid noisy diffs.',
+    ],
   },
 }
 
