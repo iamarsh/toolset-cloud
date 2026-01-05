@@ -19,6 +19,9 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'json-formatter': lazy(() => import('@/tools/json-formatter/ui')),
   'word-counter': lazy(() => import('@/tools/word-counter/ui')),
   'base64-encoder': lazy(() => import('@/tools/base64-encoder/ui')),
+  'uuid-generator': lazy(() => import('@/tools/uuid-generator/ui')),
+  'hash-generator': lazy(() => import('@/tools/hash-generator/ui')),
+  'unit-converter': lazy(() => import('@/tools/unit-converter/ui')),
 }
 
 interface ToolRunnerProps {

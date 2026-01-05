@@ -31,6 +31,8 @@ import {
   Send,
   RefreshCw,
   Settings,
+  Thermometer,
+  Weight,
   HelpCircle,
   type LucideIcon,
 } from 'lucide-react'
@@ -70,6 +72,8 @@ const iconMap: Record<string, LucideIcon> = {
   Send,
   RefreshCw,
   Settings,
+  Thermometer,
+  Weight,
   HelpCircle,
 }
 

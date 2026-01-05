@@ -294,13 +294,38 @@ const uuidGenerator: ToolDefinition = {
     description: 'Generate random UUID v4 strings instantly. Free online UUID generator.',
     keywords: ['uuid generator', 'guid generator', 'uuid v4'],
   },
+  page: {
+    about: {
+      headline: 'About UUID Generator',
+      paragraphs: [
+        'Create RFC4122 UUID v4 values instantly in your browser. Each UUID is generated locally for privacy and repeatable testing.',
+        'Use it for database keys, session tokens, and seed data without hitting a backend.',
+      ],
+      stats: [
+        { value: 'Local-only', label: 'No requests', icon: 'ShieldCheck' },
+        { value: 'v4 format', label: 'RFC4122', icon: 'Hash' },
+        { value: 'Batch', label: 'Keep recent 5', icon: 'Copy' },
+        { value: 'One-click', label: 'Copy ready', icon: 'Zap' },
+      ],
+    },
+    features: [
+      { title: 'Instant generation', description: 'Create new UUIDs with one click.', icon: 'Zap' },
+      { title: 'Copy-ready', description: 'Copy multiple UUIDs at once for seeding data.', icon: 'Copy' },
+      { title: 'Local privacy', description: 'Generated in-browser; no network calls.', icon: 'ShieldCheck' },
+    ],
+    steps: [
+      { step: 1, title: 'Generate', description: 'Click to create a UUID v4.', icon: 'Zap' },
+      { step: 2, title: 'Repeat as needed', description: 'Generate up to five recent values.', icon: 'RefreshCw' },
+      { step: 3, title: 'Copy', description: 'Copy the list for use in your project.', icon: 'Copy' },
+    ],
+  },
 }
 
 const hashGenerator: ToolDefinition = {
   id: 'hash-generator',
   slug: 'hash-generator',
   name: 'Hash Generator',
-  description: 'Generate MD5, SHA-1, SHA-256 hashes',
+  description: 'Generate SHA-1, SHA-256, and SHA-512 hashes',
   category: 'developer',
   icon: 'KeyRound',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
@@ -309,8 +334,50 @@ const hashGenerator: ToolDefinition = {
   tags: ['trending'],
   seo: {
     title: 'Hash Generator - Free Online Hash Calculator',
-    description: 'Generate MD5, SHA-1, SHA-256 hashes instantly. Free online hash generator.',
-    keywords: ['hash generator', 'md5 generator', 'sha256 generator'],
+    description: 'Generate SHA-1, SHA-256, and SHA-512 hashes instantly in your browser.',
+    keywords: ['hash generator', 'sha1', 'sha256', 'sha512'],
+  },
+  page: {
+    about: {
+      headline: 'About Hash Generator',
+      paragraphs: [
+        'Create secure SHA hashes entirely in your browser. Ideal for quick checksums and payload verification without sending data anywhere.',
+        'Supports SHA-1, SHA-256, and SHA-512 via Web Crypto for speed and privacy.',
+      ],
+      stats: [
+        { value: 'Client-side', label: 'No uploads', icon: 'ShieldCheck' },
+        { value: '3 algorithms', label: 'SHA-1 / 256 / 512', icon: 'KeyRound' },
+        { value: 'Copy ready', label: 'One-click copy', icon: 'Copy' },
+        { value: 'Instant', label: 'Web Crypto', icon: 'Zap' },
+      ],
+    },
+    features: [
+      {
+        title: 'Multiple algorithms',
+        description: 'Choose SHA-1, SHA-256, or SHA-512 based on your use case.',
+        icon: 'KeyRound',
+      },
+      {
+        title: 'Local hashing',
+        description: 'Runs fully client-side for privacy-sensitive content.',
+        icon: 'ShieldCheck',
+      },
+      {
+        title: 'Copy-friendly',
+        description: 'Copy hashed output instantly for tickets, PRs, or configs.',
+        icon: 'Copy',
+      },
+      {
+        title: 'Fast processing',
+        description: 'Built on Web Crypto APIs for performance.',
+        icon: 'Zap',
+      },
+    ],
+    steps: [
+      { step: 1, title: 'Choose algorithm', description: 'Pick SHA-1, SHA-256, or SHA-512.', icon: 'Settings' },
+      { step: 2, title: 'Enter text', description: 'Paste or type the content to hash.', icon: 'Send' },
+      { step: 3, title: 'Hash & copy', description: 'Generate and copy the hash output.', icon: 'Copy' },
+    ],
   },
 }
 
@@ -387,6 +454,32 @@ const unitConverter: ToolDefinition = {
     title: 'Unit Converter - Free Online Conversion Tool',
     description: 'Convert between different units of measurement. Free online unit converter.',
     keywords: ['unit converter', 'measurement converter', 'conversion tool'],
+  },
+  page: {
+    about: {
+      headline: 'About Unit Converter',
+      paragraphs: [
+        'Convert between common length, weight, and temperature units quickly in the browser.',
+        'Useful for travel, shipping, engineering estimates, and quick checks without leaving your tab.',
+      ],
+      stats: [
+        { value: '3 categories', label: 'Length, weight, temp', icon: 'Calculator' },
+        { value: 'Local', label: 'No API calls', icon: 'ShieldCheck' },
+        { value: 'Swap units', label: 'One tap swap', icon: 'RefreshCw' },
+        { value: 'Precision', label: 'Up to 6 decimals', icon: 'Zap' },
+      ],
+    },
+    features: [
+      { title: 'Length conversions', description: 'Meters, kilometers, miles, and feet.', icon: 'ArrowLeftRight' },
+      { title: 'Weight conversions', description: 'Grams, kilograms, pounds, and ounces.', icon: 'Weight' },
+      { title: 'Temperature conversions', description: 'Celsius, Fahrenheit, Kelvin.', icon: 'Thermometer' },
+      { title: 'Swap quickly', description: 'Swap from/to units with one click.', icon: 'RefreshCw' },
+    ],
+    steps: [
+      { step: 1, title: 'Pick category', description: 'Choose length, weight, or temperature.', icon: 'Settings' },
+      { step: 2, title: 'Set units', description: 'Select from and to units and enter a value.', icon: 'ArrowLeftRight' },
+      { step: 3, title: 'Get result', description: 'View converted value instantly and adjust as needed.', icon: 'Zap' },
+    ],
   },
 }
 
