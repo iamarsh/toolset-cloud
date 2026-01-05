@@ -28,6 +28,9 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'case-converter': lazy(() => import('@/tools/case-converter/ui')),
   'age-calculator': lazy(() => import('@/tools/age-calculator/ui')),
   'percentage-calculator': lazy(() => import('@/tools/percentage-calculator/ui')),
+  'line-break-remover': lazy(() => import('@/tools/line-break-remover/ui')),
+  'temperature-converter': lazy(() => import('@/tools/temperature-converter/ui')),
+  'date-diff-calculator': lazy(() => import('@/tools/date-diff-calculator/ui')),
 }
 
 interface ToolRunnerProps {

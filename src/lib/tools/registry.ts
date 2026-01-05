@@ -615,6 +615,62 @@ const percentageCalculator: ToolDefinition = {
   },
 }
 
+// New Text Tools
+const lineBreakRemover: ToolDefinition = {
+  id: 'line-break-remover',
+  slug: 'line-break-remover',
+  name: 'Line Break Remover',
+  description: 'Remove or replace line breaks in text',
+  category: 'text',
+  icon: 'WrapText',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Line Break Remover - Free Online Tool',
+    description: 'Remove or replace line breaks from text instantly. Free online line break remover.',
+    keywords: ['line break remover', 'remove newlines', 'text formatter'],
+  },
+}
+
+// New Calculators
+const temperatureConverter: ToolDefinition = {
+  id: 'temperature-converter',
+  slug: 'temperature-converter',
+  name: 'Temperature Converter',
+  description: 'Convert between Celsius, Fahrenheit, and Kelvin',
+  category: 'calculators',
+  icon: 'Thermometer',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Temperature Converter - Free Online Tool',
+    description: 'Convert between Celsius, Fahrenheit, and Kelvin instantly.',
+    keywords: ['temperature converter', 'celsius to fahrenheit', 'kelvin converter'],
+  },
+}
+
+const dateDiffCalculator: ToolDefinition = {
+  id: 'date-diff-calculator',
+  slug: 'date-diff-calculator',
+  name: 'Date Difference Calculator',
+  description: 'Calculate the difference between two dates',
+  category: 'calculators',
+  icon: 'CalendarDays',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Date Difference Calculator - Free Online Tool',
+    description: 'Calculate the difference between two dates in years, months, days.',
+    keywords: ['date difference', 'date calculator', 'days between dates'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -622,6 +678,7 @@ export const tools: ToolDefinition[] = [
   // Text
   wordCounter,
   caseConverter,
+  lineBreakRemover,
   // Developer
   jsonFormatter,
   base64Encoder,
@@ -635,6 +692,8 @@ export const tools: ToolDefinition[] = [
   bmiCalculator,
   ageCalculator,
   percentageCalculator,
+  temperatureConverter,
+  dateDiffCalculator,
   // Utility
   unitConverter,
 ]
