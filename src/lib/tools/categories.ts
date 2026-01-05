@@ -5,13 +5,7 @@ import type { Category, CategoryId } from './types'
  * Icons are string names - resolved to Lucide components client-side
  */
 export const categories: Category[] = [
-  {
-    id: 'text',
-    name: 'Text',
-    description: 'Transform, analyze, and manipulate text',
-    icon: 'FileText',
-    color: 'bg-blue-500/10 text-blue-500',
-  },
+  // Tech-focused categories first
   {
     id: 'developer',
     name: 'Developer',
@@ -20,25 +14,11 @@ export const categories: Category[] = [
     color: 'bg-emerald-500/10 text-emerald-500',
   },
   {
-    id: 'pdf',
-    name: 'PDF & Docs',
-    description: 'Merge, split, convert, and manage documents',
-    icon: 'FileType',
+    id: 'security',
+    name: 'Security',
+    description: 'Password generation and verification',
+    icon: 'Shield',
     color: 'bg-red-500/10 text-red-500',
-  },
-  {
-    id: 'image',
-    name: 'Images',
-    description: 'Resize, compress, convert, and edit images',
-    icon: 'Image',
-    color: 'bg-purple-500/10 text-purple-500',
-  },
-  {
-    id: 'media',
-    name: 'Video & Audio',
-    description: 'Download, trim, compress, and convert media',
-    icon: 'Video',
-    color: 'bg-pink-500/10 text-pink-500',
   },
   {
     id: 'web',
@@ -48,11 +28,11 @@ export const categories: Category[] = [
     color: 'bg-cyan-500/10 text-cyan-500',
   },
   {
-    id: 'productivity',
-    name: 'Productivity',
-    description: 'Timers, planners, and productivity tools',
-    icon: 'Clock',
-    color: 'bg-amber-500/10 text-amber-500',
+    id: 'text',
+    name: 'Text',
+    description: 'Transform, analyze, and manipulate text',
+    icon: 'FileText',
+    color: 'bg-blue-500/10 text-blue-500',
   },
   {
     id: 'calculators',
@@ -62,11 +42,33 @@ export const categories: Category[] = [
     color: 'bg-teal-500/10 text-teal-500',
   },
   {
-    id: 'security',
-    name: 'Security',
-    description: 'Password generation and verification',
-    icon: 'Shield',
+    id: 'productivity',
+    name: 'Productivity',
+    description: 'Timers, planners, and productivity tools',
+    icon: 'Clock',
+    color: 'bg-amber-500/10 text-amber-500',
+  },
+  // Consumer/creative categories last
+  {
+    id: 'image',
+    name: 'Images',
+    description: 'Resize, compress, convert, and edit images',
+    icon: 'Image',
+    color: 'bg-purple-500/10 text-purple-500',
+  },
+  {
+    id: 'pdf',
+    name: 'PDF & Docs',
+    description: 'Merge, split, convert, and manage documents',
+    icon: 'FileType',
     color: 'bg-red-500/10 text-red-500',
+  },
+  {
+    id: 'media',
+    name: 'Video & Audio',
+    description: 'Download, trim, compress, and convert media',
+    icon: 'Video',
+    color: 'bg-pink-500/10 text-pink-500',
   },
   {
     id: 'ai',
