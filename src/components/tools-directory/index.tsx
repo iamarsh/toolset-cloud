@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ToolCard } from '@/components/home/tool-card'
 import { getAllTools, categories, getDisplayCategories } from '@/lib/tools'
-import { ToolTitle } from '@/components/typography'
 import { Icon } from '@/lib/icons'
 import type { CategoryId } from '@/lib/tools/types'
 
@@ -96,8 +95,15 @@ export function ToolsDirectory() {
       <Container>
         {/* Header */}
         <header className="max-w-4xl mx-auto mb-10 text-center">
-          <ToolTitle title="Toolset.cloud tools" accent=".cloud" className="mb-4" />
-          <div className="w-16 h-1 bg-primary mx-auto mb-6" aria-hidden="true" />
+          <div className="flex flex-col items-center text-center mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold font-serif tracking-tight leading-[0.95]">
+              <span>toolset</span>
+              <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
+                .cloud
+              </span>
+            </h1>
+            <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" aria-hidden="true" />
+          </div>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Practical tools for everyday tasks. Most work instantly—some use AI for more.
           </p>
