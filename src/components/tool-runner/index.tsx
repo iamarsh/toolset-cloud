@@ -40,6 +40,18 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'color-picker': lazy(() => import('@/tools/color-picker/ui')),
   'utm-builder': lazy(() => import('@/tools/utmbuilder/ui')),
   'timezone-converter': lazy(() => import('@/tools/timezone-converter/ui')),
+  // Batch 4 - 11 new tools
+  'pomodoro-timer': lazy(() => import('@/tools/pomodoro-timer/ui')),
+  'online-clipboard': lazy(() => import('@/tools/online-clipboard/ui')),
+  'slug-generator': lazy(() => import('@/tools/slug-generator/ui')),
+  'lorem-generator': lazy(() => import('@/tools/lorem-generator/ui')),
+  'html-encoder': lazy(() => import('@/tools/html-encoder/ui')),
+  'binary-converter': lazy(() => import('@/tools/binary-converter/ui')),
+  'character-counter': lazy(() => import('@/tools/character-counter/ui')),
+  'url-parser': lazy(() => import('@/tools/url-parser/ui')),
+  'aspect-ratio-calculator': lazy(() => import('@/tools/aspect-ratio-calculator/ui')),
+  'markdown-preview': lazy(() => import('@/tools/markdown-preview/ui')),
+  'number-to-words': lazy(() => import('@/tools/number-to-words/ui')),
 }
 
 interface ToolRunnerProps {

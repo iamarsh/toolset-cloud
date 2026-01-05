@@ -834,6 +834,205 @@ const timezoneConverter: ToolDefinition = {
   },
 }
 
+// Batch 4 Tools
+const pomodoroTimer: ToolDefinition = {
+  id: 'pomodoro-timer',
+  slug: 'pomodoro-timer',
+  name: 'Pomodoro Timer',
+  description: 'Focus timer with work sessions and breaks (25/5/15)',
+  category: 'productivity',
+  icon: 'Brain',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['popular'],
+  seo: {
+    title: 'Pomodoro Timer - Free Focus Timer Online',
+    description: 'Boost productivity with the Pomodoro technique. 25-minute focus sessions with breaks.',
+    keywords: ['pomodoro timer', 'focus timer', 'productivity'],
+  },
+}
+
+const onlineClipboard: ToolDefinition = {
+  id: 'online-clipboard',
+  slug: 'online-clipboard',
+  name: 'Online Clipboard',
+  description: 'Temporary clipboard for text, code, and URLs',
+  category: 'text',
+  icon: 'ClipboardList',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Online Clipboard - Free Temporary Storage',
+    description: 'Store multiple text snippets temporarily in your browser.',
+    keywords: ['online clipboard', 'text storage', 'clipboard manager'],
+  },
+}
+
+const slugGenerator: ToolDefinition = {
+  id: 'slug-generator',
+  slug: 'slug-generator',
+  name: 'Slug Generator',
+  description: 'Convert text to URL-friendly slugs',
+  category: 'text',
+  icon: 'Link',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Slug Generator - Free URL Slug Maker',
+    description: 'Convert text to clean, URL-friendly slugs for SEO.',
+    keywords: ['slug generator', 'url slug', 'seo url'],
+  },
+}
+
+const loremGenerator: ToolDefinition = {
+  id: 'lorem-generator',
+  slug: 'lorem-generator',
+  name: 'Lorem Ipsum Generator',
+  description: 'Generate placeholder text for designs and mockups',
+  category: 'text',
+  icon: 'AlignLeft',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Lorem Ipsum Generator - Free Placeholder Text',
+    description: 'Generate lorem ipsum placeholder text for your designs.',
+    keywords: ['lorem ipsum', 'placeholder text', 'dummy text'],
+  },
+}
+
+const htmlEncoder: ToolDefinition = {
+  id: 'html-encoder',
+  slug: 'html-encoder',
+  name: 'HTML Encoder',
+  description: 'Encode and decode HTML entities',
+  category: 'developer',
+  icon: 'Code2',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'HTML Encoder - Free HTML Entity Tool',
+    description: 'Encode special characters to HTML entities or decode them back.',
+    keywords: ['html encoder', 'html entities', 'escape html'],
+  },
+}
+
+const binaryConverter: ToolDefinition = {
+  id: 'binary-converter',
+  slug: 'binary-converter',
+  name: 'Binary/Hex Converter',
+  description: 'Convert between binary, decimal, hex, and octal',
+  category: 'developer',
+  icon: 'Binary',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Binary Converter - Free Number Base Tool',
+    description: 'Convert numbers between binary, decimal, hexadecimal, and octal.',
+    keywords: ['binary converter', 'hex converter', 'number base'],
+  },
+}
+
+const characterCounter: ToolDefinition = {
+  id: 'character-counter',
+  slug: 'character-counter',
+  name: 'Character Counter',
+  description: 'Count characters with social media platform limits',
+  category: 'text',
+  icon: 'Hash',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['trending'],
+  seo: {
+    title: 'Character Counter - Social Media Limits',
+    description: 'Count characters and check limits for Twitter, Instagram, LinkedIn.',
+    keywords: ['character counter', 'twitter character limit', 'social media'],
+  },
+}
+
+const urlParser: ToolDefinition = {
+  id: 'url-parser',
+  slug: 'url-parser',
+  name: 'URL Parser',
+  description: 'Parse and analyze URL components',
+  category: 'web',
+  icon: 'Link2',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'URL Parser - Free URL Analyzer',
+    description: 'Parse URLs and extract protocol, hostname, path, and query parameters.',
+    keywords: ['url parser', 'url analyzer', 'query parameters'],
+  },
+}
+
+const aspectRatioCalculator: ToolDefinition = {
+  id: 'aspect-ratio-calculator',
+  slug: 'aspect-ratio-calculator',
+  name: 'Aspect Ratio Calculator',
+  description: 'Calculate and scale image dimensions',
+  category: 'image',
+  icon: 'RatioIcon',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Aspect Ratio Calculator - Free Tool',
+    description: 'Calculate aspect ratios and scale dimensions proportionally.',
+    keywords: ['aspect ratio', 'image dimensions', 'scale calculator'],
+  },
+}
+
+const markdownPreview: ToolDefinition = {
+  id: 'markdown-preview',
+  slug: 'markdown-preview',
+  name: 'Markdown Preview',
+  description: 'Live preview for Markdown text',
+  category: 'developer',
+  icon: 'FileCode',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Markdown Preview - Live Editor',
+    description: 'Write Markdown with instant live preview.',
+    keywords: ['markdown preview', 'markdown editor', 'md preview'],
+  },
+}
+
+const numberToWords: ToolDefinition = {
+  id: 'number-to-words',
+  slug: 'number-to-words',
+  name: 'Number to Words',
+  description: 'Convert numbers to written words',
+  category: 'text',
+  icon: 'FileDigit',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Number to Words Converter',
+    description: 'Convert numbers to written English words and ordinals.',
+    keywords: ['number to words', 'spell numbers', 'number converter'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -843,6 +1042,11 @@ export const tools: ToolDefinition[] = [
   caseConverter,
   lineBreakRemover,
   textCompare,
+  onlineClipboard,
+  slugGenerator,
+  loremGenerator,
+  characterCounter,
+  numberToWords,
   // Developer
   jsonFormatter,
   base64Encoder,
@@ -850,11 +1054,15 @@ export const tools: ToolDefinition[] = [
   hashGenerator,
   regexTester,
   jsonCsvConverter,
+  htmlEncoder,
+  binaryConverter,
+  markdownPreview,
   // Security
   passwordGenerator,
   // QR & Web
   qrGenerator,
   utmBuilder,
+  urlParser,
   // Calculators
   bmiCalculator,
   ageCalculator,
@@ -863,11 +1071,13 @@ export const tools: ToolDefinition[] = [
   dateDiffCalculator,
   loanCalculator,
   timezoneConverter,
+  aspectRatioCalculator,
   // Utility
   unitConverter,
   // Productivity
   countdownTimer,
   stopwatch,
+  pomodoroTimer,
   // Image
   colorPicker,
 ]
