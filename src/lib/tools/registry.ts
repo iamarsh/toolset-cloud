@@ -707,6 +707,133 @@ const textCompare: ToolDefinition = {
   },
 }
 
+// Productivity Tools
+const countdownTimer: ToolDefinition = {
+  id: 'countdown-timer',
+  slug: 'countdown-timer',
+  name: 'Countdown Timer',
+  description: 'Set a countdown timer with hours, minutes, and seconds',
+  category: 'productivity',
+  icon: 'Timer',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['popular'],
+  seo: {
+    title: 'Countdown Timer - Free Online Timer',
+    description: 'Set a countdown timer with customizable hours, minutes, and seconds.',
+    keywords: ['countdown timer', 'timer', 'online timer'],
+  },
+}
+
+const stopwatch: ToolDefinition = {
+  id: 'stopwatch',
+  slug: 'stopwatch',
+  name: 'Online Stopwatch',
+  description: 'Precise stopwatch with lap times and milliseconds',
+  category: 'productivity',
+  icon: 'Clock',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Online Stopwatch - Free Stopwatch with Laps',
+    description: 'Precise online stopwatch with lap times and millisecond accuracy.',
+    keywords: ['stopwatch', 'online stopwatch', 'lap timer'],
+  },
+}
+
+const loanCalculator: ToolDefinition = {
+  id: 'loan-calculator',
+  slug: 'loan-calculator',
+  name: 'Loan Calculator',
+  description: 'Calculate monthly payments, total interest, and amortization',
+  category: 'calculators',
+  icon: 'DollarSign',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Loan Calculator - Free Mortgage & Loan Calculator',
+    description: 'Calculate monthly payments, total interest, and loan amortization.',
+    keywords: ['loan calculator', 'mortgage calculator', 'payment calculator'],
+  },
+}
+
+const jsonCsvConverter: ToolDefinition = {
+  id: 'json-csv-converter',
+  slug: 'json-csv-converter',
+  name: 'JSON to CSV Converter',
+  description: 'Convert between JSON and CSV formats',
+  category: 'developer',
+  icon: 'FileJson',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'JSON to CSV Converter - Free Online Tool',
+    description: 'Convert JSON arrays to CSV or CSV to JSON instantly.',
+    keywords: ['json to csv', 'csv to json', 'data converter'],
+  },
+}
+
+const colorPicker: ToolDefinition = {
+  id: 'color-picker',
+  slug: 'color-picker',
+  name: 'Color Picker',
+  description: 'Pick colors and get HEX, RGB, and HSL values',
+  category: 'image',
+  icon: 'Palette',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Color Picker - Free Online Color Tool',
+    description: 'Pick colors and get HEX, RGB, and HSL values instantly.',
+    keywords: ['color picker', 'hex color', 'rgb color'],
+  },
+}
+
+const utmBuilder: ToolDefinition = {
+  id: 'utm-builder',
+  slug: 'utm-builder',
+  name: 'UTM Builder',
+  description: 'Create UTM-tagged URLs for campaign tracking',
+  category: 'web',
+  icon: 'Link2',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'UTM Builder - Free Campaign URL Builder',
+    description: 'Create UTM-tagged URLs for campaign tracking in Google Analytics.',
+    keywords: ['utm builder', 'campaign url', 'utm parameters'],
+  },
+}
+
+const timezoneConverter: ToolDefinition = {
+  id: 'timezone-converter',
+  slug: 'timezone-converter',
+  name: 'Timezone Converter',
+  description: 'Convert time between different timezones',
+  category: 'calculators',
+  icon: 'Globe',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Timezone Converter - World Clock Tool',
+    description: 'Convert time between different timezones with world clock view.',
+    keywords: ['timezone converter', 'world clock', 'time zone'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -722,18 +849,27 @@ export const tools: ToolDefinition[] = [
   uuidGenerator,
   hashGenerator,
   regexTester,
+  jsonCsvConverter,
   // Security
   passwordGenerator,
-  // QR
+  // QR & Web
   qrGenerator,
+  utmBuilder,
   // Calculators
   bmiCalculator,
   ageCalculator,
   percentageCalculator,
   temperatureConverter,
   dateDiffCalculator,
+  loanCalculator,
+  timezoneConverter,
   // Utility
   unitConverter,
+  // Productivity
+  countdownTimer,
+  stopwatch,
+  // Image
+  colorPicker,
 ]
 
 /**

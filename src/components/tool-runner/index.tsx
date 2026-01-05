@@ -33,6 +33,13 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'date-diff-calculator': lazy(() => import('@/tools/date-diff-calculator/ui')),
   'regex-tester': lazy(() => import('@/tools/regex-tester/ui')),
   'text-compare': lazy(() => import('@/tools/text-compare/ui')),
+  'countdown-timer': lazy(() => import('@/tools/countdown-timer/ui')),
+  'stopwatch': lazy(() => import('@/tools/stopwatch/ui')),
+  'loan-calculator': lazy(() => import('@/tools/loan-calculator/ui')),
+  'json-csv-converter': lazy(() => import('@/tools/json-csv-converter/ui')),
+  'color-picker': lazy(() => import('@/tools/color-picker/ui')),
+  'utm-builder': lazy(() => import('@/tools/utmbuilder/ui')),
+  'timezone-converter': lazy(() => import('@/tools/timezone-converter/ui')),
 }
 
 interface ToolRunnerProps {
