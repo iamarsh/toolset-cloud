@@ -31,6 +31,8 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'line-break-remover': lazy(() => import('@/tools/line-break-remover/ui')),
   'temperature-converter': lazy(() => import('@/tools/temperature-converter/ui')),
   'date-diff-calculator': lazy(() => import('@/tools/date-diff-calculator/ui')),
+  'regex-tester': lazy(() => import('@/tools/regex-tester/ui')),
+  'text-compare': lazy(() => import('@/tools/text-compare/ui')),
 }
 
 interface ToolRunnerProps {

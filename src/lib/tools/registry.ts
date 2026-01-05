@@ -671,6 +671,42 @@ const dateDiffCalculator: ToolDefinition = {
   },
 }
 
+const regexTester: ToolDefinition = {
+  id: 'regex-tester',
+  slug: 'regex-tester',
+  name: 'Regex Tester',
+  description: 'Test and debug regular expressions with live matching',
+  category: 'developer',
+  icon: 'Regex',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['trending'],
+  seo: {
+    title: 'Regex Tester - Free Online Regular Expression Tool',
+    description: 'Test and debug regular expressions with live matching and common patterns.',
+    keywords: ['regex tester', 'regular expression', 'regex debugger'],
+  },
+}
+
+const textCompare: ToolDefinition = {
+  id: 'text-compare',
+  slug: 'text-compare',
+  name: 'Text Compare',
+  description: 'Compare two texts and see the differences line by line',
+  category: 'text',
+  icon: 'GitCompare',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Text Compare - Free Online Diff Tool',
+    description: 'Compare two texts side by side and see added, removed, and unchanged lines.',
+    keywords: ['text compare', 'diff tool', 'text difference'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -679,11 +715,13 @@ export const tools: ToolDefinition[] = [
   wordCounter,
   caseConverter,
   lineBreakRemover,
+  textCompare,
   // Developer
   jsonFormatter,
   base64Encoder,
   uuidGenerator,
   hashGenerator,
+  regexTester,
   // Security
   passwordGenerator,
   // QR
