@@ -13,7 +13,7 @@ export default function HomePage() {
       <WhyChoose />
       <WhoWeServe />
       <PromoBanner />
-      
+
       {categoriesToShow.map((category) => {
         const categoryTools = getToolsByCategory(category.id)
         return (

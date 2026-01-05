@@ -33,6 +33,10 @@ import {
   Settings,
   Thermometer,
   Weight,
+  Download,
+  Type,
+  Calendar,
+  Percent,
   HelpCircle,
   type LucideIcon,
 } from 'lucide-react'
@@ -74,6 +78,10 @@ const iconMap: Record<string, LucideIcon> = {
   Settings,
   Thermometer,
   Weight,
+  Download,
+  Type,
+  Calendar,
+  Percent,
   HelpCircle,
 }
 

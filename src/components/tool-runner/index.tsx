@@ -22,6 +22,12 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'uuid-generator': lazy(() => import('@/tools/uuid-generator/ui')),
   'hash-generator': lazy(() => import('@/tools/hash-generator/ui')),
   'unit-converter': lazy(() => import('@/tools/unit-converter/ui')),
+  'password-generator': lazy(() => import('@/tools/password-generator/ui')),
+  'qr-generator': lazy(() => import('@/tools/qr-generator/ui')),
+  'bmi-calculator': lazy(() => import('@/tools/bmi-calculator/ui')),
+  'case-converter': lazy(() => import('@/tools/case-converter/ui')),
+  'age-calculator': lazy(() => import('@/tools/age-calculator/ui')),
+  'percentage-calculator': lazy(() => import('@/tools/percentage-calculator/ui')),
 }
 
 interface ToolRunnerProps {

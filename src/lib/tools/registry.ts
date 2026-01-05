@@ -398,6 +398,32 @@ const passwordGenerator: ToolDefinition = {
     description: 'Generate strong, secure random passwords. Free online password generator with customizable options.',
     keywords: ['password generator', 'secure password', 'random password'],
   },
+  page: {
+    about: {
+      headline: 'About Password Generator',
+      paragraphs: [
+        'Create strong passwords with control over length and character sets. Everything runs in the browser—no passwords leave your device.',
+        'Use it for accounts, API keys, or one-off secrets. Toggle symbols, numbers, and cases to meet policy requirements.',
+      ],
+      stats: [
+        { value: 'Client-side', label: 'No storage', icon: 'ShieldCheck' },
+        { value: '8-48 chars', label: 'Length control', icon: 'Hash' },
+        { value: 'Strength meter', label: 'Instant feedback', icon: 'Zap' },
+        { value: 'Copy ready', label: 'One click', icon: 'Copy' },
+      ],
+    },
+    features: [
+      { title: 'Configurable length', description: 'Choose between 8 and 48 characters.', icon: 'Hash' },
+      { title: 'Character sets', description: 'Toggle lowercase, uppercase, numbers, symbols.', icon: 'KeyRound' },
+      { title: 'Strength indicator', description: 'Live feedback on password strength.', icon: 'ShieldCheck' },
+      { title: 'Local generation', description: 'Passwords never leave the browser.', icon: 'ShieldCheck' },
+    ],
+    steps: [
+      { step: 1, title: 'Set rules', description: 'Pick length and character sets.', icon: 'Settings' },
+      { step: 2, title: 'Generate', description: 'Create a password instantly.', icon: 'Zap' },
+      { step: 3, title: 'Copy & use', description: 'Copy to clipboard and apply where needed.', icon: 'Copy' },
+    ],
+  },
 }
 
 // QR Tools (Web & URL category)
@@ -417,24 +443,31 @@ const qrGenerator: ToolDefinition = {
     description: 'Generate QR codes from text or URLs instantly. Free online QR code generator.',
     keywords: ['qr code generator', 'qr maker', 'qr code creator'],
   },
-}
-
-// Calculators
-const bmiCalculator: ToolDefinition = {
-  id: 'bmi-calculator',
-  slug: 'bmi-calculator',
-  name: 'BMI Calculator',
-  description: 'Calculate your Body Mass Index',
-  category: 'calculators',
-  icon: 'Calculator',
-  iconColor: 'bg-teal-500/10 text-teal-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'BMI Calculator - Free Body Mass Index Calculator',
-    description: 'Calculate your Body Mass Index (BMI) instantly. Free online BMI calculator.',
-    keywords: ['bmi calculator', 'body mass index', 'health calculator'],
+  page: {
+    about: {
+      headline: 'About QR Code Generator',
+      paragraphs: [
+        'Create QR codes for URLs or text in seconds. Preview and download as PNG instantly.',
+        'Great for sharing links, Wi-Fi creds, or promo content without external tools.',
+      ],
+      stats: [
+        { value: 'Instant', label: 'Live preview', icon: 'Zap' },
+        { value: 'PNG', label: 'Download ready', icon: 'Download' },
+        { value: 'Client-side', label: 'No signup', icon: 'ShieldCheck' },
+        { value: 'Text or URL', label: 'Any content', icon: 'Link' },
+      ],
+    },
+    features: [
+      { title: 'Live preview', description: 'See the QR as you type.', icon: 'Zap' },
+      { title: 'Download PNG', description: 'One-click PNG download.', icon: 'Download' },
+      { title: 'Copy text', description: 'Copy the source text quickly.', icon: 'Copy' },
+      { title: 'No signup', description: 'Runs in-browser, no account needed.', icon: 'ShieldCheck' },
+    ],
+    steps: [
+      { step: 1, title: 'Enter content', description: 'Add a URL or text.', icon: 'Send' },
+      { step: 2, title: 'Preview QR', description: 'Instantly see the code update.', icon: 'Zap' },
+      { step: 3, title: 'Download or share', description: 'Save PNG or copy the source text.', icon: 'Download' },
+    ],
   },
 }
 
@@ -483,12 +516,112 @@ const unitConverter: ToolDefinition = {
   },
 }
 
+const bmiCalculator: ToolDefinition = {
+  id: 'bmi-calculator',
+  slug: 'bmi-calculator',
+  name: 'BMI Calculator',
+  description: 'Calculate your Body Mass Index',
+  category: 'calculators',
+  icon: 'Calculator',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'BMI Calculator - Free Body Mass Index Calculator',
+    description: 'Calculate your Body Mass Index (BMI) instantly. Free online BMI calculator.',
+    keywords: ['bmi calculator', 'body mass index', 'health calculator'],
+  },
+  page: {
+    about: {
+      headline: 'About BMI Calculator',
+      paragraphs: [
+        'Quickly compute BMI from height and weight. Runs locally for fast health checks.',
+        'Useful for fitness tracking and health forms without sharing data.',
+      ],
+      stats: [
+        { value: 'Instant', label: 'Live result', icon: 'Zap' },
+        { value: 'Local', label: 'No data leaves', icon: 'ShieldCheck' },
+        { value: 'Metric', label: 'kg / cm inputs', icon: 'Calculator' },
+        { value: 'Readable', label: 'Category guidance', icon: 'HelpCircle' },
+      ],
+    },
+    features: [
+      { title: 'Live calculation', description: 'BMI updates as you type.', icon: 'Zap' },
+      { title: 'Simple inputs', description: 'Metric entry for weight and height.', icon: 'Calculator' },
+      { title: 'Categories', description: 'See underweight/normal/overweight/obese status.', icon: 'HelpCircle' },
+    ],
+    steps: [
+      { step: 1, title: 'Enter weight', description: 'Add weight in kilograms.', icon: 'Send' },
+      { step: 2, title: 'Enter height', description: 'Add height in centimeters.', icon: 'Send' },
+      { step: 3, title: 'View BMI', description: 'See your BMI and category instantly.', icon: 'Zap' },
+    ],
+  },
+}
+
+// Text Utilities
+const caseConverter: ToolDefinition = {
+  id: 'case-converter',
+  slug: 'case-converter',
+  name: 'Case Converter',
+  description: 'Convert text to sentence, title, upper, or lower case',
+  category: 'text',
+  icon: 'Type',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Case Converter - Free Online Text Case Tool',
+    description: 'Convert text to upper, lower, sentence, or title case instantly in your browser.',
+    keywords: ['case converter', 'uppercase', 'lowercase', 'title case'],
+  },
+}
+
+// Calculators
+const ageCalculator: ToolDefinition = {
+  id: 'age-calculator',
+  slug: 'age-calculator',
+  name: 'Age Calculator',
+  description: 'Calculate age in years, months, and days from a birth date',
+  category: 'calculators',
+  icon: 'Calendar',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Age Calculator - Free Online Age Tool',
+    description: 'Calculate exact age in years, months, and days instantly.',
+    keywords: ['age calculator', 'date difference', 'birthday'],
+  },
+}
+
+const percentageCalculator: ToolDefinition = {
+  id: 'percentage-calculator',
+  slug: 'percentage-calculator',
+  name: 'Percentage Calculator',
+  description: 'Calculate percentages and percentage change',
+  category: 'calculators',
+  icon: 'Percent',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Percentage Calculator - Free Online Tool',
+    description: 'Compute percentages and percentage changes quickly in your browser.',
+    keywords: ['percentage calculator', 'percent change', 'percent of'],
+  },
+}
+
 /**
  * All tools in the registry
  */
 export const tools: ToolDefinition[] = [
   // Text
   wordCounter,
+  caseConverter,
   // Developer
   jsonFormatter,
   base64Encoder,
@@ -500,6 +633,8 @@ export const tools: ToolDefinition[] = [
   qrGenerator,
   // Calculators
   bmiCalculator,
+  ageCalculator,
+  percentageCalculator,
   // Utility
   unitConverter,
 ]

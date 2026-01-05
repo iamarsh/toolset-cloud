@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Wrench } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
+import { UserMenu } from '@/components/auth'
 import { Container } from '@/components/ui/container'
 import { cn } from '@/lib/utils'
 
@@ -52,9 +52,7 @@ export function Header() {
           {/* Right side actions */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:block">
-              <Button asChild>
-                <Link href="/tools">Get Started</Link>
-              </Button>
+              <UserMenu />
             </div>
             <ThemeToggle />
             
@@ -88,9 +86,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="px-4 pt-2">
-                <Button asChild className="w-full">
-                  <Link href="/tools">Get Started</Link>
-                </Button>
+                <UserMenu />
               </div>
             </nav>
           </div>
