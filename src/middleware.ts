@@ -4,7 +4,7 @@ import { auth } from '@/lib/auth'
 
 // Routes that require authentication
 const protectedRoutes = [
-  '/dashboard',
+  '/workspace',
   '/settings',
   '/history',
   '/saved-configs',
@@ -20,15 +20,15 @@ export async function middleware(request: NextRequest) {
   const session = await auth()
   const { pathname } = request.nextUrl
 
-  // Redirect authenticated users from homepage to dashboard
+  // Redirect authenticated users from homepage to workspace
   if (pathname === '/' && session?.user) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    return NextResponse.redirect(new URL('/workspace', request.url))
   }
 
-  // Redirect authenticated users away from auth pages to dashboard
+  // Redirect authenticated users away from auth pages to workspace
   if (authRoutes.some(route => pathname.startsWith(route))) {
     if (session?.user) {
-      return NextResponse.redirect(new URL('/dashboard', request.url))
+      return NextResponse.redirect(new URL('/workspace', request.url))
     }
   }
 
