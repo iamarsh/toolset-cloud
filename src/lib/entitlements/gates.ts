@@ -1,6 +1,9 @@
+'use client'
+
 import type { ToolDefinition, ToolTier } from '@/lib/tools/types'
 import type { UserSession, EntitlementResult, Plan, Capability } from './types'
 import { planHasCapability, getRequiredPlanForCapability, getPlan } from './plans'
+import { useSession as useNextAuthSession } from 'next-auth/react'
 
 /**
  * Map tool tier to required capability
@@ -148,10 +151,24 @@ function formatBytes(bytes: number): string {
 }
 
 /**
- * Hook to get current session (stub - will be implemented with Appwrite)
+ * Hook to get current session from NextAuth
  */
 export function useSession(): UserSession {
-  // TODO: Implement with Appwrite auth
-  // For now, return default public session
-  return getDefaultSession()
+  const { data: session, status } = useNextAuthSession()
+
+  // Return default while loading
+  if (status === 'loading') {
+    return getDefaultSession()
+  }
+
+  // Not authenticated
+  if (!session?.user) {
+    return getDefaultSession()
+  }
+
+  // Authenticated - map NextAuth session to entitlements session
+  return {
+    plan: session.user.plan || 'FREE_ACCOUNT',
+    authenticated: true,
+  }
 }
