@@ -38,13 +38,14 @@ export function WhoWeServe() {
             return (
               <div
                 key={audience.title}
-                className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border"
+                className="group relative overflow-hidden flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="font-semibold mb-2">{audience.title}</h3>
                 <p className="text-sm text-muted-foreground">{audience.description}</p>
+                <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
               </div>
             )
           })}

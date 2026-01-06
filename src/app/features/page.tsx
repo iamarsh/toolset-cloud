@@ -4,7 +4,6 @@ import {
   CoreValuesSection,
   AccessLevelsSection,
   AudienceSection,
-  NotForSection,
   ClosingCTA
 } from '@/components/features'
 
@@ -20,7 +19,6 @@ export default function FeaturesPage() {
       <CoreValuesSection />
       <AccessLevelsSection />
       <AudienceSection />
-      <NotForSection />
       <ClosingCTA />
     </>
   )

@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { Container } from '@/components/ui/container'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 
 export function AccessLevelsSection() {
@@ -17,19 +19,19 @@ export function AccessLevelsSection() {
     },
     {
       tier: 'FREE ACCOUNT',
-      badge: 'Sign in',
-      badgeVariant: 'default' as const,
+      cta: { label: 'Get Started', href: '/login', placement: 'header' as const },
       features: [
         'Save your work',
         'Access history',
         'Reuse configurations',
         'Limited AI usage'
-      ]
+      ],
     },
     {
       tier: 'PRO',
       badge: '$9.99/month',
       badgeVariant: 'default' as const,
+      badgeHref: '/pricing',
       features: [
         'Batch workflows',
         'Higher limits',
@@ -53,10 +55,30 @@ export function AccessLevelsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {levels.map((level) => (
-            <div key={level.tier} className="flex flex-col p-6 rounded-lg border border-border bg-card">
+            <div
+              key={level.tier}
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]"
+            >
               <div className="mb-4">
                 <h3 className="text-lg font-bold mb-2">{level.tier}</h3>
-                <Badge variant={level.badgeVariant}>{level.badge}</Badge>
+                {level.badge && (
+                  level.badgeHref ? (
+                    <Link href={level.badgeHref} className="inline-block">
+                      <Badge variant={level.badgeVariant} className="cursor-pointer">
+                        {level.badge}
+                      </Badge>
+                    </Link>
+                  ) : (
+                    <Badge variant={level.badgeVariant}>{level.badge}</Badge>
+                  )
+                )}
+                {level.cta?.placement === 'header' && (
+                  <div className="mt-3">
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href={level.cta.href}>{level.cta.label}</Link>
+                    </Button>
+                  </div>
+                )}
               </div>
 
               <ul className="space-y-3 flex-1">
@@ -67,6 +89,16 @@ export function AccessLevelsSection() {
                   </li>
                 ))}
               </ul>
+
+              {level.cta && level.cta.placement !== 'header' && (
+                <div className="mt-6">
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={level.cta.href}>{level.cta.label}</Link>
+                  </Button>
+                </div>
+              )}
+
+              <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
             </div>
           ))}
         </div>

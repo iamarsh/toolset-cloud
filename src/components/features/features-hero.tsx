@@ -25,19 +25,22 @@ export function FeaturesHero() {
             Instead of jumping between random tools, starting from scratch each time, or re-explaining what you want to an AI, Toolset gives you a workspace where your tools remember context, save progress, and scale when needed.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-2xl">
-            <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]">
-              <div className="text-sm font-medium text-foreground mb-1">Free tools help you get started.</div>
-              <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
-            </div>
-            <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]">
-              <div className="text-sm font-medium text-foreground mb-1">Accounts help you pick up where you left off.</div>
-              <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
-            </div>
-            <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-gradient-to-br hover:from-card/95 hover:to-background/60 hover:shadow-[0_18px_42px_-30px_rgba(0,0,0,0.6)]">
-              <div className="text-sm font-medium text-foreground mb-1">Pro features exist to reduce repetition, handle scale, and save time.</div>
-              <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
-            </div>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-10 md:gap-12 w-full max-w-3xl">
+            {[
+              { title: 'Free tools', subtitle: 'Help you get started.' },
+              { title: 'Accounts', subtitle: 'Pick up where you left off.' },
+              { title: 'Pro features', subtitle: 'Reduce repetition and handle scale.' }
+            ].map((item, index, arr) => (
+              <div key={item.title} className="flex items-center gap-8 md:gap-12">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-semibold">{item.title}</div>
+                  <div className="text-xs text-muted-foreground tracking-wider">{item.subtitle}</div>
+                </div>
+                {index < arr.length - 1 && (
+                  <div className="h-8 w-px bg-border hidden sm:block" aria-hidden="true" />
+                )}
+              </div>
+            ))}
           </div>
 
           <p className="text-base text-muted-foreground mt-8">

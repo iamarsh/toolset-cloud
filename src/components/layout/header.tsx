@@ -14,7 +14,6 @@ const navItems = [
   { href: '/tools', label: 'Tools' },
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/about', label: 'About' },
 ]
 
 export function Header() {
