@@ -1251,6 +1251,116 @@ const imageResizer: ToolDefinition = {
   },
 }
 
+// Batch 6 Option 1: PDF Tools
+
+const pdfTextExtractor: ToolDefinition = {
+  id: 'pdf-text-extractor',
+  slug: 'pdf-text-extractor',
+  name: 'PDF Text Extractor',
+  description: 'Extract text content from PDF documents',
+  category: 'pdf',
+  icon: 'FileText',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'PDF Text Extractor - Free Online PDF to Text Converter',
+    description: 'Extract text from PDF files instantly. Free online PDF text extractor with page-by-page extraction and download options.',
+    keywords: ['pdf text extractor', 'pdf to text', 'extract text from pdf', 'pdf text converter', 'copy text from pdf'],
+  },
+}
+
+const pdfMerge: ToolDefinition = {
+  id: 'pdf-merge',
+  slug: 'pdf-merge',
+  name: 'PDF Merge',
+  description: 'Combine multiple PDF files into one document',
+  category: 'pdf',
+  icon: 'FilePlus',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'PDF Merge - Free Online Combine PDF Files Tool',
+    description: 'Merge multiple PDFs into one document. Free online PDF merger with drag-and-drop reordering and instant preview.',
+    keywords: ['pdf merge', 'combine pdf', 'merge pdf files', 'join pdf', 'pdf combiner'],
+  },
+}
+
+const splitPDF: ToolDefinition = {
+  id: 'split-pdf',
+  slug: 'split-pdf',
+  name: 'Split PDF',
+  description: 'Split PDF into individual pages or custom ranges',
+  category: 'pdf',
+  icon: 'Scissors',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Split PDF - Free Online PDF Splitter Tool',
+    description: 'Split PDF files into individual pages or custom ranges. Free online PDF splitter with extract and download options.',
+    keywords: ['split pdf', 'pdf splitter', 'separate pdf pages', 'extract pdf pages', 'divide pdf'],
+  },
+}
+
+const protectPDF: ToolDefinition = {
+  id: 'protect-pdf',
+  slug: 'protect-pdf',
+  name: 'Protect PDF',
+  description: 'Add password protection and watermarks to PDFs',
+  category: 'pdf',
+  icon: 'Shield',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Protect PDF - Free Online PDF Security Tool',
+    description: 'Add password protection and watermarks to PDF files. Free online PDF protector with encryption and security options.',
+    keywords: ['protect pdf', 'pdf password', 'secure pdf', 'pdf watermark', 'encrypt pdf'],
+  },
+}
+
+const pdfToImage: ToolDefinition = {
+  id: 'pdf-to-image',
+  slug: 'pdf-to-image',
+  name: 'PDF to Image',
+  description: 'Convert PDF pages to PNG or JPEG images',
+  category: 'pdf',
+  icon: 'Image',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'PDF to Image - Free Online PDF to PNG/JPEG Converter',
+    description: 'Convert PDF pages to images in PNG or JPEG format. Free online PDF to image converter with quality options.',
+    keywords: ['pdf to image', 'pdf to png', 'pdf to jpeg', 'convert pdf to image', 'pdf image converter'],
+  },
+}
+
+const eSignDocument: ToolDefinition = {
+  id: 'esign-document',
+  slug: 'esign-document',
+  name: 'eSign Document',
+  description: 'Add digital signatures to PDF documents',
+  category: 'pdf',
+  icon: 'PenTool',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'PAID',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'eSign Document - Free Online PDF Signature Tool',
+    description: 'Digitally sign PDF documents with custom signatures. Free online eSignature tool with position control and date stamping.',
+    keywords: ['esign pdf', 'pdf signature', 'sign pdf online', 'digital signature', 'electronic signature'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1310,6 +1420,13 @@ export const tools: ToolDefinition[] = [
   imageResizer,
   cropImage,
   thumbnailTextDesigner,
+  // PDF
+  pdfTextExtractor,
+  pdfMerge,
+  splitPDF,
+  protectPDF,
+  pdfToImage,
+  eSignDocument,
 ]
 
 /**

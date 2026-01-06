@@ -66,6 +66,13 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'qr-scanner': lazy(() => import('@/tools/qr-scanner/ui')),
   'website-status-checker': lazy(() => import('@/tools/website-status-checker/ui')),
   'image-resizer': lazy(() => import('@/tools/image-resizer/ui')),
+  // Batch 6 Option 1 - 6 PDF tools
+  'pdf-text-extractor': lazy(() => import('@/tools/pdf-text-extractor/ui')),
+  'pdf-merge': lazy(() => import('@/tools/pdf-merge/ui')),
+  'split-pdf': lazy(() => import('@/tools/split-pdf/ui')),
+  'protect-pdf': lazy(() => import('@/tools/protect-pdf/ui')),
+  'pdf-to-image': lazy(() => import('@/tools/pdf-to-image/ui')),
+  'esign-document': lazy(() => import('@/tools/esign-document/ui')),
 }
 
 interface ToolRunnerProps {
