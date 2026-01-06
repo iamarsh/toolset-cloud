@@ -91,6 +91,10 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'expense-splitter': lazy(() => import('@/tools/expense-splitter/ui')),
   'time-tracker': lazy(() => import('@/tools/time-tracker/ui')),
   'goal-planner': lazy(() => import('@/tools/goal-planner/ui')),
+  // Batch 7 - Part 1: High-Demand Practical Tools (Quick Wins)
+  'signature-maker': lazy(() => import('@/tools/signature-maker/ui')),
+  'audio-joiner': lazy(() => import('@/tools/audio-joiner/ui')),
+  'resume-parser': lazy(() => import('@/tools/resume-parser/ui')),
 }
 
 interface ToolRunnerProps {

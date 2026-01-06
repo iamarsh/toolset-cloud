@@ -1657,6 +1657,64 @@ const goalPlanner: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 7: High-Demand Practical Tools (Part 1 - Quick Wins)
+// ============================================================================
+
+const signatureMaker: ToolDefinition = {
+  id: 'signature-maker',
+  slug: 'signature-maker',
+  name: 'Digital Signature Maker',
+  description: 'Create digital signatures by drawing, typing, or uploading',
+  category: 'productivity',
+  icon: 'PenTool',
+  iconColor: 'bg-violet-500/10 text-violet-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Digital Signature Maker - Free Online Signature Creator',
+    description: 'Create digital signatures online by drawing, typing, or uploading. Download as PNG or SVG with transparent background. Free signature maker.',
+    keywords: ['signature maker', 'digital signature', 'create signature online', 'signature generator', 'electronic signature'],
+  },
+}
+
+const audioJoiner: ToolDefinition = {
+  id: 'audio-joiner',
+  slug: 'audio-joiner',
+  name: 'Audio Joiner',
+  description: 'Merge multiple audio files into one with fade effects',
+  category: 'media',
+  icon: 'Music',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Audio Joiner - Free Online Audio Merger Tool',
+    description: 'Merge multiple audio files online with fade effects and volume normalization. Free audio joiner for MP3, WAV, and other formats.',
+    keywords: ['audio joiner', 'audio merger', 'merge audio online', 'combine audio files', 'audio combiner'],
+  },
+}
+
+const resumeParser: ToolDefinition = {
+  id: 'resume-parser',
+  slug: 'resume-parser',
+  name: 'Resume Parser',
+  description: 'Extract structured data from PDF and text resumes',
+  category: 'pdf',
+  icon: 'FileUser',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Resume Parser - Free Online CV Data Extractor',
+    description: 'Parse resumes online to extract contact info, skills, education, and experience. Free resume parser for PDF and TXT files with JSON/CSV export.',
+    keywords: ['resume parser', 'cv parser', 'extract resume data', 'resume extractor', 'parse cv online'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1726,6 +1784,7 @@ export const tools: ToolDefinition[] = [
   expenseSplitter,
   timeTracker,
   goalPlanner,
+  signatureMaker,
   // Image
   colorPicker,
   imageCompressor,
@@ -1739,6 +1798,9 @@ export const tools: ToolDefinition[] = [
   protectPDF,
   pdfToImage,
   eSignDocument,
+  resumeParser,
+  // Media
+  audioJoiner,
 ]
 
 /**
