@@ -1,26 +1,21 @@
-import { Users, Briefcase, GraduationCap, Code } from 'lucide-react'
+import { Code, Briefcase, Megaphone } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 
 const audiences = [
   {
-    icon: Users,
-    title: 'Everyday Users',
-    description: 'Simple tools for common tasks like text editing, file conversion, and quick calculations.',
+    icon: Code,
+    title: 'Developers',
+    description: 'Repetitive tasks, API testing, data transformation. Save your configs and run again.',
   },
   {
     icon: Briefcase,
-    title: 'Professionals',
-    description: 'Productivity boosters for work—document tools, formatters, and time management.',
+    title: 'Solo Professionals',
+    description: 'Content operations, routine formatting, regular workflows. Pick up where you left off.',
   },
   {
-    icon: GraduationCap,
-    title: 'Students & Educators',
-    description: 'Study aids, word counters, citation tools, and focus timers for academic success.',
-  },
-  {
-    icon: Code,
-    title: 'Developers',
-    description: 'JSON formatters, regex testers, hash generators, and AI-powered code utilities.',
+    icon: Megaphone,
+    title: 'Content Operators',
+    description: 'Social media managers, copywriters, regular posting schedules. Saved tone and context.',
   },
 ]
 
@@ -30,14 +25,14 @@ export function WhoWeServe() {
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-sm font-semibold text-muted-foreground tracking-wider uppercase mb-3">
-            WHO WE SERVE
+            WHO TOOLSET IS FOR
           </h2>
           <p className="text-2xl md:text-3xl font-semibold font-serif tracking-tight max-w-2xl mx-auto">
-            Built for everyone who needs reliable tools
+            Built for people who value saved context and repeatable workflows
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {audiences.map((audience) => {
             const Icon = audience.icon
             return (

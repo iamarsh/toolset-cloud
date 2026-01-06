@@ -9,7 +9,7 @@ export function Hero() {
   const metrics = [
     { value: `${tools.length}+`, label: 'Tools & growing' },
     { value: 'Secure', label: 'Client-side first' },
-    { value: 'AI-powered', label: 'Where it helps' },
+    { value: 'Workspace', label: 'Designed for repeat use' },
   ]
   
   return (
@@ -30,16 +30,16 @@ export function Hero() {
             <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" />
           </div>
           
-          {/* Tagline - emphasizing one-stop, productivity, AI, security */}
+          {/* Tagline - emphasizing workspace, repeat use, continuity */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-balance">
-            Your one-stop toolkit for everyday productivity. Browser-based tools you can trust—AI-powered where it helps, secure by design.
+            Your workspace for repeatable tasks. Pick up where you left off. Run the same task again without redoing the setup. Secure by design, AI-powered where it genuinely helps.
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button asChild size="lg" className="gap-2">
               <Link href="/tools">
-                Browse all tools
+                Explore workspace
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>

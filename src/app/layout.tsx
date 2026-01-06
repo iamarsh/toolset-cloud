@@ -30,18 +30,19 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://toolset.cloud'),
   title: {
-    default: 'Toolset.cloud — Practical tools, AI-powered where it helps',
+    default: 'Toolset.cloud — Your workspace for repeatable tasks',
     template: '%s | Toolset.cloud',
   },
   description:
-    'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
+    'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
   keywords: [
-    'online tools platform',
-    'browser tools',
-    'developer utilities',
-    'productivity tools',
+    'workspace tools',
+    'repeatable workflows',
+    'saved work',
+    'developer workspace',
+    'productivity workspace',
+    'browser-first tools',
     'AI-powered tools',
-    'free online tools',
   ],
   authors: [{ name: 'Toolset.cloud' }],
   creator: 'Toolset.cloud',
@@ -51,23 +52,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://toolset.cloud',
     siteName: 'Toolset.cloud',
-    title: 'Toolset.cloud — Practical tools, AI-powered where it helps',
+    title: 'Toolset.cloud — Your workspace for repeatable tasks',
     description:
-      'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
+      'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Toolset.cloud — Practical tools, AI-powered where it helps',
+        alt: 'Toolset.cloud — Your workspace for repeatable tasks',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toolset.cloud — Practical tools, AI-powered where it helps',
+    title: 'Toolset.cloud — Your workspace for repeatable tasks',
     description:
-      'Practical tools for text, code, and files. Free utilities run in your browser, with optional AI-powered features and workflows for when you need more.',
+      'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
     images: ['/og-image.png'],
   },
   robots: {

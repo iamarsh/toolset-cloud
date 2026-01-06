@@ -1,22 +1,22 @@
-import { Check, Wrench, Zap, ShieldCheck } from 'lucide-react'
+import { Check, History, RotateCcw, ShieldCheck } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { getAllTools } from '@/lib/tools'
 
 const valueProps = [
   {
-    icon: Wrench,
-    title: 'All-in-One Toolkit',
-    description: 'Practical tools for text, code, images, and more—all in one place.',
+    icon: History,
+    title: 'Pick up where you left off',
+    description: 'Your recent tools and saved configurations are always ready. No need to start from scratch.',
   },
   {
-    icon: Zap,
-    title: 'Start Instantly',
-    description: 'No signup required for most tools. Jump right in and get things done.',
+    icon: RotateCcw,
+    title: 'Run the same task again',
+    description: "Saved work means you don't have to redo the setup each time.",
   },
   {
     icon: ShieldCheck,
-    title: 'Your Data Stays Private',
-    description: 'Client-side processing. Nothing leaves your browser unless you say so.',
+    title: 'Secure by design',
+    description: 'Client-side first. Your data stays private unless you choose to save it.',
   },
 ]
 
@@ -36,12 +36,12 @@ export function WhyChoose() {
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-4 md:space-y-6">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
-                  WHY CHOOSE TOOLSET?
+                  WHY USE A WORKSPACE?
                 </h3>
                 <div className="w-16 sm:w-20 h-1 bg-primary" />
                 <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  Toolset brings together the most practical tools in one place. 
-                  Access everything you need to work smarter, stay organized, and get things done faster.
+                  Toolset remembers your context so you can focus on getting work done.
+                  Saved configurations, recent tools, and optional AI assistance—all in one place you return to.
                 </p>
               </div>
               
@@ -74,7 +74,7 @@ export function WhyChoose() {
                 TOOLS & GROWING
               </div>
               <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                AI-powered where it helps
+                Designed for repeat use
               </div>
             </div>
           </div>
