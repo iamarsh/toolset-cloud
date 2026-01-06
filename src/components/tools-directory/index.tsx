@@ -11,18 +11,23 @@ import { getAllTools, categories, getDisplayCategories } from '@/lib/tools'
 import { Icon } from '@/lib/icons'
 import type { CategoryId } from '@/lib/tools/types'
 
-type SortOption = 'name' | 'popular' | 'trending' | 'new'
+type SortOption = 'name' | 'popular' | 'trending' | 'new' | 'ai-first'
 
 // Helper to check if a tool uses AI
 const isAIPowered = (tool: { tier: string; category: string }) => {
   return tool.tier === 'AUTH' || tool.tier === 'PAID' || tool.category === 'ai'
 }
 
-export function ToolsDirectory() {
+interface ToolsDirectoryProps {
+  showWelcome?: boolean
+  prioritizeAI?: boolean
+}
+
+export function ToolsDirectory({ showWelcome = true, prioritizeAI = false }: ToolsDirectoryProps = {}) {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all')
   const [showAIOnly, setShowAIOnly] = useState(false)
-  const [sortBy, setSortBy] = useState<SortOption>('popular')
+  const [sortBy, setSortBy] = useState<SortOption>(prioritizeAI ? 'ai-first' : 'popular')
 
   const allTools = getAllTools()
   const displayCategories = getDisplayCategories() // Excludes 'ai' category
@@ -76,6 +81,18 @@ export function ToolsDirectory() {
           return bNew - aNew
         })
         break
+      case 'ai-first':
+        result.sort((a, b) => {
+          // AI-powered tools first
+          const aAI = isAIPowered(a) ? 1 : 0
+          const bAI = isAIPowered(b) ? 1 : 0
+          if (aAI !== bAI) return bAI - aAI
+          // Then by popular
+          const aPopular = a.tags.includes('popular') ? 1 : 0
+          const bPopular = b.tags.includes('popular') ? 1 : 0
+          return bPopular - aPopular
+        })
+        break
     }
 
     return result
@@ -91,38 +108,40 @@ export function ToolsDirectory() {
   const hasActiveFilters = search || selectedCategory !== 'all' || showAIOnly
 
   return (
-    <div className="py-14 md:py-20">
+    <div className={showWelcome ? "py-14 md:py-20" : "py-8 md:py-12"} id="tools">
       <Container>
         {/* Header */}
-        <header className="max-w-4xl mx-auto mb-10 text-center">
-          <div className="flex flex-col items-center text-center mb-6">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold font-serif tracking-tight leading-[0.95]">
-              <span>toolset</span>
-              <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
-                .cloud
-              </span>
-            </h1>
-            <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" aria-hidden="true" />
-          </div>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Practical tools for everyday tasks. Most work instantly—some use AI for more.
-          </p>
-          
-          {/* Search */}
-          <div className="max-w-xl mx-auto mb-8">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                id="tool-search"
-                type="search"
-                placeholder="Search for tools..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="h-12 pl-12 rounded-full text-base"
-              />
+        {showWelcome && (
+          <header className="max-w-4xl mx-auto mb-10 text-center">
+            <div className="flex flex-col items-center text-center mb-6">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold font-serif tracking-tight leading-[0.95]">
+                <span>toolset</span>
+                <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
+                  .cloud
+                </span>
+              </h1>
+              <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" aria-hidden="true" />
             </div>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Practical tools for everyday tasks. Most work instantly—some use AI for more.
+            </p>
+          </header>
+        )}
+
+        {/* Search - Always show */}
+        <div className="max-w-xl mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              id="tool-search"
+              type="search"
+              placeholder="Search for tools..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="h-12 pl-12 rounded-full text-base"
+            />
           </div>
-        </header>
+        </div>
 
         {/* Unified Filter Section */}
         <div className="max-w-5xl mx-auto mb-8 space-y-4">
@@ -172,6 +191,7 @@ export function ToolsDirectory() {
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="h-9 rounded-lg border border-border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
               >
+                {prioritizeAI && <option value="ai-first">AI-Powered First</option>}
                 <option value="popular">Popular</option>
                 <option value="trending">Trending</option>
                 <option value="new">Newest</option>
