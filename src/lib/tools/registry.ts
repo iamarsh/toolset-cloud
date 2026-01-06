@@ -1033,6 +1033,224 @@ const numberToWords: ToolDefinition = {
   },
 }
 
+// Batch 5 Tools
+
+const emailVerifier: ToolDefinition = {
+  id: 'email-verifier',
+  slug: 'email-verifier',
+  name: 'Email Verifier',
+  description: 'Validate email format and detect disposable addresses',
+  category: 'security',
+  icon: 'Mail',
+  iconColor: 'bg-red-500/10 text-red-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Email Verifier - Free Online Email Validation Tool',
+    description: 'Validate email addresses instantly with format checking and disposable email detection. Free online email verifier with detailed validation reports.',
+    keywords: ['email validator', 'email verification', 'disposable email checker', 'email format validator', 'verify email address'],
+  },
+}
+
+const safeLinkChecker: ToolDefinition = {
+  id: 'safe-link-checker',
+  slug: 'safe-link-checker',
+  name: 'Safe Link Checker',
+  description: 'Analyze URLs for potential security risks',
+  category: 'security',
+  icon: 'ShieldCheck',
+  iconColor: 'bg-red-500/10 text-red-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Safe Link Checker - Free Online URL Security Scanner',
+    description: 'Check URLs for suspicious patterns, phishing attempts, and security risks. Free online link safety analyzer with instant results.',
+    keywords: ['link checker', 'url scanner', 'phishing detector', 'safe link checker', 'url security check'],
+  },
+}
+
+const videoThumbnailGrabber: ToolDefinition = {
+  id: 'video-thumbnail-grabber',
+  slug: 'video-thumbnail-grabber',
+  name: 'Video Thumbnail Grabber',
+  description: 'Extract and download YouTube video thumbnails',
+  category: 'web',
+  icon: 'Video',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'YouTube Thumbnail Grabber - Free Video Thumbnail Downloader',
+    description: 'Download YouTube thumbnails in all resolutions (HD, SD, HQ). Free online thumbnail extractor with one-click download.',
+    keywords: ['youtube thumbnail', 'thumbnail downloader', 'video thumbnail', 'youtube thumbnail grabber', 'extract thumbnail'],
+  },
+}
+
+const imageCompressor: ToolDefinition = {
+  id: 'image-compressor',
+  slug: 'image-compressor',
+  name: 'Image Compressor',
+  description: 'Compress JPEG and PNG images with adjustable quality',
+  category: 'image',
+  icon: 'FileImage',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Image Compressor - Free Online JPEG & PNG Compression Tool',
+    description: 'Compress images up to 80% without visible quality loss. Free online image compressor for JPEG and PNG with before/after preview.',
+    keywords: ['image compressor', 'compress jpeg', 'compress png', 'reduce image size', 'image optimizer'],
+  },
+}
+
+const smartCalculator: ToolDefinition = {
+  id: 'smart-calculator',
+  slug: 'smart-calculator',
+  name: 'Smart Calculator',
+  description: 'Scientific calculator with advanced mathematical functions',
+  category: 'calculator',
+  icon: 'Calculator',
+  iconColor: 'bg-green-500/10 text-green-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Scientific Calculator - Free Online Math Calculator',
+    description: 'Advanced scientific calculator with trigonometric functions, logarithms, and constants. Free online calculator with expression history.',
+    keywords: ['scientific calculator', 'math calculator', 'calculator online', 'advanced calculator', 'expression calculator'],
+  },
+}
+
+const thumbnailTextDesigner: ToolDefinition = {
+  id: 'thumbnail-text-designer',
+  slug: 'thumbnail-text-designer',
+  name: 'Thumbnail Text Designer',
+  description: 'Add customizable text overlays to images',
+  category: 'image',
+  icon: 'Type',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Thumbnail Text Designer - Free Online Image Text Tool',
+    description: 'Add text to images with custom fonts, colors, and positioning. Free online thumbnail creator with text overlay designer.',
+    keywords: ['add text to image', 'thumbnail maker', 'text overlay', 'image text editor', 'thumbnail designer'],
+  },
+}
+
+const cropImage: ToolDefinition = {
+  id: 'crop-image',
+  slug: 'crop-image',
+  name: 'Crop Image',
+  description: 'Crop images with preset aspect ratios or custom dimensions',
+  category: 'image',
+  icon: 'Crop',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Image Cropper - Free Online Crop Tool',
+    description: 'Crop images with 7 aspect ratio presets (1:1, 16:9, 4:5, etc.) or custom dimensions. Free online image cropper with instant preview.',
+    keywords: ['crop image', 'image cropper', 'aspect ratio crop', 'resize image', 'photo cropper'],
+  },
+}
+
+const currencyConverter: ToolDefinition = {
+  id: 'currency-converter',
+  slug: 'currency-converter',
+  name: 'Currency Converter',
+  description: 'Convert between currencies with real-time exchange rates',
+  category: 'calculator',
+  icon: 'DollarSign',
+  iconColor: 'bg-green-500/10 text-green-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Currency Converter - Free Real-Time Exchange Rates',
+    description: 'Convert currencies with live exchange rates. Support for 150+ currencies including USD, EUR, GBP, JPY. Free online currency converter.',
+    keywords: ['currency converter', 'exchange rate', 'convert currency', 'money converter', 'forex calculator'],
+  },
+}
+
+const codeFormatter: ToolDefinition = {
+  id: 'code-formatter',
+  slug: 'code-formatter',
+  name: 'Code Formatter',
+  description: 'Format and beautify HTML, CSS, JavaScript, and JSON code',
+  category: 'developer',
+  icon: 'Code2',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Code Formatter - Free Online HTML, CSS, JS Beautifier',
+    description: 'Format and minify HTML, CSS, JavaScript, and JSON code. Free online code beautifier with auto-detect and customizable indentation.',
+    keywords: ['code formatter', 'html formatter', 'css beautifier', 'javascript formatter', 'json formatter'],
+  },
+}
+
+const qrScanner: ToolDefinition = {
+  id: 'qr-scanner',
+  slug: 'qr-scanner',
+  name: 'QR Code Scanner',
+  description: 'Decode QR codes from uploaded images',
+  category: 'developer',
+  icon: 'ScanLine',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'QR Code Scanner - Free Online QR Reader Tool',
+    description: 'Scan and decode QR codes from images instantly. Free online QR code reader with URL detection and copy to clipboard.',
+    keywords: ['qr scanner', 'qr code reader', 'decode qr code', 'scan qr code', 'qr code decoder'],
+  },
+}
+
+const websiteStatusChecker: ToolDefinition = {
+  id: 'website-status-checker',
+  slug: 'website-status-checker',
+  name: 'Website Status Checker',
+  description: 'Check website availability and HTTP status codes',
+  category: 'web',
+  icon: 'Activity',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Website Status Checker - Free Online Uptime Monitor',
+    description: 'Check website status, HTTP codes, and response time. Free online website availability checker with history tracking.',
+    keywords: ['website status checker', 'uptime checker', 'http status', 'website monitor', 'ping website'],
+  },
+}
+
+const imageResizer: ToolDefinition = {
+  id: 'image-resizer',
+  slug: 'image-resizer',
+  name: 'Image Resizer',
+  description: 'Resize images with preset dimensions or custom sizes',
+  category: 'image',
+  icon: 'Maximize2',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['popular'],
+  seo: {
+    title: 'Image Resizer - Free Online Image Resize Tool',
+    description: 'Resize images to preset dimensions or custom sizes. Free online image resizer with aspect ratio lock and instant preview.',
+    keywords: ['image resizer', 'resize image', 'image dimensions', 'scale image', 'photo resizer'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1057,12 +1275,18 @@ export const tools: ToolDefinition[] = [
   htmlEncoder,
   binaryConverter,
   markdownPreview,
+  codeFormatter,
+  qrScanner,
   // Security
   passwordGenerator,
+  emailVerifier,
+  safeLinkChecker,
   // QR & Web
   qrGenerator,
   utmBuilder,
   urlParser,
+  videoThumbnailGrabber,
+  websiteStatusChecker,
   // Calculators
   bmiCalculator,
   ageCalculator,
@@ -1072,6 +1296,8 @@ export const tools: ToolDefinition[] = [
   loanCalculator,
   timezoneConverter,
   aspectRatioCalculator,
+  smartCalculator,
+  currencyConverter,
   // Utility
   unitConverter,
   // Productivity
@@ -1080,6 +1306,10 @@ export const tools: ToolDefinition[] = [
   pomodoroTimer,
   // Image
   colorPicker,
+  imageCompressor,
+  imageResizer,
+  cropImage,
+  thumbnailTextDesigner,
 ]
 
 /**

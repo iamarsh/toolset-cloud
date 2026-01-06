@@ -53,6 +53,19 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'aspect-ratio-calculator': lazy(() => import('@/tools/aspect-ratio-calculator/ui')),
   'markdown-preview': lazy(() => import('@/tools/markdown-preview/ui')),
   'number-to-words': lazy(() => import('@/tools/number-to-words/ui')),
+  // Batch 5 - 12 new tools
+  'email-verifier': lazy(() => import('@/tools/email-verifier/ui')),
+  'safe-link-checker': lazy(() => import('@/tools/safe-link-checker/ui')),
+  'video-thumbnail-grabber': lazy(() => import('@/tools/video-thumbnail-grabber/ui')),
+  'image-compressor': lazy(() => import('@/tools/image-compressor/ui')),
+  'smart-calculator': lazy(() => import('@/tools/smart-calculator/ui')),
+  'thumbnail-text-designer': lazy(() => import('@/tools/thumbnail-text-designer/ui')),
+  'crop-image': lazy(() => import('@/tools/crop-image/ui')),
+  'currency-converter': lazy(() => import('@/tools/currency-converter/ui')),
+  'code-formatter': lazy(() => import('@/tools/code-formatter/ui')),
+  'qr-scanner': lazy(() => import('@/tools/qr-scanner/ui')),
+  'website-status-checker': lazy(() => import('@/tools/website-status-checker/ui')),
+  'image-resizer': lazy(() => import('@/tools/image-resizer/ui')),
 }
 
 interface ToolRunnerProps {
