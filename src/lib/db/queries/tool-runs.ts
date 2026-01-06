@@ -15,8 +15,8 @@ type ToolRunUpdate = Database['next_auth']['Tables']['tool_runs']['Update']
 /**
  * Create a new tool run record
  */
-export async function createToolRun(data: ToolRunInsert) {
-  const supabase = createServerClient()
+export async function createToolRun(data: ToolRunInsert): Promise<ToolRun> {
+  const supabase = createServerClient() as any
 
   const { data: toolRun, error } = await supabase
     .from('tool_runs')
@@ -28,14 +28,14 @@ export async function createToolRun(data: ToolRunInsert) {
     throw new Error(`Failed to create tool run: ${error.message}`)
   }
 
-  return toolRun
+  return toolRun as unknown as ToolRun
 }
 
 /**
  * Get a single tool run by ID
  */
-export async function getToolRun(id: string) {
-  const supabase = createServerClient()
+export async function getToolRun(id: string): Promise<ToolRun> {
+  const supabase = createServerClient() as any
 
   const { data: toolRun, error } = await supabase
     .from('tool_runs')
@@ -47,7 +47,7 @@ export async function getToolRun(id: string) {
     throw new Error(`Failed to get tool run: ${error.message}`)
   }
 
-  return toolRun
+  return toolRun as unknown as ToolRun
 }
 
 /**
@@ -55,8 +55,8 @@ export async function getToolRun(id: string) {
  * @param userId - User ID to filter by
  * @param limit - Maximum number of runs to return (default: 10)
  */
-export async function getRecentToolRuns(userId: string, limit = 10) {
-  const supabase = createServerClient()
+export async function getRecentToolRuns(userId: string, limit = 10): Promise<ToolRun[]> {
+  const supabase = createServerClient() as any
 
   const { data: toolRuns, error } = await supabase
     .from('tool_runs')
@@ -69,7 +69,7 @@ export async function getRecentToolRuns(userId: string, limit = 10) {
     throw new Error(`Failed to get recent tool runs: ${error.message}`)
   }
 
-  return toolRuns || []
+  return (toolRuns || []) as unknown as ToolRun[]
 }
 
 /**
@@ -78,8 +78,8 @@ export async function getRecentToolRuns(userId: string, limit = 10) {
  * @param toolId - Tool ID to filter by
  * @param limit - Maximum number of runs to return (default: 20)
  */
-export async function getToolRunsByTool(userId: string, toolId: string, limit = 20) {
-  const supabase = createServerClient()
+export async function getToolRunsByTool(userId: string, toolId: string, limit = 20): Promise<ToolRun[]> {
+  const supabase = createServerClient() as any
 
   const { data: toolRuns, error } = await supabase
     .from('tool_runs')
@@ -93,7 +93,7 @@ export async function getToolRunsByTool(userId: string, toolId: string, limit = 
     throw new Error(`Failed to get tool runs: ${error.message}`)
   }
 
-  return toolRuns || []
+  return (toolRuns || []) as unknown as ToolRun[]
 }
 
 /**
@@ -107,7 +107,7 @@ export async function getToolRunHistory(
   page = 1,
   pageSize = 20
 ) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const from = (page - 1) * pageSize
   const to = from + pageSize - 1
@@ -136,7 +136,7 @@ export async function getToolRunHistory(
  * Get tool run statistics for a user
  */
 export async function getToolRunStats(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   // Get total runs
   const { count: totalRuns, error: countError } = await supabase
@@ -158,7 +158,7 @@ export async function getToolRunStats(userId: string) {
     throw new Error(`Failed to get status data: ${statusError.message}`)
   }
 
-  const statusCounts = (statusData || []).reduce((acc, run) => {
+  const statusCounts = (statusData || []).reduce((acc: Record<string, number>, run: any) => {
     acc[run.status] = (acc[run.status] || 0) + 1
     return acc
   }, {} as Record<string, number>)
@@ -173,16 +173,18 @@ export async function getToolRunStats(userId: string) {
     throw new Error(`Failed to get tool data: ${toolError.message}`)
   }
 
-  const toolCounts = (toolData || []).reduce((acc, run) => {
+  type ToolCount = { tool_id: string; tool_slug: string; count: number }
+
+  const toolCounts = (toolData || []).reduce((acc: Record<string, ToolCount>, run: any) => {
     const key = run.tool_id
     if (!acc[key]) {
       acc[key] = { tool_id: run.tool_id, tool_slug: run.tool_slug, count: 0 }
     }
     acc[key].count++
     return acc
-  }, {} as Record<string, { tool_id: string; tool_slug: string; count: number }>)
+  }, {} as Record<string, ToolCount>)
 
-  const mostUsedTools = Object.values(toolCounts)
+  const mostUsedTools = (Object.values(toolCounts) as ToolCount[])
     .sort((a, b) => b.count - a.count)
     .slice(0, 5)
 
@@ -196,8 +198,8 @@ export async function getToolRunStats(userId: string) {
 /**
  * Update a tool run (e.g., mark as completed/failed)
  */
-export async function updateToolRun(id: string, updates: ToolRunUpdate) {
-  const supabase = createServerClient()
+export async function updateToolRun(id: string, updates: ToolRunUpdate): Promise<ToolRun> {
+  const supabase = createServerClient() as any
 
   const { data: toolRun, error } = await supabase
     .from('tool_runs')
@@ -210,14 +212,14 @@ export async function updateToolRun(id: string, updates: ToolRunUpdate) {
     throw new Error(`Failed to update tool run: ${error.message}`)
   }
 
-  return toolRun
+  return toolRun as unknown as ToolRun
 }
 
 /**
  * Delete a tool run
  */
 export async function deleteToolRun(id: string, userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { error } = await supabase
     .from('tool_runs')
@@ -236,7 +238,7 @@ export async function deleteToolRun(id: string, userId: string) {
  * Delete all tool runs for a user (useful for account deletion)
  */
 export async function deleteAllToolRuns(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { error } = await supabase
     .from('tool_runs')
@@ -262,8 +264,8 @@ export async function searchToolRuns(
     endDate?: Date
     limit?: number
   }
-) {
-  const supabase = createServerClient()
+): Promise<ToolRun[]> {
+  const supabase = createServerClient() as any
 
   let queryBuilder = supabase
     .from('tool_runs')
@@ -296,5 +298,5 @@ export async function searchToolRuns(
     throw new Error(`Failed to search tool runs: ${error.message}`)
   }
 
-  return toolRuns || []
+  return (toolRuns || []) as unknown as ToolRun[]
 }

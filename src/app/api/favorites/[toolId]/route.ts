@@ -5,9 +5,7 @@ import {
   createToolConfig,
   deleteToolConfig,
 } from '@/lib/db/queries'
-import type { Database } from '@/lib/db/types'
-
-type ToolConfig = Database['next_auth']['Tables']['tool_configs']['Row']
+import type { ToolConfig } from '@/lib/db/types'
 
 /**
  * GET /api/favorites/[toolId]

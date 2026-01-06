@@ -15,8 +15,8 @@ type ToolConfigUpdate = Database['next_auth']['Tables']['tool_configs']['Update'
 /**
  * Create a new tool configuration
  */
-export async function createToolConfig(data: ToolConfigInsert) {
-  const supabase = createServerClient()
+export async function createToolConfig(data: ToolConfigInsert): Promise<ToolConfig> {
+  const supabase = createServerClient() as any
 
   const { data: config, error } = await supabase
     .from('tool_configs')
@@ -28,14 +28,14 @@ export async function createToolConfig(data: ToolConfigInsert) {
     throw new Error(`Failed to create tool config: ${error.message}`)
   }
 
-  return config
+  return config as unknown as ToolConfig
 }
 
 /**
  * Get a single tool configuration by ID
  */
 export async function getToolConfig(id: string, userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: config, error } = await supabase
     .from('tool_configs')
@@ -54,8 +54,8 @@ export async function getToolConfig(id: string, userId: string) {
 /**
  * Get all configurations for a specific tool
  */
-export async function getToolConfigsByTool(userId: string, toolId: string) {
-  const supabase = createServerClient()
+export async function getToolConfigsByTool(userId: string, toolId: string): Promise<ToolConfig[]> {
+  const supabase = createServerClient() as any
 
   const { data: configs, error } = await supabase
     .from('tool_configs')
@@ -68,14 +68,14 @@ export async function getToolConfigsByTool(userId: string, toolId: string) {
     throw new Error(`Failed to get tool configs: ${error.message}`)
   }
 
-  return configs || []
+  return (configs || []) as unknown as ToolConfig[]
 }
 
 /**
  * Get all saved configurations for a user
  */
 export async function getAllToolConfigs(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: configs, error } = await supabase
     .from('tool_configs')
@@ -94,7 +94,7 @@ export async function getAllToolConfigs(userId: string) {
  * Get favorite configurations for a user
  */
 export async function getFavoriteToolConfigs(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: configs, error } = await supabase
     .from('tool_configs')
@@ -118,7 +118,7 @@ export async function updateToolConfig(
   userId: string,
   updates: ToolConfigUpdate
 ) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: config, error } = await supabase
     .from('tool_configs')
@@ -139,7 +139,7 @@ export async function updateToolConfig(
  * Toggle favorite status for a configuration
  */
 export async function toggleFavorite(id: string, userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   // Get current favorite status
   const { data: current, error: fetchError } = await supabase
@@ -173,7 +173,7 @@ export async function toggleFavorite(id: string, userId: string) {
  * Delete a tool configuration
  */
 export async function deleteToolConfig(id: string, userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { error } = await supabase
     .from('tool_configs')
@@ -192,7 +192,7 @@ export async function deleteToolConfig(id: string, userId: string) {
  * Delete all configurations for a specific tool
  */
 export async function deleteToolConfigsByTool(userId: string, toolId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { error } = await supabase
     .from('tool_configs')
@@ -216,7 +216,7 @@ export async function configNameExists(
   name: string,
   excludeId?: string
 ) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   let query = supabase
     .from('tool_configs')
@@ -242,7 +242,7 @@ export async function configNameExists(
  * Get configuration count for a user
  */
 export async function getToolConfigCount(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { count, error } = await supabase
     .from('tool_configs')
@@ -260,7 +260,7 @@ export async function getToolConfigCount(userId: string) {
  * Get most recently used configurations
  */
 export async function getRecentToolConfigs(userId: string, limit = 5) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: configs, error } = await supabase
     .from('tool_configs')
@@ -280,7 +280,7 @@ export async function getRecentToolConfigs(userId: string, limit = 5) {
  * Search configurations by name
  */
 export async function searchToolConfigs(userId: string, searchTerm: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: configs, error } = await supabase
     .from('tool_configs')
@@ -304,7 +304,7 @@ export async function duplicateToolConfig(
   userId: string,
   newName: string
 ) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   // Get the original config
   const { data: original, error: fetchError } = await supabase

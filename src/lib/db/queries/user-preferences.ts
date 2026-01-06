@@ -17,7 +17,7 @@ type UserPreferencesUpdate = Database['next_auth']['Tables']['user_preferences']
  * Creates default preferences if they don't exist
  */
 export async function getUserPreferences(userId: string): Promise<UserPreferences> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: prefs, error } = await supabase
     .from('user_preferences')
@@ -45,7 +45,7 @@ export async function createUserPreferences(
   userId: string,
   overrides?: Partial<UserPreferencesInsert>
 ): Promise<UserPreferences> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const defaults: UserPreferencesInsert = {
     user_id: userId,
@@ -75,7 +75,7 @@ export async function updateUserPreferences(
   userId: string,
   updates: UserPreferencesUpdate
 ): Promise<UserPreferences> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: prefs, error } = await supabase
     .from('user_preferences')
@@ -121,7 +121,7 @@ export async function updateRecentToolsLimit(
 export async function toggleEmailNotifications(
   userId: string
 ): Promise<UserPreferences> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   // Get current setting
   const current = await getUserPreferences(userId)
@@ -137,7 +137,7 @@ export async function toggleEmailNotifications(
  * Used during account deletion
  */
 export async function deleteUserPreferences(userId: string) {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { error } = await supabase
     .from('user_preferences')
@@ -155,7 +155,7 @@ export async function deleteUserPreferences(userId: string) {
  * Reset preferences to defaults
  */
 export async function resetUserPreferences(userId: string): Promise<UserPreferences> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const defaults: UserPreferencesUpdate = {
     theme: 'system',
@@ -181,7 +181,7 @@ export async function resetUserPreferences(userId: string): Promise<UserPreferen
  * Check if user has preferences record
  */
 export async function hasUserPreferences(userId: string): Promise<boolean> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data, error } = await supabase
     .from('user_preferences')
@@ -250,7 +250,7 @@ export async function bulkUpdatePreferences(
  * Useful for analytics or bulk operations
  */
 export async function getUserPreferencesBulk(userIds: string[]): Promise<UserPreferences[]> {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: prefs, error } = await supabase
     .from('user_preferences')
@@ -268,7 +268,7 @@ export async function getUserPreferencesBulk(userIds: string[]): Promise<UserPre
  * Get preference statistics (admin function)
  */
 export async function getPreferenceStats() {
-  const supabase = createServerClient()
+  const supabase = createServerClient() as any
 
   const { data: allPrefs, error } = await supabase
     .from('user_preferences')
@@ -293,7 +293,7 @@ export async function getPreferenceStats() {
   }
 
   if (allPrefs) {
-    allPrefs.forEach((pref) => {
+    allPrefs.forEach((pref: any) => {
       // Count themes
       if (pref.theme === 'light') stats.themes.light++
       else if (pref.theme === 'dark') stats.themes.dark++
@@ -308,7 +308,7 @@ export async function getPreferenceStats() {
     })
 
     // Calculate average recent tools limit
-    const totalLimit = allPrefs.reduce((sum, pref) => sum + (pref.recent_tools_limit || 10), 0)
+    const totalLimit = allPrefs.reduce((sum: number, pref: any) => sum + (pref.recent_tools_limit || 10), 0)
     stats.averageRecentToolsLimit = Math.round(totalLimit / allPrefs.length)
   }
 

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { createServerClient } from '@/lib/db/supabase'
-import type { Database } from '@/lib/db/types'
 
 /**
  * Debug endpoint to test Supabase connection
@@ -18,8 +17,6 @@ export async function GET() {
       .select('*', { count: 'exact', head: false })
       .limit(5)
 
-    type UserRow = Database['next_auth']['Tables']['users']['Row']
-
     if (error) {
       return NextResponse.json({
         success: false,
@@ -32,13 +29,7 @@ export async function GET() {
       success: true,
       message: 'Supabase connection working! (next_auth schema)',
       userCount: count,
-      sampleUsers: (data as UserRow[] | null)?.map(u => ({
-        id: u.id,
-        email: u.email,
-        emailVerified: u.emailVerified,  // camelCase in next_auth schema
-        name: u.name,
-        plan: u.plan,
-      })),
+      sampleUsers: data,
       env: {
         hasSupabaseUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
         hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,

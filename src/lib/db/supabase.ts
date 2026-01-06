@@ -1,6 +1,9 @@
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import type { Database } from './types'
 
+// Type alias for the next_auth schema to use with Supabase client
+type NextAuthSchema = Database['next_auth']
+
 /**
  * Create a Supabase client for server-side use
  * Uses the service role key for admin operations
@@ -13,13 +16,13 @@ export function createServerClient() {
     throw new Error('Missing Supabase environment variables')
   }
 
-  return createSupabaseClient<Database>(supabaseUrl, supabaseServiceKey, {
-    db: { schema: 'next_auth' },  // Use next_auth schema for all queries
+  return createSupabaseClient(supabaseUrl, supabaseServiceKey, {
+    db: { schema: 'next_auth' },
     auth: {
       autoRefreshToken: false,
       persistSession: false,
     },
-  })
+  }) as any
 }
 
 /**
@@ -34,7 +37,7 @@ export function createClient() {
     throw new Error('Missing Supabase environment variables')
   }
 
-  return createSupabaseClient<Database>(supabaseUrl, supabaseAnonKey, {
-    db: { schema: 'next_auth' },  // Use next_auth schema for all queries
-  })
+  return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
+    db: { schema: 'next_auth' },
+  }) as any
 }
