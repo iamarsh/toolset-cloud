@@ -81,7 +81,7 @@ export async function convertPDFToImages(
       await page.render({
         canvasContext: context,
         viewport,
-      }).promise
+      } as any).promise
 
       // Convert canvas to blob
       const blob = await new Promise<Blob>((resolve, reject) => {
@@ -158,7 +158,7 @@ export async function convertSpecificPages(
       await page.render({
         canvasContext: context,
         viewport,
-      }).promise
+      } as any).promise
 
       const blob = await new Promise<Blob>((resolve, reject) => {
         canvas.toBlob(

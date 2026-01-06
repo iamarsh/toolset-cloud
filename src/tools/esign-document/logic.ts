@@ -150,7 +150,7 @@ export async function signPDF(
 
     // Save signed PDF
     const pdfBytes = await pdf.save()
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
 
     return {
       success: true,

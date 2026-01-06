@@ -34,7 +34,7 @@ export async function splitIntoPages(file: File): Promise<SplitResult> {
       newPdf.addPage(copiedPage)
 
       const pdfBytes = await newPdf.save()
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
       pdfs.push(blob)
     }
 
@@ -82,7 +82,7 @@ export async function splitByRanges(
       copiedPages.forEach((page) => newPdf.addPage(page))
 
       const pdfBytes = await newPdf.save()
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
       pdfs.push(blob)
     }
 
@@ -124,7 +124,7 @@ export async function extractPages(
     copiedPages.forEach((page) => newPdf.addPage(page))
 
     const pdfBytes = await newPdf.save()
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
 
     return { success: true, pdfs: [blob] }
   } catch (error) {

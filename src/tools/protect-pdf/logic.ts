@@ -3,7 +3,7 @@
  * Uses pdf-lib to add password protection to PDF files
  */
 
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import { PDFDocument, StandardFonts, rgb, degrees } from 'pdf-lib'
 
 export interface ProtectResult {
   success: boolean
@@ -75,7 +75,7 @@ export async function protectPDF(
 
     // Save the PDF
     const pdfBytes = await pdf.save()
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
 
     return {
       success: true,
@@ -128,12 +128,12 @@ export async function addWatermark(
         font,
         color: rgb(color.r, color.g, color.b),
         opacity,
-        rotate: { angle: rotation, type: 'degrees' },
+        rotate: degrees(rotation),
       })
     })
 
     const pdfBytes = await pdf.save()
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+    const blob = new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' })
 
     return {
       success: true,
