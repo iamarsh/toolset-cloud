@@ -164,7 +164,7 @@ export function extractEducation(text: string): EducationEntry[] {
   const education: EducationEntry[] = []
   const educationRegex = /(Bachelor|Master|PhD|BS|MS|BA|MA|Associate|Diploma).*?(\d{4})/gi
 
-  let match
+  let match: RegExpExecArray | null
   while ((match = educationRegex.exec(text)) !== null) {
     // Try to extract institution (usually on same line or previous line)
     const contextStart = Math.max(0, match.index - 100)
@@ -195,7 +195,7 @@ export function extractExperience(text: string): ExperienceEntry[] {
   // Look for year ranges that typically indicate work experience
   const experienceRegex = /(\d{4})\s*[-–]\s*(\d{4}|Present|Current)/gi
 
-  let match
+  let match: RegExpExecArray | null
   while ((match = experienceRegex.exec(text)) !== null) {
     const contextStart = Math.max(0, match.index - 150)
     const contextEnd = Math.min(text.length, match.index + 150)
