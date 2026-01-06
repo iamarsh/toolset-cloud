@@ -16,14 +16,10 @@ import { cn } from '@/lib/utils'
  */
 export function RecentToolsDropdown() {
   const { data: session } = useSession()
-  const { tools, isLoading } = useRecentTools({ limit: 5 })
+  // Always call hooks in the same order - useRecentTools handles auth internally
+  const { tools, isLoading } = useRecentTools({ limit: 5, enabled: !!session?.user })
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  // Don't render if not authenticated
-  if (!session?.user) {
-    return null
-  }
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -38,6 +34,11 @@ export function RecentToolsDropdown() {
       return () => document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [isOpen])
+
+  // Don't render if not authenticated
+  if (!session?.user) {
+    return null
+  }
 
   return (
     <div className="relative" ref={dropdownRef}>

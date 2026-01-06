@@ -5,6 +5,9 @@ import {
   createToolConfig,
   deleteToolConfig,
 } from '@/lib/db/queries'
+import type { Database } from '@/lib/db/types'
+
+type ToolConfig = Database['next_auth']['Tables']['tool_configs']['Row']
 
 /**
  * GET /api/favorites/[toolId]
@@ -27,7 +30,7 @@ export async function GET(
     const { toolId } = await context.params
 
     // Check if a favorite config exists for this tool
-    const configs = await getToolConfigsByTool(session.user.id, toolId)
+    const configs: ToolConfig[] = await getToolConfigsByTool(session.user.id, toolId)
     const favorite = configs.find((c) => c.is_favorite)
 
     return NextResponse.json({
@@ -74,7 +77,7 @@ export async function POST(
     }
 
     // Check if already favorited
-    const configs = await getToolConfigsByTool(session.user.id, toolId)
+    const configs: ToolConfig[] = await getToolConfigsByTool(session.user.id, toolId)
     const existing = configs.find((c) => c.is_favorite)
 
     if (existing) {
@@ -129,7 +132,7 @@ export async function DELETE(
     const { toolId } = await context.params
 
     // Find and delete the favorite config
-    const configs = await getToolConfigsByTool(session.user.id, toolId)
+    const configs: ToolConfig[] = await getToolConfigsByTool(session.user.id, toolId)
     const favorite = configs.find((c) => c.is_favorite)
 
     if (!favorite) {
