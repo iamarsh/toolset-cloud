@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { auth } from '@/lib/auth'
 import { WelcomeSection } from '@/components/dashboard/welcome-section'
+import { WorkspaceShortcuts } from '@/components/workspace/workspace-shortcuts'
 import { ToolsDirectory } from '@/components/tools-directory'
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default async function WorkspacePage() {
   return (
     <>
       <WelcomeSection user={session.user} />
+      <WorkspaceShortcuts />
       <ToolsDirectory showWelcome={false} prioritizeAI={true} />
     </>
   )

@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { useSession } from 'next-auth/react'
 import { Menu, X, Wrench } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { UserMenu } from '@/components/auth'
@@ -9,15 +11,24 @@ import { Container } from '@/components/ui/container'
 import { RecentToolsDropdown } from '@/components/workspace/recent-tools-dropdown'
 import { cn } from '@/lib/utils'
 
-const navItems = [
+const publicNavItems = [
   { href: '/', label: 'Home' },
   { href: '/tools', label: 'Tools' },
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
 ]
 
+const authenticatedNavItems = [
+  { href: '/workspace', label: 'Workspace' },
+  { href: '/tools', label: 'Tools' },
+  { href: '/history', label: 'History' },
+  { href: '/saved-configs', label: 'Saved' },
+]
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { data: session } = useSession()
+  const navItems = session ? authenticatedNavItems : publicNavItems
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
@@ -103,8 +114,8 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, children }: NavLinkProps) {
-  // In a real app, you'd check the current route
-  const isActive = false
+  const pathname = usePathname()
+  const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
 
   return (
     <Link
