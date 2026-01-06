@@ -18,11 +18,7 @@ export function FeaturesHero() {
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-8 text-balance">
-            Toolset is built for work you do more than once.
-          </p>
-
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl text-balance leading-relaxed">
-            Instead of jumping between random tools, starting from scratch each time, or re-explaining what you want to an AI, Toolset gives you a workspace where your tools remember context, save progress, and scale when needed.
+            Toolset is built for work you do more than once — with saved presets, history, and optional AI assistance.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-10 md:gap-12 w-full max-w-3xl">

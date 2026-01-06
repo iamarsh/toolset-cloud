@@ -66,7 +66,24 @@ export function ToolCard({ tool }: ToolCardProps) {
       </div>
 
       {/* Content */}
-      <h3 className="font-semibold mb-2">{tool.name}</h3>
+      <div className="flex items-center gap-2 mb-2">
+        <h3 className="font-semibold">{tool.name}</h3>
+        {tool.tier === 'PUBLIC' && (
+          <Badge variant="outline" className="bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20 text-xs">
+            Public
+          </Badge>
+        )}
+        {tool.tier === 'AUTH' && (
+          <Badge variant="outline" className="bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20 text-xs">
+            Account
+          </Badge>
+        )}
+        {tool.tier === 'PAID' && (
+          <Badge variant="outline" className="bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20 text-xs">
+            Pro
+          </Badge>
+        )}
+      </div>
       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{tool.description}</p>
 
       {/* Action */}

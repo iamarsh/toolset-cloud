@@ -122,8 +122,8 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false }: Too
               </h1>
               <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" aria-hidden="true" />
             </div>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Practical tools for everyday tasks. Most work instantly—some use AI for more.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-2">
+              Fast utilities for one-off tasks. Workspace features for repeatable work.
             </p>
           </header>
         )}

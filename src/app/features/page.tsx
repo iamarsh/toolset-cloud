@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import {
   FeaturesHero,
   CoreValuesSection,
+  ExampleWorkflows,
+  WhatGetsSaved,
   AccessLevelsSection,
   AudienceSection,
+  SecurityPrivacy,
   ClosingCTA
 } from '@/components/features'
 
@@ -17,8 +20,11 @@ export default function FeaturesPage() {
     <>
       <FeaturesHero />
       <CoreValuesSection />
+      <ExampleWorkflows />
+      <WhatGetsSaved />
       <AccessLevelsSection />
       <AudienceSection />
+      <SecurityPrivacy />
       <ClosingCTA />
     </>
   )

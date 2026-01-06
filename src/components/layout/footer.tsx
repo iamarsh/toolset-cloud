@@ -11,7 +11,12 @@ export function Footer() {
     { href: '/tools', label: 'Tools' },
     { href: '/features', label: 'Features' },
     { href: '/pricing', label: 'Pricing' },
-    { href: '/blog', label: 'Blog' },
+  ]
+
+  const resourceLinks = [
+    { href: '/security', label: 'Security' },
+    { href: '/changelog', label: 'Changelog' },
+    { href: '/status', label: 'Status' },
   ]
 
   return (
@@ -41,17 +46,37 @@ export function Footer() {
 
             {/* Links */}
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                {navLinks.map((link) => (
-                  <div key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                <div>
+                  <h3 className="font-semibold mb-3 text-sm">Product</h3>
+                  <div className="space-y-2">
+                    {navLinks.map((link) => (
+                      <div key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                        >
+                          {link.label}
+                        </Link>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-3 text-sm">Resources</h3>
+                  <div className="space-y-2">
+                    {resourceLinks.map((link) => (
+                      <div key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                        >
+                          {link.label}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

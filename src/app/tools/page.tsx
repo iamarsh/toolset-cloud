@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ToolsDirectory } from '@/components/tools-directory'
+import { FeaturedWorkflows } from '@/components/home'
 
 export const metadata: Metadata = {
   title: 'All Tools',
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 }
 
 export default function ToolsPage() {
-  return <ToolsDirectory />
+  return (
+    <>
+      <FeaturedWorkflows />
+      <ToolsDirectory />
+    </>
+  )
 }

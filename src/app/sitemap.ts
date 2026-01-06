@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllTools } from '@/lib/tools'
+import { getAllTools, getDisplayCategories } from '@/lib/tools'
 
 const baseUrl = 'https://toolset.cloud'
 
@@ -9,7 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools',
     '/features',
     '/pricing',
-    '/blog',
+    '/security',
+    '/changelog',
+    '/status',
     '/login',
     '/signup',
   ].map((route) => ({
@@ -22,5 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }))
 
-  return [...staticRoutes, ...toolRoutes]
+  // Category pages
+  const categoryRoutes: MetadataRoute.Sitemap = getDisplayCategories().map((category) => ({
+    url: `${baseUrl}/tools/${category.id}`,
+    lastModified: new Date(),
+  }))
+
+  return [...staticRoutes, ...toolRoutes, ...categoryRoutes]
 }

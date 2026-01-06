@@ -31,10 +31,15 @@ export function Hero() {
           </div>
           
           {/* Tagline - emphasizing workspace, repeat use, continuity */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-balance">
-            Your workspace for repeatable tasks. Pick up where you left off. Run the same task again without redoing the setup. Secure by design, AI-powered where it genuinely helps.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 text-balance">
+            Save presets, pick up where you left off, and rerun common tasks in seconds. Most tools work instantly. AI is available when it clearly helps.
           </p>
-          
+
+          {/* Helper text */}
+          <p className="text-sm text-muted-foreground/80 mb-10">
+            No hype. No pressure. Tools that behave predictably.
+          </p>
+
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button asChild size="lg" className="gap-2">
