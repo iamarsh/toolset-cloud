@@ -1,4 +1,5 @@
-import { Hero, ToolSection, PromoBanner, WhoWeServe, WhyChoose } from '@/components/home'
+import { Hero, ToolSection, PromoBanner, WhoWeServe, WhyChoose, SocialProof } from '@/components/home'
+import { AccessLevelsSection, ClosingCTA } from '@/components/features'
 import { categories, getToolsByCategory, getAllTools, getCategoriesWithTools } from '@/lib/tools'
 
 export default function HomePage() {
@@ -10,8 +11,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SocialProof />
       <WhyChoose />
       <WhoWeServe />
+      <AccessLevelsSection />
       <PromoBanner />
 
       {categoriesToShow.map((category) => {
@@ -25,6 +28,8 @@ export default function HomePage() {
           />
         )
       })}
+
+      <ClosingCTA />
     </>
   )
 }
