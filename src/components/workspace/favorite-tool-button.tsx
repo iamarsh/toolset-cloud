@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import { Star, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -16,21 +17,24 @@ interface FavoriteToolButtonProps {
  *
  * Allows users to mark tools as favorites for quick access.
  * Shows a star icon that fills when the tool is favorited.
- * Only visible to authenticated users.
+ * Visible to all users - prompts login if not authenticated.
  */
 export function FavoriteToolButton({ toolId, toolSlug, toolName }: FavoriteToolButtonProps) {
   const { data: session, status } = useSession()
+  const router = useRouter()
   const [isFavorite, setIsFavorite] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [isUpdating, setIsUpdating] = useState(false)
 
-  // Don't render if not authenticated
-  if (status !== 'authenticated' || !session?.user) {
-    return null
-  }
+  const isAuthenticated = status === 'authenticated' && session?.user
 
-  // Check if tool is favorited on mount
+  // Check if tool is favorited on mount (only for authenticated users)
   useEffect(() => {
+    if (!isAuthenticated) {
+      setIsLoading(false)
+      return
+    }
+
     const checkFavorite = async () => {
       try {
         const response = await fetch(`/api/favorites/${toolId}`)
@@ -46,9 +50,15 @@ export function FavoriteToolButton({ toolId, toolSlug, toolName }: FavoriteToolB
     }
 
     checkFavorite()
-  }, [toolId])
+  }, [toolId, isAuthenticated])
 
-  const toggleFavorite = async () => {
+  const handleClick = async () => {
+    // Redirect to login if not authenticated
+    if (!isAuthenticated) {
+      router.push('/login')
+      return
+    }
+
     if (isUpdating) return
 
     setIsUpdating(true)
@@ -87,7 +97,7 @@ export function FavoriteToolButton({ toolId, toolSlug, toolName }: FavoriteToolB
 
   return (
     <button
-      onClick={toggleFavorite}
+      onClick={handleClick}
       disabled={isUpdating}
       className={cn(
         'flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-colors',
@@ -96,8 +106,20 @@ export function FavoriteToolButton({ toolId, toolSlug, toolName }: FavoriteToolB
           : 'border-border text-muted-foreground hover:bg-muted hover:text-foreground',
         isUpdating && 'opacity-50 cursor-not-allowed'
       )}
-      aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-      title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+      aria-label={
+        !isAuthenticated
+          ? 'Save to Workspace'
+          : isFavorite
+            ? 'Remove from Workspace'
+            : 'Save to Workspace'
+      }
+      title={
+        !isAuthenticated
+          ? 'Save to Workspace'
+          : isFavorite
+            ? 'Remove from Workspace'
+            : 'Save to Workspace'
+      }
     >
       {isUpdating ? (
         <Loader2 className="h-4 w-4 animate-spin" />
@@ -107,7 +129,7 @@ export function FavoriteToolButton({ toolId, toolSlug, toolName }: FavoriteToolB
         />
       )}
       <span className="hidden sm:inline">
-        {isFavorite ? 'Favorited' : 'Favorite'}
+        {!isAuthenticated ? 'Save to Workspace' : isFavorite ? 'Saved' : 'Save'}
       </span>
     </button>
   )

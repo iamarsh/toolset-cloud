@@ -119,9 +119,6 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
           <ToolTitle title={tool.name} />
           {showStatus && <ToolStatus />}
           <p className="text-muted-foreground max-w-2xl">{tool.description}</p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <FavoriteToolButton toolId={tool.id} toolSlug={tool.slug} toolName={tool.name} />
-          </div>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-primary/70" aria-hidden="true" />
@@ -145,6 +142,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
                 Pro
               </Badge>
             )}
+            <FavoriteToolButton toolId={tool.id} toolSlug={tool.slug} toolName={tool.name} />
           </div>
         </div>
 

@@ -21,7 +21,7 @@ export function PromoBanner() {
           </div>
           <Button asChild className="gap-2 whitespace-nowrap">
             <Link href="/tools">
-              Explore workspace
+              Browse tools
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
