@@ -16,10 +16,10 @@ export default function CodeFormatterUI() {
   const [error, setError] = useState('')
   const [copied, setCopied] = useState(false)
 
-  const handleFormat = () => {
+  const handleFormat = async () => {
     if (!code.trim()) return
 
-    const result = formatCode(code, language, indent)
+    const result = await formatCode(code, language, indent)
     if (result.success && result.formatted) {
       setFormatted(result.formatted)
       setError('')
@@ -29,10 +29,10 @@ export default function CodeFormatterUI() {
     }
   }
 
-  const handleMinify = () => {
+  const handleMinify = async () => {
     if (!code.trim()) return
 
-    const result = minifyCode(code, language)
+    const result = await minifyCode(code, language)
     if (result.success && result.formatted) {
       setFormatted(result.formatted)
       setError('')

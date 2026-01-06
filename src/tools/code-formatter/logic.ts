@@ -15,11 +15,11 @@ export interface FormatResult {
   error?: string
 }
 
-export function formatCode(
+export async function formatCode(
   code: string,
   language: CodeLanguage,
   indent: number = 2
-): FormatResult {
+): Promise<FormatResult> {
   try {
     let parser: string
 
@@ -42,7 +42,7 @@ export function formatCode(
         return { success: false, error: 'Unsupported language' }
     }
 
-    const formatted = prettier.format(code, {
+    const formatted = await prettier.format(code, {
       parser,
       plugins: [parserBabel, parserHtml, parserPostcss],
       tabWidth: indent,
@@ -93,7 +93,7 @@ export function detectLanguage(code: string): CodeLanguage {
   return 'javascript'
 }
 
-export function minifyCode(code: string, language: CodeLanguage): FormatResult {
+export async function minifyCode(code: string, language: CodeLanguage): Promise<FormatResult> {
   try {
     if (language === 'json') {
       const parsed = JSON.parse(code)
@@ -101,7 +101,7 @@ export function minifyCode(code: string, language: CodeLanguage): FormatResult {
     }
 
     // For other languages, use compact formatting
-    const formatted = prettier.format(code, {
+    const formatted = await prettier.format(code, {
       parser: language === 'html' ? 'html' : language === 'css' ? 'css' : 'babel',
       plugins: [parserBabel, parserHtml, parserPostcss],
       printWidth: 1000,

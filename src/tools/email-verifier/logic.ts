@@ -81,7 +81,7 @@ export function verifyEmail(email: string): EmailValidationResult {
   }
 
   // Check 3: Local part not empty
-  const hasLocalPart = localPart && localPart.length > 0
+  const hasLocalPart = !!(localPart && localPart.length > 0)
   checks.push({
     name: 'Local part exists',
     passed: hasLocalPart,
@@ -92,7 +92,7 @@ export function verifyEmail(email: string): EmailValidationResult {
   }
 
   // Check 4: Domain not empty
-  const hasDomain = domain && domain.length > 0
+  const hasDomain = !!(domain && domain.length > 0)
   checks.push({
     name: 'Domain exists',
     passed: hasDomain,
