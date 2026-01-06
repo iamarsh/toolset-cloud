@@ -55,21 +55,12 @@ export const metadata: Metadata = {
     title: 'Toolset.cloud — Your workspace for repeatable tasks',
     description:
       'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Toolset.cloud — Your workspace for repeatable tasks',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Toolset.cloud — Your workspace for repeatable tasks',
     description:
       'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
-    images: ['/og-image.png'],
   },
   robots: {
     index: true,
