@@ -985,7 +985,7 @@ const aspectRatioCalculator: ToolDefinition = {
   name: 'Aspect Ratio Calculator',
   description: 'Calculate and scale image dimensions',
   category: 'image',
-  icon: 'RatioIcon',
+  icon: 'Maximize2',
   iconColor: 'bg-pink-500/10 text-pink-500',
   tier: 'PUBLIC',
   runtime: 'CLIENT',
@@ -1509,6 +1509,154 @@ const studyPlanner: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 6 Option 3: Advanced Productivity & Collaboration Tools (AUTH)
+// ============================================================================
+
+const meetingNotes: ToolDefinition = {
+  id: 'meeting-notes',
+  slug: 'meeting-notes',
+  name: 'Meeting Notes',
+  description: 'Take meeting notes with attendees and action items',
+  category: 'productivity',
+  icon: 'Users',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Meeting Notes - Free Online Meeting Minutes Tool',
+    description: 'Take meeting notes online with attendee tracking and action items. Create professional meeting minutes with task management. Free meeting notes tool.',
+    keywords: ['meeting notes', 'meeting minutes', 'action items', 'meeting tracker', 'notes app'],
+  },
+}
+
+const invoiceGenerator: ToolDefinition = {
+  id: 'invoice-generator',
+  slug: 'invoice-generator',
+  name: 'Invoice Generator',
+  description: 'Create professional invoices with line items and tax calculations',
+  category: 'productivity',
+  icon: 'FileText',
+  iconColor: 'bg-green-500/10 text-green-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Invoice Generator - Free Online Invoice Maker Tool',
+    description: 'Generate professional invoices online with automatic calculations. Create invoices with line items, tax, and export to text. Free invoice maker.',
+    keywords: ['invoice generator', 'invoice maker', 'create invoice online', 'billing tool', 'invoice template'],
+  },
+}
+
+const resumeBuilder: ToolDefinition = {
+  id: 'resume-builder',
+  slug: 'resume-builder',
+  name: 'Resume Builder',
+  description: 'Build professional resumes with work experience and skills',
+  category: 'productivity',
+  icon: 'FileUser',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Resume Builder - Free Online CV Maker Tool',
+    description: 'Build professional resumes online with work experience, education, and skills. Create and export your CV instantly. Free resume builder.',
+    keywords: ['resume builder', 'cv maker', 'resume creator', 'online resume', 'cv builder'],
+  },
+}
+
+const budgetTracker: ToolDefinition = {
+  id: 'budget-tracker',
+  slug: 'budget-tracker',
+  name: 'Budget Tracker',
+  description: 'Track income and expenses by category with analytics',
+  category: 'productivity',
+  icon: 'DollarSign',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Budget Tracker - Free Online Personal Finance Manager',
+    description: 'Track your budget online with income and expense categories. Monitor spending, view analytics, and manage finances. Free budget tracker.',
+    keywords: ['budget tracker', 'expense tracker', 'finance manager', 'budget planner', 'money tracker'],
+  },
+}
+
+const habitTracker: ToolDefinition = {
+  id: 'habit-tracker',
+  slug: 'habit-tracker',
+  name: 'Habit Tracker',
+  description: 'Track daily habits with streaks and completion rates',
+  category: 'productivity',
+  icon: 'CheckSquare',
+  iconColor: 'bg-teal-500/10 text-teal-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Habit Tracker - Free Online Daily Habit Builder',
+    description: 'Track daily habits online with streak counting and completion rates. Build better habits with visual progress tracking. Free habit tracker.',
+    keywords: ['habit tracker', 'daily habits', 'habit builder', 'streak tracker', 'goal tracker'],
+  },
+}
+
+const expenseSplitter: ToolDefinition = {
+  id: 'expense-splitter',
+  slug: 'expense-splitter',
+  name: 'Expense Splitter',
+  description: 'Split expenses among group members with settlement calculations',
+  category: 'productivity',
+  icon: 'Split',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Expense Splitter - Free Online Bill Split Calculator',
+    description: 'Split expenses online among groups with automatic settlement calculations. Track shared bills and who owes whom. Free expense splitter.',
+    keywords: ['expense splitter', 'bill splitter', 'split calculator', 'shared expenses', 'group expenses'],
+  },
+}
+
+const timeTracker: ToolDefinition = {
+  id: 'time-tracker',
+  slug: 'time-tracker',
+  name: 'Time Tracker',
+  description: 'Track time spent on projects with start/stop timers',
+  category: 'productivity',
+  icon: 'Clock',
+  iconColor: 'bg-indigo-500/10 text-indigo-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Time Tracker - Free Online Project Time Management',
+    description: 'Track time online with project-based timers. Monitor hours spent on tasks with start/stop functionality. Free time tracking tool.',
+    keywords: ['time tracker', 'time management', 'project timer', 'work hours tracker', 'timesheet'],
+  },
+}
+
+const goalPlanner: ToolDefinition = {
+  id: 'goal-planner',
+  slug: 'goal-planner',
+  name: 'Goal Planner',
+  description: 'Set and track goals with milestones and progress monitoring',
+  category: 'productivity',
+  icon: 'Target',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Goal Planner - Free Online Goal Setting & Tracker',
+    description: 'Plan and track goals online with milestones and progress monitoring. Set targets, track completion, and achieve your goals. Free goal planner.',
+    keywords: ['goal planner', 'goal tracker', 'goal setting', 'milestone tracker', 'objective planner'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1570,6 +1718,14 @@ export const tools: ToolDefinition[] = [
   checklistMaker,
   focusMusic,
   studyPlanner,
+  meetingNotes,
+  invoiceGenerator,
+  resumeBuilder,
+  budgetTracker,
+  habitTracker,
+  expenseSplitter,
+  timeTracker,
+  goalPlanner,
   // Image
   colorPicker,
   imageCompressor,

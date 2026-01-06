@@ -82,6 +82,15 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'link-preview': lazy(() => import('@/tools/link-preview/ui')),
   'code-share': lazy(() => import('@/tools/code-share/ui')),
   'study-planner': lazy(() => import('@/tools/study-planner/ui')),
+  // Batch 6 Option 3 - 8 Advanced Productivity & Collaboration tools
+  'meeting-notes': lazy(() => import('@/tools/meeting-notes/ui')),
+  'invoice-generator': lazy(() => import('@/tools/invoice-generator/ui')),
+  'resume-builder': lazy(() => import('@/tools/resume-builder/ui')),
+  'budget-tracker': lazy(() => import('@/tools/budget-tracker/ui')),
+  'habit-tracker': lazy(() => import('@/tools/habit-tracker/ui')),
+  'expense-splitter': lazy(() => import('@/tools/expense-splitter/ui')),
+  'time-tracker': lazy(() => import('@/tools/time-tracker/ui')),
+  'goal-planner': lazy(() => import('@/tools/goal-planner/ui')),
 }
 
 interface ToolRunnerProps {
