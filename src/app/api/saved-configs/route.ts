@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
 import { getAllToolConfigs } from '@/lib/db/queries'
+import { getToolById } from '@/lib/tools'
 
 /**
  * GET /api/saved-configs
@@ -18,7 +19,17 @@ export async function GET() {
     }
 
     // Fetch all configs (includes both favorited and saved configs)
-    const configs = await getAllToolConfigs(session.user.id)
+    const rawConfigs = await getAllToolConfigs(session.user.id)
+
+    // Enrich with tool names from registry
+    const configs = rawConfigs.map((config: any) => {
+      const tool = getToolById(config.tool_id)
+      return {
+        ...config,
+        tool_name: tool?.name || config.tool_id,
+        tool_slug: tool?.slug || config.tool_id,
+      }
+    })
 
     return NextResponse.json({
       configs,

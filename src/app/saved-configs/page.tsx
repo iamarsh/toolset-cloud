@@ -5,8 +5,8 @@ import { Container } from '@/components/ui/container'
 import { SavedConfigsList } from '@/components/workspace/saved-configs-list'
 
 export const metadata: Metadata = {
-  title: 'Saved Configurations',
-  description: 'Your saved tool configurations and favorite tools',
+  title: 'Saved Tools',
+  description: 'Your saved tools and favorite configurations',
 }
 
 export default async function SavedConfigsPage() {
@@ -22,10 +22,10 @@ export default async function SavedConfigsPage() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-semibold font-serif mb-2">
-            Saved Configurations
+            Saved Tools
           </h1>
           <p className="text-muted-foreground">
-            Your favorite tools and saved configurations for quick access
+            Your saved tools for quick access
           </p>
         </div>
 

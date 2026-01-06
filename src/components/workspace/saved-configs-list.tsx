@@ -76,9 +76,9 @@ export function SavedConfigsList({ userId }: SavedConfigsListProps) {
     return (
       <Card className="p-8 text-center">
         <Star className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-        <h3 className="text-lg font-semibold mb-2">No saved configurations yet</h3>
+        <h3 className="text-lg font-semibold mb-2">No saved tools yet</h3>
         <p className="text-muted-foreground mb-6">
-          Favorite tools or save configurations to see them here
+          Save tools to your workspace for quick access
         </p>
         <Link
           href="/tools"
