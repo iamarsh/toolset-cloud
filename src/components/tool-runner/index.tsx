@@ -12,6 +12,7 @@ import { useSession, checkToolEntitlement } from '@/lib/entitlements'
 import { getToolsByCategory } from '@/lib/tools'
 import { ToolTitle, ToolStatus } from '@/components/typography'
 import { ToolAboutSection, ToolFeaturesSection, ToolStepsSection } from '@/components/tool/sections'
+import { FavoriteToolButton } from '@/components/workspace/favorite-tool-button'
 import type { ToolDefinition, Category } from '@/lib/tools/types'
 
 // Dynamic tool component imports
@@ -118,6 +119,9 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
           <ToolTitle title={tool.name} />
           {showStatus && <ToolStatus />}
           <p className="text-muted-foreground max-w-2xl">{tool.description}</p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <FavoriteToolButton toolId={tool.id} toolSlug={tool.slug} toolName={tool.name} />
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-primary/70" aria-hidden="true" />

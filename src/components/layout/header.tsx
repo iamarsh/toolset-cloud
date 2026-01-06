@@ -6,6 +6,7 @@ import { Menu, X, Wrench } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { UserMenu } from '@/components/auth'
 import { Container } from '@/components/ui/container'
+import { RecentToolsDropdown } from '@/components/workspace/recent-tools-dropdown'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -51,6 +52,7 @@ export function Header() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-3">
+            <RecentToolsDropdown />
             <div className="hidden sm:block">
               <UserMenu />
             </div>
