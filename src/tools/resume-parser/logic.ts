@@ -170,15 +170,18 @@ export function extractEducation(text: string): EducationEntry[] {
     const contextStart = Math.max(0, match.index - 100)
     const contextEnd = Math.min(text.length, match.index + match[0].length + 100)
     const context = text.substring(contextStart, contextEnd)
+    const matchText = match[0]
+    const degree = match[1]
+    const year = match[2]
 
     const lines = context.split('\n')
-    const matchLine = lines.find((line: string) => line.includes(match[0]))
+    const matchLine = lines.find((line: string) => line.includes(matchText))
 
     if (matchLine) {
       education.push({
         institution: 'University', // Simplified - would need better parsing
-        degree: match[1] || 'Degree',
-        year: match[2] || 'N/A',
+        degree: degree || 'Degree',
+        year: year || 'N/A',
       })
     }
   }
@@ -200,13 +203,14 @@ export function extractExperience(text: string): ExperienceEntry[] {
     const contextStart = Math.max(0, match.index - 150)
     const contextEnd = Math.min(text.length, match.index + 150)
     const context = text.substring(contextStart, contextEnd)
+    const duration = match[0]
 
     const lines = context.split('\n').map((line: string) => line.trim())
 
     experience.push({
       company: 'Company', // Simplified
       title: 'Position', // Simplified
-      duration: match[0],
+      duration: duration,
       description: lines.join(' ').substring(0, 200),
     })
   }
