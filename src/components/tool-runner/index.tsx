@@ -73,6 +73,15 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'protect-pdf': lazy(() => import('@/tools/protect-pdf/ui')),
   'pdf-to-image': lazy(() => import('@/tools/pdf-to-image/ui')),
   'esign-document': lazy(() => import('@/tools/esign-document/ui')),
+  // Batch 6 Option 2 - 8 Mixed Utility & Productivity tools
+  'file-compress': lazy(() => import('@/tools/file-compress/ui')),
+  'file-share': lazy(() => import('@/tools/file-share/ui')),
+  'checklist-maker': lazy(() => import('@/tools/checklist-maker/ui')),
+  'focus-music': lazy(() => import('@/tools/focus-music/ui')),
+  'url-shortener': lazy(() => import('@/tools/url-shortener/ui')),
+  'link-preview': lazy(() => import('@/tools/link-preview/ui')),
+  'code-share': lazy(() => import('@/tools/code-share/ui')),
+  'study-planner': lazy(() => import('@/tools/study-planner/ui')),
 }
 
 interface ToolRunnerProps {

@@ -1361,6 +1361,154 @@ const eSignDocument: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 6 Option 2: Mixed Utility & Productivity Tools (AUTH)
+// ============================================================================
+
+const fileCompress: ToolDefinition = {
+  id: 'file-compress',
+  slug: 'file-compress',
+  name: 'File Compressor',
+  description: 'Compress files with gzip compression to reduce file size',
+  category: 'productivity',
+  icon: 'FileArchive',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'File Compressor - Free Online Gzip Compression Tool',
+    description: 'Compress files online with gzip compression. Reduce file size instantly for faster uploads and downloads. Free file compression tool.',
+    keywords: ['file compressor', 'gzip compression', 'compress file online', 'file size reducer', 'zip file online'],
+  },
+}
+
+const fileShare: ToolDefinition = {
+  id: 'file-share',
+  slug: 'file-share',
+  name: 'File Share',
+  description: 'Share files temporarily with expiring links',
+  category: 'productivity',
+  icon: 'Share2',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'File Share - Free Online Temporary File Sharing',
+    description: 'Share files online with expiring links. Temporary file sharing with 1-hour to 7-day expiration. Secure file sharing made simple.',
+    keywords: ['file sharing', 'share files online', 'temporary file share', 'expiring file links', 'secure file transfer'],
+  },
+}
+
+const checklistMaker: ToolDefinition = {
+  id: 'checklist-maker',
+  slug: 'checklist-maker',
+  name: 'Checklist Maker',
+  description: 'Create and manage multiple checklists with progress tracking',
+  category: 'productivity',
+  icon: 'ListChecks',
+  iconColor: 'bg-green-500/10 text-green-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Checklist Maker - Free Online Task List Creator',
+    description: 'Create checklists online with progress tracking. Manage multiple task lists, track completion, and export to text. Free checklist tool.',
+    keywords: ['checklist maker', 'task list creator', 'to-do list', 'checklist online', 'progress tracker'],
+  },
+}
+
+const focusMusic: ToolDefinition = {
+  id: 'focus-music',
+  slug: 'focus-music',
+  name: 'Focus Music',
+  description: 'Generate ambient soundscapes for focus and concentration',
+  category: 'productivity',
+  icon: 'Music',
+  iconColor: 'bg-indigo-500/10 text-indigo-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Focus Music - Free Online Ambient Sounds Generator',
+    description: 'Generate focus music and ambient sounds online. Rain, ocean waves, white noise, and more. Free concentration sounds for productivity.',
+    keywords: ['focus music', 'ambient sounds', 'white noise generator', 'concentration music', 'study sounds'],
+  },
+}
+
+const urlShortener: ToolDefinition = {
+  id: 'url-shortener',
+  slug: 'url-shortener',
+  name: 'URL Shortener',
+  description: 'Create short URLs with click tracking',
+  category: 'web',
+  icon: 'Link',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'URL Shortener - Free Online Short Link Generator',
+    description: 'Shorten URLs online with click tracking. Create short links for social media, marketing, and sharing. Free URL shortener tool.',
+    keywords: ['url shortener', 'short link', 'link shortener', 'shorten url', 'url compressor'],
+  },
+}
+
+const linkPreview: ToolDefinition = {
+  id: 'link-preview',
+  slug: 'link-preview',
+  name: 'Link Preview',
+  description: 'Generate rich link preview cards for social media',
+  category: 'web',
+  icon: 'Eye',
+  iconColor: 'bg-violet-500/10 text-violet-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Link Preview - Free Online Social Media Card Generator',
+    description: 'Generate link preview cards for social media. Create rich preview cards with images and descriptions. Free Open Graph preview tool.',
+    keywords: ['link preview', 'social media cards', 'open graph', 'preview generator', 'link card'],
+  },
+}
+
+const codeShare: ToolDefinition = {
+  id: 'code-share',
+  slug: 'code-share',
+  name: 'Code Share',
+  description: 'Share code snippets with syntax highlighting',
+  category: 'developer',
+  icon: 'Code2',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Code Share - Free Online Code Snippet Sharing',
+    description: 'Share code snippets online with syntax highlighting. Supports 20+ programming languages. Free code sharing tool for developers.',
+    keywords: ['code share', 'share code snippet', 'code sharing', 'pastebin alternative', 'syntax highlighting'],
+  },
+}
+
+const studyPlanner: ToolDefinition = {
+  id: 'study-planner',
+  slug: 'study-planner',
+  name: 'Study Planner',
+  description: 'Plan and track study sessions with progress analytics',
+  category: 'productivity',
+  icon: 'BookOpen',
+  iconColor: 'bg-rose-500/10 text-rose-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Study Planner - Free Online Study Schedule Organizer',
+    description: 'Plan study sessions online with progress tracking. Create study schedules, track hours, and monitor completion. Free study planner tool.',
+    keywords: ['study planner', 'study schedule', 'study tracker', 'exam planner', 'study organizer'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1387,6 +1535,7 @@ export const tools: ToolDefinition[] = [
   markdownPreview,
   codeFormatter,
   qrScanner,
+  codeShare,
   // Security
   passwordGenerator,
   emailVerifier,
@@ -1397,6 +1546,8 @@ export const tools: ToolDefinition[] = [
   urlParser,
   videoThumbnailGrabber,
   websiteStatusChecker,
+  urlShortener,
+  linkPreview,
   // Calculators
   bmiCalculator,
   ageCalculator,
@@ -1414,6 +1565,11 @@ export const tools: ToolDefinition[] = [
   countdownTimer,
   stopwatch,
   pomodoroTimer,
+  fileCompress,
+  fileShare,
+  checklistMaker,
+  focusMusic,
+  studyPlanner,
   // Image
   colorPicker,
   imageCompressor,
