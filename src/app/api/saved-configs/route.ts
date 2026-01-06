@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { getUserFavorites } from '@/lib/db/queries'
+import { getAllToolConfigs } from '@/lib/db/queries'
 
 /**
  * GET /api/saved-configs
@@ -17,8 +17,8 @@ export async function GET() {
       )
     }
 
-    // Fetch all favorites and configs (they're stored in the same table)
-    const configs = await getUserFavorites(session.user.id)
+    // Fetch all configs (includes both favorited and saved configs)
+    const configs = await getAllToolConfigs(session.user.id)
 
     return NextResponse.json({
       configs,
