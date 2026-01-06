@@ -19,7 +19,9 @@ export function AccessLevelsSection() {
     },
     {
       tier: 'FREE ACCOUNT',
-      cta: { label: 'Get Started', href: '/login', placement: 'header' as const },
+      badge: 'Get Started',
+      badgeVariant: 'outline' as const,
+      badgeHref: '/login',
       features: [
         'Save your work',
         'Access history',
@@ -72,13 +74,6 @@ export function AccessLevelsSection() {
                     <Badge variant={level.badgeVariant}>{level.badge}</Badge>
                   )
                 )}
-                {level.cta?.placement === 'header' && (
-                  <div className="mt-3">
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={level.cta.href}>{level.cta.label}</Link>
-                    </Button>
-                  </div>
-                )}
               </div>
 
               <ul className="space-y-3 flex-1">
@@ -89,14 +84,6 @@ export function AccessLevelsSection() {
                   </li>
                 ))}
               </ul>
-
-              {level.cta && level.cta.placement !== 'header' && (
-                <div className="mt-6">
-                  <Button asChild variant="outline" className="w-full">
-                    <Link href={level.cta.href}>{level.cta.label}</Link>
-                  </Button>
-                </div>
-              )}
 
               <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
             </div>

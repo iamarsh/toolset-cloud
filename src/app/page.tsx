@@ -11,9 +11,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <SocialProof />
       <WhyChoose />
       <WhoWeServe />
+      <SocialProof />
       <AccessLevelsSection />
       <PromoBanner />
 
