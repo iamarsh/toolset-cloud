@@ -1715,6 +1715,28 @@ const resumeParser: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 7: High-Demand Practical Tools (Part 2 - PDF Editor)
+// ============================================================================
+
+const pdfEditor: ToolDefinition = {
+  id: 'pdf-editor',
+  slug: 'pdf-editor',
+  name: 'PDF Editor',
+  description: 'Edit PDF files with text, highlights, and annotations',
+  category: 'pdf',
+  icon: 'Edit',
+  iconColor: 'bg-red-500/10 text-red-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'PDF Editor - Free Online PDF Editing Tool',
+    description: 'Edit PDF files online with text, highlights, and annotations. Add text to PDFs, rotate pages, and save edited documents. Free PDF editor.',
+    keywords: ['pdf editor', 'edit pdf online', 'add text to pdf', 'annotate pdf', 'pdf annotation tool'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1799,6 +1821,7 @@ export const tools: ToolDefinition[] = [
   pdfToImage,
   eSignDocument,
   resumeParser,
+  pdfEditor,
   // Media
   audioJoiner,
 ]

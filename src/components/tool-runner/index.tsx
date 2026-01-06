@@ -95,6 +95,8 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'signature-maker': lazy(() => import('@/tools/signature-maker/ui')),
   'audio-joiner': lazy(() => import('@/tools/audio-joiner/ui')),
   'resume-parser': lazy(() => import('@/tools/resume-parser/ui')),
+  // Batch 7 - Part 2: PDF Editor
+  'pdf-editor': lazy(() => import('@/tools/pdf-editor/ui')),
 }
 
 interface ToolRunnerProps {
