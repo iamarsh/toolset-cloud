@@ -739,25 +739,6 @@ const bmiCalculator: ToolDefinition = {
   },
 }
 
-// Text Utilities
-const caseConverter: ToolDefinition = {
-  id: 'case-converter',
-  slug: 'case-converter',
-  name: 'Case Converter',
-  description: 'Convert text to sentence, title, upper, or lower case',
-  category: 'text',
-  icon: 'Type',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Case Converter - Free Online Text Case Tool',
-    description: 'Convert text to upper, lower, sentence, or title case instantly in your browser.',
-    keywords: ['case converter', 'uppercase', 'lowercase', 'title case'],
-  },
-}
-
 // Calculators
 const ageCalculator: ToolDefinition = {
   id: 'age-calculator',
@@ -796,24 +777,6 @@ const percentageCalculator: ToolDefinition = {
 }
 
 // New Text Tools
-const lineBreakRemover: ToolDefinition = {
-  id: 'line-break-remover',
-  slug: 'line-break-remover',
-  name: 'Line Break Remover',
-  description: 'Remove or replace line breaks in text',
-  category: 'text',
-  icon: 'WrapText',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Line Break Remover - Free Online Tool',
-    description: 'Remove or replace line breaks from text instantly. Free online line break remover.',
-    keywords: ['line break remover', 'remove newlines', 'text formatter'],
-  },
-}
-
 // New Calculators
 const temperatureConverter: ToolDefinition = {
   id: 'temperature-converter',
@@ -848,42 +811,6 @@ const dateDiffCalculator: ToolDefinition = {
     title: 'Date Difference Calculator - Free Online Tool',
     description: 'Calculate the difference between two dates in years, months, days.',
     keywords: ['date difference', 'date calculator', 'days between dates'],
-  },
-}
-
-const regexTester: ToolDefinition = {
-  id: 'regex-tester',
-  slug: 'regex-tester',
-  name: 'Regex Tester',
-  description: 'Test and debug regular expressions with live matching',
-  category: 'developer',
-  icon: 'Regex',
-  iconColor: 'bg-emerald-500/10 text-emerald-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: ['trending'],
-  seo: {
-    title: 'Regex Tester - Free Online Regular Expression Tool',
-    description: 'Test and debug regular expressions with live matching and common patterns.',
-    keywords: ['regex tester', 'regular expression', 'regex debugger'],
-  },
-}
-
-const textCompare: ToolDefinition = {
-  id: 'text-compare',
-  slug: 'text-compare',
-  name: 'Text Compare',
-  description: 'Compare two texts and see the differences line by line',
-  category: 'text',
-  icon: 'GitCompare',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Text Compare - Free Online Diff Tool',
-    description: 'Compare two texts side by side and see added, removed, and unchanged lines.',
-    keywords: ['text compare', 'diff tool', 'text difference'],
   },
 }
 
@@ -1033,60 +960,6 @@ const pomodoroTimer: ToolDefinition = {
   },
 }
 
-const onlineClipboard: ToolDefinition = {
-  id: 'online-clipboard',
-  slug: 'online-clipboard',
-  name: 'Online Clipboard',
-  description: 'Temporary clipboard for text, code, and URLs',
-  category: 'text',
-  icon: 'ClipboardList',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Online Clipboard - Free Temporary Storage',
-    description: 'Store multiple text snippets temporarily in your browser.',
-    keywords: ['online clipboard', 'text storage', 'clipboard manager'],
-  },
-}
-
-const slugGenerator: ToolDefinition = {
-  id: 'slug-generator',
-  slug: 'slug-generator',
-  name: 'Slug Generator',
-  description: 'Convert text to URL-friendly slugs',
-  category: 'text',
-  icon: 'Link',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Slug Generator - Free URL Slug Maker',
-    description: 'Convert text to clean, URL-friendly slugs for SEO.',
-    keywords: ['slug generator', 'url slug', 'seo url'],
-  },
-}
-
-const loremGenerator: ToolDefinition = {
-  id: 'lorem-generator',
-  slug: 'lorem-generator',
-  name: 'Lorem Ipsum Generator',
-  description: 'Generate placeholder text for designs and mockups',
-  category: 'text',
-  icon: 'AlignLeft',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Lorem Ipsum Generator - Free Placeholder Text',
-    description: 'Generate lorem ipsum placeholder text for your designs.',
-    keywords: ['lorem ipsum', 'placeholder text', 'dummy text'],
-  },
-}
-
 const htmlEncoder: ToolDefinition = {
   id: 'html-encoder',
   slug: 'html-encoder',
@@ -1120,24 +993,6 @@ const binaryConverter: ToolDefinition = {
     title: 'Binary Converter - Free Number Base Tool',
     description: 'Convert numbers between binary, decimal, hexadecimal, and octal.',
     keywords: ['binary converter', 'hex converter', 'number base'],
-  },
-}
-
-const characterCounter: ToolDefinition = {
-  id: 'character-counter',
-  slug: 'character-counter',
-  name: 'Character Counter',
-  description: 'Count characters with social media platform limits',
-  category: 'text',
-  icon: 'Hash',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: ['trending'],
-  seo: {
-    title: 'Character Counter - Social Media Limits',
-    description: 'Count characters and check limits for Twitter, Instagram, LinkedIn.',
-    keywords: ['character counter', 'twitter character limit', 'social media'],
   },
 }
 
@@ -1192,24 +1047,6 @@ const markdownPreview: ToolDefinition = {
     title: 'Markdown Preview - Live Editor',
     description: 'Write Markdown with instant live preview.',
     keywords: ['markdown preview', 'markdown editor', 'md preview'],
-  },
-}
-
-const numberToWords: ToolDefinition = {
-  id: 'number-to-words',
-  slug: 'number-to-words',
-  name: 'Number to Words',
-  description: 'Convert numbers to written words',
-  category: 'text',
-  icon: 'FileDigit',
-  iconColor: 'bg-blue-500/10 text-blue-500',
-  tier: 'PUBLIC',
-  runtime: 'CLIENT',
-  tags: [],
-  seo: {
-    title: 'Number to Words Converter',
-    description: 'Convert numbers to written English words and ordinals.',
-    keywords: ['number to words', 'spell numbers', 'number converter'],
   },
 }
 
@@ -2156,24 +1993,6 @@ const gifMaker: ToolDefinition = {
     title: 'GIF Maker - Free Video to GIF Converter',
     description: 'Create GIFs from videos online. Control frame rate, resolution, and quality. Convert video to GIF with loop settings. Free GIF maker.',
     keywords: ['gif maker', 'video to gif', 'gif converter', 'create gif', 'gif generator'],
-  },
-}
-
-const apiTester: ToolDefinition = {
-  id: 'api-tester',
-  slug: 'api-tester',
-  name: 'API Tester',
-  description: 'Test REST APIs with custom headers, query params, and request body',
-  category: 'developer',
-  icon: 'Code',
-  iconColor: 'bg-emerald-500/10 text-emerald-500',
-  tier: 'AUTH',
-  runtime: 'CLIENT',
-  tags: ['new', 'popular'],
-  seo: {
-    title: 'API Tester - Free HTTP REST Client Online',
-    description: 'Test REST APIs online with GET, POST, PUT, DELETE methods. Add custom headers and body. View formatted responses. Free API testing tool.',
-    keywords: ['api tester', 'rest client', 'http client', 'api testing', 'postman alternative'],
   },
 }
 
