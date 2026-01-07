@@ -161,7 +161,9 @@ export async function savePDF(pdfDoc: PDFDocument): Promise<Uint8Array> {
  * Download PDF
  */
 export function downloadPDF(pdfBytes: Uint8Array, filename: string = 'edited.pdf'): void {
-  const blob = new Blob([pdfBytes.buffer], { type: 'application/pdf' })
+  // Create a new Uint8Array to ensure we have a proper ArrayBuffer
+  const bytes = new Uint8Array(pdfBytes)
+  const blob = new Blob([bytes], { type: 'application/pdf' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
