@@ -1,10 +1,34 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getToolBySlug, getCategoryById } from '@/lib/tools'
+import { getToolBySlug, getCategoryById, type ToolDefinition } from '@/lib/tools'
 import { ToolRunner } from '@/components/tool-runner'
+import { RelatedTools } from '@/components/tools/related-tools'
 
 // Force dynamic rendering since tool registry contains functions
 export const dynamic = 'force-dynamic'
+
+function generateToolSchema(tool: ToolDefinition) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: tool.name,
+    description: tool.seo?.description || tool.description,
+    applicationCategory: 'WebApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    featureList: tool.page?.features?.map(f => f.title).join(', '),
+    url: `https://toolset.cloud/tools/${tool.slug}`,
+    author: {
+      '@type': 'Organization',
+      name: 'Toolset.cloud',
+      url: 'https://toolset.cloud',
+    },
+  }
+}
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>
@@ -70,5 +94,14 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   const category = getCategoryById(tool.category)
 
-  return <ToolRunner tool={tool} category={category} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(tool)) }}
+      />
+      <ToolRunner tool={tool} category={category} />
+      <RelatedTools currentTool={tool} />
+    </>
+  )
 }
