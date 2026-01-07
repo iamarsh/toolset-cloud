@@ -73,6 +73,10 @@ import {
   Target,
   Split,
   Film,
+  Cloud,
+  Dices,
+  FileSearch,
+  Volume2,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -153,6 +157,10 @@ const iconMap: Record<string, LucideIcon> = {
   Target,
   Split,
   Film,
+  Cloud,
+  Dices,
+  FileSearch,
+  Volume2,
 }
 
 /**

@@ -113,6 +113,19 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'video-trimmer': lazy(() => import('@/tools/video-trimmer/ui')),
   'gif-maker': lazy(() => import('@/tools/gif-maker/ui')),
   'api-tester': lazy(() => import('@/tools/api-tester/ui')),
+  // Batch 9: Milestone Tools (89 → 101 tools)
+  'decision-maker': lazy(() => import('@/tools/decision-maker/ui')),
+  'random-name-generator': lazy(() => import('@/tools/random-name-generator/ui')),
+  'color-gradient-generator': lazy(() => import('@/tools/color-gradient-generator/ui')),
+  'cron-expression-generator': lazy(() => import('@/tools/cron-expression-generator/ui')),
+  'open-graph-preview': lazy(() => import('@/tools/open-graph-preview/ui')),
+  'email-signature-generator': lazy(() => import('@/tools/email-signature-generator/ui')),
+  'favicon-generator': lazy(() => import('@/tools/favicon-generator/ui')),
+  'sql-beautifier': lazy(() => import('@/tools/sql-beautifier/ui')),
+  'word-cloud-generator': lazy(() => import('@/tools/word-cloud-generator/ui')),
+  'diff-checker': lazy(() => import('@/tools/diff-checker/ui')),
+  'text-to-speech': lazy(() => import('@/tools/text-to-speech/ui')),
+  'plagiarism-checker': lazy(() => import('@/tools/plagiarism-checker/ui')),
 }
 
 interface ToolRunnerProps {

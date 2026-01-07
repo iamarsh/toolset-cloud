@@ -1996,13 +1996,236 @@ const gifMaker: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 9: Milestone Tools (89 → 101 tools)
+// ============================================================================
+
+const plagiarismChecker: ToolDefinition = {
+  id: 'plagiarism-checker',
+  slug: 'plagiarism-checker',
+  name: 'Plagiarism Checker',
+  description: 'Compare text similarity and detect matching phrases',
+  category: 'text',
+  icon: 'FileSearch',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Plagiarism Checker - Free Text Similarity Tool',
+    description: 'Compare text similarity online with phrase matching and highlighting. Free plagiarism checker for text comparison.',
+    keywords: ['plagiarism checker', 'text similarity', 'compare text', 'similarity checker', 'text comparison'],
+  },
+}
+
+const textToSpeech: ToolDefinition = {
+  id: 'text-to-speech',
+  slug: 'text-to-speech',
+  name: 'Text to Speech',
+  description: 'Convert text to speech with voice controls',
+  category: 'text',
+  icon: 'Volume2',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Text to Speech - Free TTS Generator Online',
+    description: 'Convert text to speech online with rate, pitch, and volume controls. Free TTS tool with multiple voices.',
+    keywords: ['text to speech', 'tts', 'speech synthesis', 'voice generator', 'text reader'],
+  },
+}
+
+const wordCloudGenerator: ToolDefinition = {
+  id: 'word-cloud-generator',
+  slug: 'word-cloud-generator',
+  name: 'Word Cloud Generator',
+  description: 'Generate word clouds with frequency-based sizing',
+  category: 'text',
+  icon: 'Cloud',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Word Cloud Generator - Free Word Art Maker',
+    description: 'Create word clouds from text with frequency analysis. Free word cloud generator with custom colors.',
+    keywords: ['word cloud', 'word cloud generator', 'text visualization', 'word frequency', 'word art'],
+  },
+}
+
+const diffChecker: ToolDefinition = {
+  id: 'diff-checker',
+  slug: 'diff-checker',
+  name: 'Diff Checker',
+  description: 'Compare texts side-by-side with highlighted differences',
+  category: 'developer',
+  icon: 'GitCompare',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Diff Checker - Free Text Comparison Tool',
+    description: 'Compare text files online with side-by-side diff view. Free diff checker with line-by-line comparison.',
+    keywords: ['diff checker', 'text diff', 'compare files', 'text comparison', 'diff tool'],
+  },
+}
+
+const sqlBeautifier: ToolDefinition = {
+  id: 'sql-beautifier',
+  slug: 'sql-beautifier',
+  name: 'SQL Beautifier',
+  description: 'Format and beautify SQL queries with customizable styling',
+  category: 'developer',
+  icon: 'Database',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'SQL Beautifier - Free SQL Formatter Online',
+    description: 'Format SQL queries online with keyword case and indentation options. Free SQL beautifier and formatter.',
+    keywords: ['sql beautifier', 'sql formatter', 'format sql', 'sql pretty print', 'sql online'],
+  },
+}
+
+const cronExpressionGenerator: ToolDefinition = {
+  id: 'cron-expression-generator',
+  slug: 'cron-expression-generator',
+  name: 'Cron Expression Generator',
+  description: 'Generate cron expressions with visual builder and scheduler',
+  category: 'developer',
+  icon: 'Calendar',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Cron Expression Generator - Free Cron Builder Tool',
+    description: 'Generate cron expressions online with visual builder. Calculate next run times and get human-readable descriptions.',
+    keywords: ['cron generator', 'cron expression', 'crontab generator', 'cron builder', 'schedule generator'],
+  },
+}
+
+const openGraphPreview: ToolDefinition = {
+  id: 'open-graph-preview',
+  slug: 'open-graph-preview',
+  name: 'Open Graph Preview',
+  description: 'Preview and generate Open Graph meta tags for social media',
+  category: 'web',
+  icon: 'Share2',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Open Graph Preview - Free OG Tag Tester Tool',
+    description: 'Preview Open Graph tags and generate meta tags for Facebook, Twitter, LinkedIn. Free OG tag validator.',
+    keywords: ['open graph', 'og tags', 'meta tags', 'social media preview', 'og validator'],
+  },
+}
+
+const emailSignatureGenerator: ToolDefinition = {
+  id: 'email-signature-generator',
+  slug: 'email-signature-generator',
+  name: 'Email Signature Generator',
+  description: 'Create professional HTML email signatures',
+  category: 'web',
+  icon: 'Mail',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Email Signature Generator - Free HTML Signature',
+    description: 'Create professional email signatures with contact info and social links. Free HTML email signature generator.',
+    keywords: ['email signature', 'signature generator', 'html signature', 'email footer', 'professional signature'],
+  },
+}
+
+const faviconGenerator: ToolDefinition = {
+  id: 'favicon-generator',
+  slug: 'favicon-generator',
+  name: 'Favicon Generator',
+  description: 'Generate favicons in multiple sizes from uploaded images',
+  category: 'image',
+  icon: 'Image',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Favicon Generator - Free ICO Creator Online',
+    description: 'Generate favicons in multiple sizes (16x16 to 256x256). Free favicon generator with instant preview.',
+    keywords: ['favicon generator', 'ico generator', 'create favicon', 'favicon maker', 'icon generator'],
+  },
+}
+
+const colorGradientGenerator: ToolDefinition = {
+  id: 'color-gradient-generator',
+  slug: 'color-gradient-generator',
+  name: 'Color Gradient Generator',
+  description: 'Create CSS gradients with visual editor and presets',
+  category: 'image',
+  icon: 'Palette',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Color Gradient Generator - Free CSS Gradient Tool',
+    description: 'Create CSS gradients online with color stops and angle control. Free gradient generator with preset templates.',
+    keywords: ['gradient generator', 'css gradient', 'color gradient', 'gradient maker', 'linear gradient'],
+  },
+}
+
+const randomNameGenerator: ToolDefinition = {
+  id: 'random-name-generator',
+  slug: 'random-name-generator',
+  name: 'Random Name Generator',
+  description: 'Generate random person names, business names, and usernames',
+  category: 'productivity',
+  icon: 'Users',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Random Name Generator - Free Name Creator Tool',
+    description: 'Generate random names for people, businesses, and usernames. Bulk generation with gender filters.',
+    keywords: ['name generator', 'random name', 'username generator', 'business name generator', 'fake name'],
+  },
+}
+
+const decisionMaker: ToolDefinition = {
+  id: 'decision-maker',
+  slug: 'decision-maker',
+  name: 'Decision Maker',
+  description: 'Random choice picker with optional spin wheel animation',
+  category: 'productivity',
+  icon: 'Dices',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Decision Maker - Free Random Choice Picker',
+    description: 'Make random decisions from multiple options with spin wheel animation. Free decision maker with history.',
+    keywords: ['decision maker', 'random picker', 'choice picker', 'wheel spinner', 'random decision'],
+  },
+}
+
 /**
  * All tools in the registry (ordered by search popularity within categories)
  */
 export const tools: ToolDefinition[] = [
   // Text Tools (by popularity)
+  plagiarismChecker,   // 320K
+  textToSpeech,        // 250K
   wordCounter,         // 150K
   characterCounter,    // 150K
+  wordCloudGenerator,  // 120K
   caseConverter,       // 120K
   loremGenerator,      // 100K
   textCompare,         // 80K
@@ -2014,11 +2237,14 @@ export const tools: ToolDefinition[] = [
   // Developer Tools (by popularity)
   regexTester,         // 280K
   apiTester,           // 220K
+  diffChecker,         // 200K
   jsonFormatter,       // 200K
+  sqlBeautifier,       // 180K
   base64Encoder,       // 180K
+  hashGenerator,       // 180K
+  cronExpressionGenerator, // 150K
   codeFormatter,       // 140K
   htmlEncoder,         // 130K
-  hashGenerator,       // 180K
   uuidGenerator,       // 120K
   jsonCsvConverter,    // 110K
   binaryConverter,     // 85K
@@ -2035,11 +2261,13 @@ export const tools: ToolDefinition[] = [
 
   // Web & URL Tools (by popularity)
   qrGenerator,             // 350K
-  htmlEntityEncoder,       // 140K
-  urlParser,               // 90K
-  utmBuilder,              // 70K
   videoThumbnailGrabber,   // 150K
+  htmlEntityEncoder,       // 140K
+  emailSignatureGenerator, // 130K
+  openGraphPreview,        // 90K
+  urlParser,               // 90K
   websiteStatusChecker,    // 80K
+  utmBuilder,              // 70K
   urlShortener,            // 70K
   linkPreview,             // 60K
 
@@ -2059,6 +2287,7 @@ export const tools: ToolDefinition[] = [
   // Productivity Tools (by popularity)
   pomodoroTimer,      // 180K
   invoiceGenerator,   // 160K
+  randomNameGenerator, // 150K
   stopwatch,          // 150K
   countdownTimer,     // 140K
   timeTracker,        // 130K
@@ -2070,6 +2299,7 @@ export const tools: ToolDefinition[] = [
   meetingNotes,       // 80K
   fileCompress,       // 70K
   fileShare,          // 65K
+  decisionMaker,      // 60K
   studyPlanner,       // 60K
   focusMusic,         // 55K
   resumeBuilder,      // 50K
@@ -2082,7 +2312,9 @@ export const tools: ToolDefinition[] = [
   imageUpscaler,         // 250K
   watermarkRemover,      // 220K
   cropImage,             // 180K
+  faviconGenerator,      // 140K
   thumbnailTextDesigner, // 120K
+  colorGradientGenerator, // 110K
   colorPicker,           // 90K
 
   // PDF & Docs Tools (by popularity)
