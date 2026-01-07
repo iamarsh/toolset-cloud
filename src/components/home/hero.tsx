@@ -7,7 +7,7 @@ import { getAllTools } from '@/lib/tools'
 export function Hero() {
   const tools = getAllTools()
   const metrics = [
-    { value: `${tools.length}+`, label: 'Tools & growing' },
+    { value: '100+', label: 'Tools & growing' },
     { value: 'Secure', label: 'Client-side first' },
     { value: 'Workspace', label: 'Designed for repeat use' },
   ]
