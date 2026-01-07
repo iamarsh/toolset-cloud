@@ -35,7 +35,7 @@ export function Footer() {
                   alt="Toolset.cloud logo"
                   width={24}
                   height={24}
-                  className="h-6 w-6"
+                  className="h-10 w-10"
                 />
                 <span>
                   toolset
