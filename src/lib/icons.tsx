@@ -64,6 +64,14 @@ import {
   Timer,
   WrapText,
   HelpCircle,
+  ZoomIn,
+  Eraser,
+  Subtitles,
+  Edit,
+  FileUser,
+  CheckSquare,
+  Target,
+  Split,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -135,6 +143,14 @@ const iconMap: Record<string, LucideIcon> = {
   Timer,
   WrapText,
   HelpCircle,
+  ZoomIn,
+  Eraser,
+  Subtitles,
+  Edit,
+  FileUser,
+  CheckSquare,
+  Target,
+  Split,
 }
 
 /**

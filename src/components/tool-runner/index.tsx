@@ -97,6 +97,13 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'resume-parser': lazy(() => import('@/tools/resume-parser/ui')),
   // Batch 7 - Part 2: PDF Editor
   'pdf-editor': lazy(() => import('@/tools/pdf-editor/ui')),
+  // Batch 7 - Part 3: Remaining 6 High-Demand Tools
+  'document-converter': lazy(() => import('@/tools/document-converter/ui')),
+  'video-compressor': lazy(() => import('@/tools/video-compressor/ui')),
+  'background-remover': lazy(() => import('@/tools/background-remover/ui')),
+  'image-upscaler': lazy(() => import('@/tools/image-upscaler/ui')),
+  'watermark-remover': lazy(() => import('@/tools/watermark-remover/ui')),
+  'subtitle-generator': lazy(() => import('@/tools/subtitle-generator/ui')),
 }
 
 interface ToolRunnerProps {

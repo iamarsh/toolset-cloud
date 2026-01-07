@@ -1737,6 +1737,118 @@ const pdfEditor: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 7: High-Demand Practical Tools (Part 3 - Remaining 6 Tools)
+// ============================================================================
+
+const documentConverter: ToolDefinition = {
+  id: 'document-converter',
+  slug: 'document-converter',
+  name: 'Document Converter',
+  description: 'Convert between DOCX, PDF, TXT, RTF, HTML, and Markdown formats',
+  category: 'pdf',
+  icon: 'FileText',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Document Converter - Free Online File Format Tool',
+    description: 'Convert documents between DOCX, PDF, TXT, RTF, HTML, and Markdown formats online. Free document converter with format preservation.',
+    keywords: ['document converter', 'pdf converter', 'docx to pdf', 'html to pdf', 'markdown converter'],
+  },
+}
+
+const videoCompressor: ToolDefinition = {
+  id: 'video-compressor',
+  slug: 'video-compressor',
+  name: 'Video Compressor',
+  description: 'Compress video files with quality presets and resolution options',
+  category: 'media',
+  icon: 'Video',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Video Compressor - Free Online Video Compression Tool',
+    description: 'Compress videos online with quality presets. Reduce video file size for MP4, MOV, AVI, WebM. Free video compressor with resolution adjustment.',
+    keywords: ['video compressor', 'compress video', 'reduce video size', 'video optimizer', 'shrink video'],
+  },
+}
+
+const backgroundRemover: ToolDefinition = {
+  id: 'background-remover',
+  slug: 'background-remover',
+  name: 'Background Remover',
+  description: 'Remove backgrounds from images with transparent PNG output',
+  category: 'image',
+  icon: 'Image',
+  iconColor: 'bg-pink-500/10 text-pink-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Background Remover - Free Online Photo Background Tool',
+    description: 'Remove backgrounds from images online with AI. Create transparent PNG images instantly. Free background remover with before/after preview.',
+    keywords: ['background remover', 'remove background', 'transparent png', 'background eraser', 'cut out background'],
+  },
+}
+
+const imageUpscaler: ToolDefinition = {
+  id: 'image-upscaler',
+  slug: 'image-upscaler',
+  name: 'Image Upscaler',
+  description: 'Upscale images 2x or 4x with enhanced quality',
+  category: 'image',
+  icon: 'ZoomIn',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Image Upscaler - Free Online Photo Enlarger Tool',
+    description: 'Upscale images 2x or 4x online with enhanced quality. Enlarge photos without losing detail. Free image upscaler with bicubic interpolation.',
+    keywords: ['image upscaler', 'upscale image', 'enlarge photo', 'increase resolution', 'image enhancer'],
+  },
+}
+
+const watermarkRemover: ToolDefinition = {
+  id: 'watermark-remover',
+  slug: 'watermark-remover',
+  name: 'Watermark Remover',
+  description: 'Remove watermarks from images using selection areas',
+  category: 'image',
+  icon: 'Eraser',
+  iconColor: 'bg-orange-500/10 text-orange-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Watermark Remover - Free Online Watermark Eraser',
+    description: 'Remove watermarks from images online. Select areas to erase with content-aware fill. Free watermark removal tool with blur and clone options.',
+    keywords: ['watermark remover', 'remove watermark', 'erase watermark', 'watermark eraser', 'clean image'],
+  },
+}
+
+const subtitleGenerator: ToolDefinition = {
+  id: 'subtitle-generator',
+  slug: 'subtitle-generator',
+  name: 'Subtitle Generator',
+  description: 'Generate and edit subtitles for videos in SRT and VTT formats',
+  category: 'media',
+  icon: 'Subtitles',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Subtitle Generator - Free Online SRT & VTT Creator',
+    description: 'Create subtitles for videos online. Generate SRT and VTT files with manual editing and timing control. Free subtitle maker tool.',
+    keywords: ['subtitle generator', 'create subtitles', 'srt generator', 'vtt creator', 'video subtitles'],
+  },
+}
+
 /**
  * All tools in the registry
  */
@@ -1813,6 +1925,9 @@ export const tools: ToolDefinition[] = [
   imageResizer,
   cropImage,
   thumbnailTextDesigner,
+  backgroundRemover,
+  imageUpscaler,
+  watermarkRemover,
   // PDF
   pdfTextExtractor,
   pdfMerge,
@@ -1822,8 +1937,11 @@ export const tools: ToolDefinition[] = [
   eSignDocument,
   resumeParser,
   pdfEditor,
+  documentConverter,
   // Media
   audioJoiner,
+  videoCompressor,
+  subtitleGenerator,
 ]
 
 /**
