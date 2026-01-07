@@ -15,7 +15,6 @@ export function Footer() {
 
   const resourceLinks = [
     { href: '/security', label: 'Security' },
-    { href: '/changelog', label: 'Changelog' },
     { href: '/status', label: 'Status' },
   ]
 
