@@ -104,6 +104,15 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   'image-upscaler': lazy(() => import('@/tools/image-upscaler/ui')),
   'watermark-remover': lazy(() => import('@/tools/watermark-remover/ui')),
   'subtitle-generator': lazy(() => import('@/tools/subtitle-generator/ui')),
+  // Batch 8: Security, Developer, and Media Tools
+  'html-entity-encoder': lazy(() => import('@/tools/html-entity-encoder/ui')),
+  'password-strength-checker': lazy(() => import('@/tools/password-strength-checker/ui')),
+  'jwt-decoder': lazy(() => import('@/tools/jwt-decoder/ui')),
+  'audio-trimmer': lazy(() => import('@/tools/audio-trimmer/ui')),
+  'audio-converter': lazy(() => import('@/tools/audio-converter/ui')),
+  'video-trimmer': lazy(() => import('@/tools/video-trimmer/ui')),
+  'gif-maker': lazy(() => import('@/tools/gif-maker/ui')),
+  'api-tester': lazy(() => import('@/tools/api-tester/ui')),
 }
 
 interface ToolRunnerProps {

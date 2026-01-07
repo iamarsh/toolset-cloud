@@ -72,6 +72,7 @@ import {
   CheckSquare,
   Target,
   Split,
+  Film,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -151,6 +152,7 @@ const iconMap: Record<string, LucideIcon> = {
   CheckSquare,
   Target,
   Split,
+  Film,
 }
 
 /**

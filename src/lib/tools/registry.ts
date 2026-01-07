@@ -5,7 +5,7 @@ import type { ToolDefinition, CategoryId, ToolTag, ToolTier } from './types'
  * All tools are defined here with string icon names (resolved to Lucide components client-side)
  */
 
-// Text Tools
+// Text Tools (ordered by search popularity)
 const wordCounter: ToolDefinition = {
   id: 'word-counter',
   slug: 'word-counter',
@@ -97,7 +97,187 @@ const wordCounter: ToolDefinition = {
   },
 }
 
-// Developer Tools
+const characterCounter: ToolDefinition = {
+  id: 'character-counter',
+  slug: 'character-counter',
+  name: 'Character Counter',
+  description: 'Count characters with social media platform limits',
+  category: 'text',
+  icon: 'Hash',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['trending'],
+  seo: {
+    title: 'Character Counter - Social Media Limits',
+    description: 'Count characters and check limits for Twitter, Instagram, LinkedIn.',
+    keywords: ['character counter', 'twitter character limit', 'social media'],
+  },
+}
+
+const caseConverter: ToolDefinition = {
+  id: 'case-converter',
+  slug: 'case-converter',
+  name: 'Case Converter',
+  description: 'Convert text to sentence, title, upper, or lower case',
+  category: 'text',
+  icon: 'Type',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Case Converter - Free Online Text Case Tool',
+    description: 'Convert text to upper, lower, sentence, or title case instantly in your browser.',
+    keywords: ['case converter', 'uppercase', 'lowercase', 'title case'],
+  },
+}
+
+const loremGenerator: ToolDefinition = {
+  id: 'lorem-generator',
+  slug: 'lorem-generator',
+  name: 'Lorem Ipsum Generator',
+  description: 'Generate placeholder text for designs and mockups',
+  category: 'text',
+  icon: 'AlignLeft',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Lorem Ipsum Generator - Free Placeholder Text',
+    description: 'Generate lorem ipsum placeholder text for your designs.',
+    keywords: ['lorem ipsum', 'placeholder text', 'dummy text'],
+  },
+}
+
+const textCompare: ToolDefinition = {
+  id: 'text-compare',
+  slug: 'text-compare',
+  name: 'Text Compare',
+  description: 'Compare two texts and see the differences line by line',
+  category: 'text',
+  icon: 'GitCompare',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Text Compare - Free Online Diff Tool',
+    description: 'Compare two texts side by side and see added, removed, and unchanged lines.',
+    keywords: ['text compare', 'diff tool', 'text difference'],
+  },
+}
+
+const lineBreakRemover: ToolDefinition = {
+  id: 'line-break-remover',
+  slug: 'line-break-remover',
+  name: 'Line Break Remover',
+  description: 'Remove or replace line breaks in text',
+  category: 'text',
+  icon: 'WrapText',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Line Break Remover - Free Online Tool',
+    description: 'Remove or replace line breaks from text instantly. Free online line break remover.',
+    keywords: ['line break remover', 'remove newlines', 'text formatter'],
+  },
+}
+
+const onlineClipboard: ToolDefinition = {
+  id: 'online-clipboard',
+  slug: 'online-clipboard',
+  name: 'Online Clipboard',
+  description: 'Temporary clipboard for text, code, and URLs',
+  category: 'text',
+  icon: 'ClipboardList',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Online Clipboard - Free Temporary Storage',
+    description: 'Store multiple text snippets temporarily in your browser.',
+    keywords: ['online clipboard', 'text storage', 'clipboard manager'],
+  },
+}
+
+const slugGenerator: ToolDefinition = {
+  id: 'slug-generator',
+  slug: 'slug-generator',
+  name: 'Slug Generator',
+  description: 'Convert text to URL-friendly slugs',
+  category: 'text',
+  icon: 'Link',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Slug Generator - Free URL Slug Maker',
+    description: 'Convert text to clean, URL-friendly slugs for SEO.',
+    keywords: ['slug generator', 'url slug', 'seo url'],
+  },
+}
+
+const numberToWords: ToolDefinition = {
+  id: 'number-to-words',
+  slug: 'number-to-words',
+  name: 'Number to Words',
+  description: 'Convert numbers to written words',
+  category: 'text',
+  icon: 'FileDigit',
+  iconColor: 'bg-blue-500/10 text-blue-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: [],
+  seo: {
+    title: 'Number to Words Converter',
+    description: 'Convert numbers to written English words and ordinals.',
+    keywords: ['number to words', 'spell numbers', 'number converter'],
+  },
+}
+
+// Developer Tools (ordered by search popularity)
+const regexTester: ToolDefinition = {
+  id: 'regex-tester',
+  slug: 'regex-tester',
+  name: 'Regex Tester',
+  description: 'Test and debug regular expressions with live matching',
+  category: 'developer',
+  icon: 'Regex',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['trending'],
+  seo: {
+    title: 'Regex Tester - Free Online Regular Expression Tool',
+    description: 'Test and debug regular expressions with live matching and common patterns.',
+    keywords: ['regex tester', 'regular expression', 'regex debugger'],
+  },
+}
+
+const apiTester: ToolDefinition = {
+  id: 'api-tester',
+  slug: 'api-tester',
+  name: 'API Tester',
+  description: 'Test REST APIs with custom headers, query params, and request body',
+  category: 'developer',
+  icon: 'Code',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'API Tester - Free HTTP REST Client Online',
+    description: 'Test REST APIs online with GET, POST, PUT, DELETE methods. Add custom headers and body. View formatted responses. Free API testing tool.',
+    keywords: ['api tester', 'rest client', 'http client', 'api testing', 'postman alternative'],
+  },
+}
+
 const jsonFormatter: ToolDefinition = {
   id: 'json-formatter',
   slug: 'json-formatter',
@@ -1849,99 +2029,262 @@ const subtitleGenerator: ToolDefinition = {
   },
 }
 
+// ============================================================================
+// Batch 8: High-Demand Security, Developer, and Media Tools
+// ============================================================================
+
+const htmlEntityEncoder: ToolDefinition = {
+  id: 'html-entity-encoder',
+  slug: 'html-entity-encoder',
+  name: 'HTML Entity Encoder/Decoder',
+  description: 'Encode and decode HTML entities with support for named and numeric formats',
+  category: 'web',
+  icon: 'Code2',
+  iconColor: 'bg-cyan-500/10 text-cyan-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'HTML Entity Encoder - Free HTML Escape Tool',
+    description: 'Encode and decode HTML entities online. Support for named entities (&nbsp;, &copy;) and numeric entities (&#169;). Free HTML entity converter.',
+    keywords: ['html entity encoder', 'html escape', 'html decode', 'entity converter', 'html entities'],
+  },
+}
+
+const passwordStrengthChecker: ToolDefinition = {
+  id: 'password-strength-checker',
+  slug: 'password-strength-checker',
+  name: 'Password Strength Checker',
+  description: 'Analyze password strength with crack time estimates and suggestions',
+  category: 'security',
+  icon: 'ShieldCheck',
+  iconColor: 'bg-red-500/10 text-red-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'Password Strength Checker - Free Security Analyzer',
+    description: 'Check password strength with real-time analysis, crack time estimates, and security suggestions. Free online password strength tester.',
+    keywords: ['password strength', 'password checker', 'password security', 'password analyzer', 'strong password'],
+  },
+}
+
+const jwtDecoder: ToolDefinition = {
+  id: 'jwt-decoder',
+  slug: 'jwt-decoder',
+  name: 'JWT Decoder',
+  description: 'Decode JWT tokens to view header, payload, and check expiration',
+  category: 'security',
+  icon: 'KeyRound',
+  iconColor: 'bg-red-500/10 text-red-500',
+  tier: 'PUBLIC',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'JWT Decoder - Free Token Parser Online',
+    description: 'Decode JWT tokens instantly to inspect header, payload, and signature. Check expiration status and view claims. Free JWT decoder tool.',
+    keywords: ['jwt decoder', 'jwt parser', 'decode jwt', 'jwt token', 'json web token'],
+  },
+}
+
+const audioTrimmer: ToolDefinition = {
+  id: 'audio-trimmer',
+  slug: 'audio-trimmer',
+  name: 'Audio Trimmer',
+  description: 'Trim audio files with fade in/out effects and precision timing',
+  category: 'media',
+  icon: 'Scissors',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Audio Trimmer - Free MP3 Cutter Online',
+    description: 'Trim audio files online with waveform preview and fade effects. Cut MP3, WAV, and other audio formats. Free audio trimmer tool.',
+    keywords: ['audio trimmer', 'mp3 cutter', 'trim audio', 'audio editor', 'cut audio online'],
+  },
+}
+
+const audioConverter: ToolDefinition = {
+  id: 'audio-converter',
+  slug: 'audio-converter',
+  name: 'Audio Converter',
+  description: 'Convert between audio formats with quality and bitrate control',
+  category: 'media',
+  icon: 'Music',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Audio Converter - Free MP3 WAV Converter',
+    description: 'Convert audio between MP3, WAV, and OGG formats. Adjust bitrate and sample rate. Free online audio converter.',
+    keywords: ['audio converter', 'mp3 converter', 'wav converter', 'convert audio', 'audio format converter'],
+  },
+}
+
+const videoTrimmer: ToolDefinition = {
+  id: 'video-trimmer',
+  slug: 'video-trimmer',
+  name: 'Video Trimmer',
+  description: 'Preview and set trim points for video files with timeline controls',
+  category: 'media',
+  icon: 'Scissors',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new'],
+  seo: {
+    title: 'Video Trimmer - Free MP4 Cutter Online',
+    description: 'Trim videos online with preview and timeline controls. Set start/end times for MP4, MOV, and WebM files. Free video trimmer tool.',
+    keywords: ['video trimmer', 'mp4 cutter', 'trim video', 'video editor', 'cut video online'],
+  },
+}
+
+const gifMaker: ToolDefinition = {
+  id: 'gif-maker',
+  slug: 'gif-maker',
+  name: 'GIF Maker',
+  description: 'Create GIFs from videos with frame rate and resolution control',
+  category: 'media',
+  icon: 'Film',
+  iconColor: 'bg-purple-500/10 text-purple-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'GIF Maker - Free Video to GIF Converter',
+    description: 'Create GIFs from videos online. Control frame rate, resolution, and quality. Convert video to GIF with loop settings. Free GIF maker.',
+    keywords: ['gif maker', 'video to gif', 'gif converter', 'create gif', 'gif generator'],
+  },
+}
+
+const apiTester: ToolDefinition = {
+  id: 'api-tester',
+  slug: 'api-tester',
+  name: 'API Tester',
+  description: 'Test REST APIs with custom headers, query params, and request body',
+  category: 'developer',
+  icon: 'Code',
+  iconColor: 'bg-emerald-500/10 text-emerald-500',
+  tier: 'AUTH',
+  runtime: 'CLIENT',
+  tags: ['new', 'popular'],
+  seo: {
+    title: 'API Tester - Free HTTP REST Client Online',
+    description: 'Test REST APIs online with GET, POST, PUT, DELETE methods. Add custom headers and body. View formatted responses. Free API testing tool.',
+    keywords: ['api tester', 'rest client', 'http client', 'api testing', 'postman alternative'],
+  },
+}
+
 /**
- * All tools in the registry
+ * All tools in the registry (ordered by search popularity within categories)
  */
 export const tools: ToolDefinition[] = [
-  // Text
-  wordCounter,
-  caseConverter,
-  lineBreakRemover,
-  textCompare,
-  onlineClipboard,
-  slugGenerator,
-  loremGenerator,
-  characterCounter,
-  numberToWords,
-  // Developer
-  jsonFormatter,
-  base64Encoder,
-  uuidGenerator,
-  hashGenerator,
-  regexTester,
-  jsonCsvConverter,
-  htmlEncoder,
-  binaryConverter,
-  markdownPreview,
-  codeFormatter,
-  qrScanner,
-  codeShare,
-  // Security
-  passwordGenerator,
-  emailVerifier,
-  safeLinkChecker,
-  // QR & Web
-  qrGenerator,
-  utmBuilder,
-  urlParser,
-  videoThumbnailGrabber,
-  websiteStatusChecker,
-  urlShortener,
-  linkPreview,
-  // Calculators
-  bmiCalculator,
-  ageCalculator,
-  percentageCalculator,
-  temperatureConverter,
-  dateDiffCalculator,
-  loanCalculator,
-  timezoneConverter,
-  aspectRatioCalculator,
-  smartCalculator,
-  currencyConverter,
-  // Utility
-  unitConverter,
-  // Productivity
-  countdownTimer,
-  stopwatch,
-  pomodoroTimer,
-  fileCompress,
-  fileShare,
-  checklistMaker,
-  focusMusic,
-  studyPlanner,
-  meetingNotes,
-  invoiceGenerator,
-  resumeBuilder,
-  budgetTracker,
-  habitTracker,
-  expenseSplitter,
-  timeTracker,
-  goalPlanner,
-  signatureMaker,
-  // Image
-  colorPicker,
-  imageCompressor,
-  imageResizer,
-  cropImage,
-  thumbnailTextDesigner,
-  backgroundRemover,
-  imageUpscaler,
-  watermarkRemover,
-  // PDF
-  pdfTextExtractor,
-  pdfMerge,
-  splitPDF,
-  protectPDF,
-  pdfToImage,
-  eSignDocument,
-  resumeParser,
-  pdfEditor,
-  documentConverter,
-  // Media
-  audioJoiner,
-  videoCompressor,
-  subtitleGenerator,
+  // Text Tools (by popularity)
+  wordCounter,         // 150K
+  characterCounter,    // 150K
+  caseConverter,       // 120K
+  loremGenerator,      // 100K
+  textCompare,         // 80K
+  lineBreakRemover,    // 50K
+  onlineClipboard,     // 40K
+  slugGenerator,       // 100K
+  numberToWords,       // 30K
+
+  // Developer Tools (by popularity)
+  regexTester,         // 280K
+  apiTester,           // 220K
+  jsonFormatter,       // 200K
+  base64Encoder,       // 180K
+  codeFormatter,       // 140K
+  htmlEncoder,         // 130K
+  hashGenerator,       // 180K
+  uuidGenerator,       // 120K
+  jsonCsvConverter,    // 110K
+  binaryConverter,     // 85K
+  markdownPreview,     // 60K
+  qrScanner,           // 50K
+  codeShare,           // 45K
+
+  // Security Tools (by popularity)
+  passwordGenerator,        // 400K
+  passwordStrengthChecker,  // 250K
+  jwtDecoder,               // 200K
+  emailVerifier,            // 150K
+  safeLinkChecker,          // 100K
+
+  // Web & URL Tools (by popularity)
+  qrGenerator,             // 350K
+  htmlEntityEncoder,       // 140K
+  urlParser,               // 90K
+  utmBuilder,              // 70K
+  videoThumbnailGrabber,   // 150K
+  websiteStatusChecker,    // 80K
+  urlShortener,            // 70K
+  linkPreview,             // 60K
+
+  // Calculators (by popularity)
+  percentageCalculator,  // 300K
+  bmiCalculator,         // 280K
+  ageCalculator,         // 250K
+  unitConverter,         // 220K
+  loanCalculator,        // 200K
+  currencyConverter,     // 180K
+  temperatureConverter,  // 140K
+  dateDiffCalculator,    // 130K
+  timezoneConverter,     // 100K
+  smartCalculator,       // 90K
+  aspectRatioCalculator, // 80K
+
+  // Productivity Tools (by popularity)
+  pomodoroTimer,      // 180K
+  invoiceGenerator,   // 160K
+  stopwatch,          // 150K
+  countdownTimer,     // 140K
+  timeTracker,        // 130K
+  habitTracker,       // 120K
+  expenseSplitter,    // 110K
+  goalPlanner,        // 100K
+  checklistMaker,     // 95K
+  budgetTracker,      // 90K
+  meetingNotes,       // 80K
+  fileCompress,       // 70K
+  fileShare,          // 65K
+  studyPlanner,       // 60K
+  focusMusic,         // 55K
+  resumeBuilder,      // 50K
+  signatureMaker,     // 45K
+
+  // Image Tools (by popularity)
+  imageCompressor,       // 400K
+  backgroundRemover,     // 400K
+  imageResizer,          // 350K
+  imageUpscaler,         // 250K
+  watermarkRemover,      // 220K
+  cropImage,             // 180K
+  thumbnailTextDesigner, // 120K
+  colorPicker,           // 90K
+
+  // PDF & Docs Tools (by popularity)
+  pdfEditor,          // 550K
+  pdfMerge,           // 450K
+  splitPDF,           // 380K
+  documentConverter,  // 380K
+  pdfTextExtractor,   // 320K
+  resumeParser,       // 280K
+  pdfToImage,         // 270K
+  protectPDF,         // 180K
+  eSignDocument,      // 150K
+
+  // Media Tools (by popularity)
+  gifMaker,           // 450K
+  videoCompressor,    // 450K
+  videoTrimmer,       // 380K
+  audioConverter,     // 320K
+  audioTrimmer,       // 300K
+  audioJoiner,        // 180K
+  subtitleGenerator,  // 160K
 ]
 
 /**
