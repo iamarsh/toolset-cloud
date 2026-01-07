@@ -45,36 +45,30 @@ export async function GET(request: NextRequest) {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
               marginBottom: '40px',
             }}
           >
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: categoryColor,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            />
             <span
               style={{
-                fontSize: '32px',
+                fontSize: '36px',
                 fontWeight: 600,
                 color: '#ffffff',
                 letterSpacing: '-0.02em',
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
               toolset
               <span
                 style={{
-                  background: 'linear-gradient(90deg, #fcd34d 0%, #fb923c 50%, #f97316 100%)',
+                  marginLeft: '4px',
+                  background: 'linear-gradient(90deg, #fcd34d 0%, #fbbf24 25%, #fb923c 75%, #f97316 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
                   fontStyle: 'italic',
+                  fontWeight: 600,
+                  paddingRight: '10px',
                 }}
               >
                 .cloud
