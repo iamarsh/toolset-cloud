@@ -1,10 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { Menu, X, Wrench } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { UserMenu } from '@/components/auth'
 import { Container } from '@/components/ui/container'
@@ -39,7 +40,13 @@ export function Header() {
             className="flex items-center gap-2 font-semibold text-xl font-serif tracking-tight"
             aria-label="toolset.cloud"
           >
-            <Wrench className="h-6 w-6 text-primary" />
+            <Image
+              src="/logo.webp"
+              alt="Toolset.cloud logo"
+              width={24}
+              height={24}
+              className="h-6 w-6"
+            />
             <span>
               toolset
               <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
