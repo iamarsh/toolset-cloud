@@ -3,7 +3,7 @@
  * Edit PDF files with text, drawings, and annotations
  */
 
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
+import { PDFDocument, rgb, StandardFonts, degrees } from 'pdf-lib'
 
 export interface Annotation {
   id: string
@@ -232,10 +232,10 @@ export async function renderPDFPage(
 /**
  * Rotate PDF page
  */
-export function rotatePage(pdfDoc: PDFDocument, pageIndex: number, degrees: 90 | 180 | 270): void {
+export function rotatePage(pdfDoc: PDFDocument, pageIndex: number, degreeValue: 90 | 180 | 270): void {
   const pages = pdfDoc.getPages()
   const page = pages[pageIndex]
-  page.setRotation({ angle: degrees, type: 'degrees' })
+  page.setRotation(degrees(degreeValue))
 }
 
 /**
