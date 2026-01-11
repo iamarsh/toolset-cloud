@@ -253,6 +253,27 @@ export async function deleteAllToolRuns(userId: string) {
 }
 
 /**
+ * Check if user has any tool run history
+ * Used to determine first-time vs returning user
+ */
+export async function hasToolRunHistory(userId: string): Promise<boolean> {
+  const supabase = createServerClient() as any
+
+  const { count, error } = await supabase
+    .from('tool_runs')
+    .select('*', { count: 'exact', head: true })
+    .eq('user_id', userId)
+    .limit(1)
+
+  if (error) {
+    console.error('Failed to check tool run history:', error)
+    return false
+  }
+
+  return (count || 0) > 0
+}
+
+/**
  * Search tool runs by tool name or status
  */
 export async function searchToolRuns(

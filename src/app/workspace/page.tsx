@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { auth } from '@/lib/auth'
+import { hasToolRunHistory } from '@/lib/db/queries'
 import { WelcomeSection } from '@/components/dashboard/welcome-section'
 import { WorkspaceShortcuts } from '@/components/workspace/workspace-shortcuts'
 import { ToolsDirectory } from '@/components/tools-directory'
@@ -18,11 +19,14 @@ export default async function WorkspacePage() {
     redirect('/login')
   }
 
+  // Check if this is a returning user
+  const isReturningUser = await hasToolRunHistory(session.user.id)
+
   return (
     <>
-      <WelcomeSection user={session.user} />
+      <WelcomeSection user={session.user} isReturningUser={isReturningUser} />
       <WorkspaceShortcuts />
-      <ToolsDirectory showWelcome={false} prioritizeAI={true} />
+      <ToolsDirectory showWelcome={false} prioritizeAI={true} defaultShowAIOnly={true} />
     </>
   )
 }

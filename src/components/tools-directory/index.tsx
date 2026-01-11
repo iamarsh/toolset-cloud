@@ -21,12 +21,13 @@ const isAIPowered = (tool: { tier: string; category: string }) => {
 interface ToolsDirectoryProps {
   showWelcome?: boolean
   prioritizeAI?: boolean
+  defaultShowAIOnly?: boolean
 }
 
-export function ToolsDirectory({ showWelcome = true, prioritizeAI = false }: ToolsDirectoryProps = {}) {
+export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defaultShowAIOnly = false }: ToolsDirectoryProps = {}) {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all')
-  const [showAIOnly, setShowAIOnly] = useState(false)
+  const [showAIOnly, setShowAIOnly] = useState(defaultShowAIOnly)
   const [sortBy, setSortBy] = useState<SortOption>(prioritizeAI ? 'ai-first' : 'popular')
 
   const allTools = getAllTools()

@@ -1,5 +1,3 @@
-'use client'
-
 import { Container } from '@/components/ui/container'
 
 interface User {
@@ -9,14 +7,16 @@ interface User {
 
 interface WelcomeSectionProps {
   user: User
+  isReturningUser?: boolean
 }
 
-export function WelcomeSection({ user }: WelcomeSectionProps) {
+export function WelcomeSection({ user, isReturningUser = true }: WelcomeSectionProps) {
   // Extract first name from full name
   const firstName = user.name?.split(' ')[0] || 'there'
+  const greeting = isReturningUser ? 'Welcome back' : 'Welcome'
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24">
+    <section className="relative overflow-hidden md:py-24">
       {/* Subtle ambient background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,140,66,0.08),transparent_38%),radial-gradient(circle_at_80%_0,rgba(255,184,122,0.06),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent)]" />
@@ -25,7 +25,7 @@ export function WelcomeSection({ user }: WelcomeSectionProps) {
       <Container>
         <div className="flex flex-col items-center text-center mb-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-3">
-            Welcome back,{' '}
+            {greeting},{' '}
             <span className="inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic">
               {firstName}
             </span>
