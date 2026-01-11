@@ -6,9 +6,8 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import {
-  removeBackground,
+  removeBackgroundFromImage,
   downloadImage,
-  formatFileSize,
   createPreviewUrl,
   type RemovalOptions,
 } from './logic'
@@ -22,6 +21,7 @@ export default function BackgroundRemoverUI() {
   const [processedBlob, setProcessedBlob] = useState<Blob | null>(null)
   const [processedFilename, setProcessedFilename] = useState<string>('')
   const [showComparison, setShowComparison] = useState(false)
+  const [error, setError] = useState<string>('')
   const [options, setOptions] = useState<RemovalOptions>({
     outputFormat: 'png',
     quality: 90,
@@ -39,6 +39,7 @@ export default function BackgroundRemoverUI() {
     setProcessedBlob(null)
     setProgress(0)
     setShowComparison(false)
+    setError('')
   }
 
   const handleRemoveBackground = async () => {
@@ -46,16 +47,18 @@ export default function BackgroundRemoverUI() {
 
     setIsProcessing(true)
     setProgress(0)
+    setError('')
 
     try {
-      const result = await removeBackground(file, options, (p) => setProgress(p))
+      const result = await removeBackgroundFromImage(file, options, (p: number) => setProgress(p))
       setProcessedBlob(result.blob)
       setProcessedFilename(result.filename)
       setProcessedUrl(createPreviewUrl(result.blob))
       setShowComparison(true)
     } catch (error) {
       console.error('Background removal failed:', error)
-      alert('Failed to remove background. Please try a different image.')
+      const errorMessage = error instanceof Error ? error.message : 'Failed to remove background. Please try a different image.'
+      setError(errorMessage)
     } finally {
       setIsProcessing(false)
     }
@@ -75,6 +78,7 @@ export default function BackgroundRemoverUI() {
     setProcessedBlob(null)
     setProgress(0)
     setShowComparison(false)
+    setError('')
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
@@ -173,6 +177,19 @@ export default function BackgroundRemoverUI() {
         </Card>
       )}
 
+      {/* Error Display */}
+      {error && (
+        <Card className="p-4 border-red-500/50 bg-red-500/5">
+          <div className="flex gap-2">
+            <Info className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <p className="text-sm font-medium text-red-500 mb-1">Error</p>
+              <p className="text-sm text-muted-foreground">{error}</p>
+            </div>
+          </div>
+        </Card>
+      )}
+
       {/* Before/After Comparison */}
       {showComparison && originalUrl && processedUrl && (
         <Card className="p-6 space-y-4">
@@ -217,20 +234,9 @@ export default function BackgroundRemoverUI() {
       <Card className="p-4 border-blue-500/50 bg-blue-500/5">
         <div className="flex gap-2">
           <Info className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-          <div className="text-sm text-muted-foreground space-y-2">
-            <div>
-              <strong>Note:</strong> This tool uses a simplified background removal algorithm. For
-              production use with AI-based removal, consider using @imgly/background-removal
-              library.
-            </div>
-            <div>
-              <strong>Best results:</strong> Images with clear subjects and solid/bright backgrounds
-              work best.
-            </div>
-            <div>
-              <strong>Privacy:</strong> All processing happens in your browser. No images are
-              uploaded.
-            </div>
+          <div className="text-sm text-muted-foreground">
+            <strong>Privacy:</strong> All processing happens in your browser using AI. No images are
+            uploaded to any server.
           </div>
         </div>
       </Card>
