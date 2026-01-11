@@ -19,6 +19,7 @@ export {
   updateToolRun,
   deleteToolRun,
   deleteAllToolRuns,
+  hasToolRunHistory,
   searchToolRuns,
 } from './tool-runs'
 
