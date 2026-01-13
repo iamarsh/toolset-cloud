@@ -143,7 +143,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
     tool.tier === 'PUBLIC'
       ? 'Free to start in-browser'
       : tool.tier === 'AUTH'
-      ? 'Sign in to unlock'
+      ? (session.authenticated ? 'Free with account' : 'Sign in to unlock')
       : 'Pro access'
   const showStatus = tool.tier !== 'PUBLIC'
 
@@ -203,7 +203,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
                 <span>{category.name}</span>
               </div>
             )}
-            {tool.tier === 'AUTH' && (
+            {tool.tier === 'AUTH' && !session.authenticated && (
               <Badge variant="outline" className="gap-1">
                 <Lock className="h-3 w-3" />
                 Sign in required
