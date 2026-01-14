@@ -28,118 +28,45 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Options */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* General Inquiries */}
+        <div className="mb-12">
+          {/* Primary Contact */}
           <a
-            href="mailto:hello@toolset.cloud"
-            className="p-6 rounded-xl border border-foreground/10 hover:border-primary/30 transition-all bg-foreground/5 hover:bg-foreground/10 group"
+            href="mailto:contact@iamarsh.com"
+            className="block p-8 rounded-xl border border-foreground/10 hover:border-primary/30 transition-all bg-foreground/5 hover:bg-foreground/10 group max-w-2xl mx-auto"
           >
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Mail className="w-6 h-6 text-primary" />
+                <Mail className="w-8 h-8 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">General Inquiries</h3>
+                <h3 className="text-2xl font-semibold mb-2">Get in Touch</h3>
                 <p className="text-foreground/70 mb-3">
-                  Questions about our tools or services? General feedback? Reach out to us.
+                  Questions, feedback, bug reports, or support inquiries? We're here to help!
                 </p>
-                <p className="text-primary font-medium">hello@toolset.cloud</p>
-              </div>
-            </div>
-          </a>
-
-          {/* Support */}
-          <a
-            href="mailto:support@toolset.cloud"
-            className="p-6 rounded-xl border border-foreground/10 hover:border-primary/30 transition-all bg-foreground/5 hover:bg-foreground/10 group"
-          >
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <HelpCircle className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Technical Support</h3>
-                <p className="text-foreground/70 mb-3">
-                  Need help with a tool? Experiencing technical issues? We'll help you out.
-                </p>
-                <p className="text-primary font-medium">support@toolset.cloud</p>
-              </div>
-            </div>
-          </a>
-
-          {/* Privacy & Security */}
-          <a
-            href="mailto:privacy@toolset.cloud"
-            className="p-6 rounded-xl border border-foreground/10 hover:border-primary/30 transition-all bg-foreground/5 hover:bg-foreground/10 group"
-          >
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Privacy & Security</h3>
-                <p className="text-foreground/70 mb-3">
-                  Privacy concerns or data requests? Contact our data protection team.
-                </p>
-                <p className="text-primary font-medium">privacy@toolset.cloud</p>
-              </div>
-            </div>
-          </a>
-
-          {/* Feedback & Suggestions */}
-          <a
-            href="mailto:feedback@toolset.cloud"
-            className="p-6 rounded-xl border border-foreground/10 hover:border-primary/30 transition-all bg-foreground/5 hover:bg-foreground/10 group"
-          >
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Lightbulb className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Feedback & Ideas</h3>
-                <p className="text-foreground/70 mb-3">
-                  Have ideas for new tools or improvements? We'd love to hear them!
-                </p>
-                <p className="text-primary font-medium">feedback@toolset.cloud</p>
+                <p className="text-primary font-medium text-lg">contact@iamarsh.com</p>
               </div>
             </div>
           </a>
         </div>
 
-        {/* Additional Contact Methods */}
+        {/* What to Include */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-center">Other Ways to Reach Us</h2>
-          <div className="space-y-4">
-            {/* Bug Reports */}
-            <div className="p-5 rounded-lg border border-foreground/10 bg-foreground/5">
-              <div className="flex items-start gap-4">
-                <Bug className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Report a Bug</h3>
-                  <p className="text-foreground/70 mb-2">
-                    Found a bug or technical issue? Help us improve by reporting it.
-                  </p>
-                  <a href="mailto:bugs@toolset.cloud" className="text-primary hover:underline font-medium">
-                    bugs@toolset.cloud
-                  </a>
-                </div>
-              </div>
+          <h2 className="text-2xl font-bold mb-6 text-center">What to Include in Your Email</h2>
+          <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="p-4 rounded-lg border border-foreground/10 bg-foreground/5 text-center">
+              <Bug className="w-6 h-6 text-primary mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Bug Reports</h3>
+              <p className="text-sm text-foreground/70">Steps to reproduce, screenshots</p>
             </div>
-
-            {/* Legal */}
-            <div className="p-5 rounded-lg border border-foreground/10 bg-foreground/5">
-              <div className="flex items-start gap-4">
-                <MessageSquare className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Legal Inquiries</h3>
-                  <p className="text-foreground/70 mb-2">
-                    For legal matters, terms of service, or compliance questions.
-                  </p>
-                  <a href="mailto:legal@toolset.cloud" className="text-primary hover:underline font-medium">
-                    legal@toolset.cloud
-                  </a>
-                </div>
-              </div>
+            <div className="p-4 rounded-lg border border-foreground/10 bg-foreground/5 text-center">
+              <Lightbulb className="w-6 h-6 text-primary mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Feature Requests</h3>
+              <p className="text-sm text-foreground/70">What you'd like to see</p>
+            </div>
+            <div className="p-4 rounded-lg border border-foreground/10 bg-foreground/5 text-center">
+              <HelpCircle className="w-6 h-6 text-primary mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Support</h3>
+              <p className="text-sm text-foreground/70">Tool name, issue description</p>
             </div>
           </div>
         </div>
@@ -187,7 +114,7 @@ export default function ContactPage() {
               </summary>
               <p className="text-foreground/70 mt-3 leading-relaxed">
                 We love hearing your ideas! Send your suggestions to{' '}
-                <a href="mailto:feedback@toolset.cloud" className="text-primary hover:underline">feedback@toolset.cloud</a>.
+                <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">contact@iamarsh.com</a>.
                 We review all requests and prioritize based on user demand and technical feasibility.
               </p>
             </details>
@@ -199,7 +126,7 @@ export default function ContactPage() {
               </summary>
               <p className="text-foreground/70 mt-3 leading-relaxed">
                 You can delete your account anytime through your account settings, or email{' '}
-                <a href="mailto:privacy@toolset.cloud" className="text-primary hover:underline">privacy@toolset.cloud</a>.
+                <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">contact@iamarsh.com</a>.
                 We'll permanently delete your data within 30 days, as outlined in our{' '}
                 <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
               </p>

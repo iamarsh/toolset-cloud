@@ -180,7 +180,7 @@ export default function TermsPage() {
             </p>
             <div className="mt-3 p-4 bg-foreground/5 rounded-lg">
               <p className="text-foreground/80">
-                Email: <a href="mailto:legal@toolset.cloud" className="text-primary hover:underline">legal@toolset.cloud</a>
+                Email: <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">contact@iamarsh.com</a>
               </p>
               <p className="text-foreground/80 mt-1">
                 Website: <Link href="/contact" className="text-primary hover:underline">toolset.cloud/contact</Link>

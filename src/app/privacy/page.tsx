@@ -226,7 +226,7 @@ export default function PrivacyPage() {
             </div>
 
             <p className="text-foreground/80 leading-relaxed mt-4">
-              To exercise any of these rights, please contact us at <a href="mailto:privacy@toolset.cloud" className="text-primary hover:underline">privacy@toolset.cloud</a>. We will respond to your request within 30 days.
+              To exercise any of these rights, please contact us at <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">contact@iamarsh.com</a>. We will respond to your request within 30 days.
             </p>
           </section>
 
@@ -308,13 +308,10 @@ export default function PrivacyPage() {
             </p>
             <div className="mt-3 p-4 bg-foreground/5 rounded-lg space-y-2">
               <p className="text-foreground/80">
-                <strong>Email:</strong> <a href="mailto:privacy@toolset.cloud" className="text-primary hover:underline">privacy@toolset.cloud</a>
+                <strong>Email:</strong> <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">contact@iamarsh.com</a>
               </p>
               <p className="text-foreground/80">
-                <strong>Data Protection:</strong> <a href="mailto:dpo@toolset.cloud" className="text-primary hover:underline">dpo@toolset.cloud</a>
-              </p>
-              <p className="text-foreground/80">
-                <strong>General Contact:</strong> <Link href="/contact" className="text-primary hover:underline">toolset.cloud/contact</Link>
+                <strong>Contact Page:</strong> <Link href="/contact" className="text-primary hover:underline">toolset.cloud/contact</Link>
               </p>
             </div>
           </section>
