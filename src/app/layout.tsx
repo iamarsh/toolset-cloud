@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from '@/components/theme-provider'
 import { AuthSessionProvider } from '@/components/auth'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { UmamiAnalytics } from '@/components/analytics'
 import './globals.css'
 
 const inter = Inter({
@@ -142,7 +142,10 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </AuthSessionProvider>
-        <Analytics />
+        <UmamiAnalytics
+          websiteId={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
+          src={process.env.NEXT_PUBLIC_UMAMI_URL || 'https://analytics.toolset.cloud/script.js'}
+        />
       </body>
     </html>
   )

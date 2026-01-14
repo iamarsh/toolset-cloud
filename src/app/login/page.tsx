@@ -20,8 +20,8 @@ export default function LoginPage() {
         <div className="relative z-10 text-center">
           <Link href="/">
             <h1 className="font-serif tracking-tight text-5xl sm:text-6xl lg:text-7xl leading-[0.95] cursor-pointer mb-4">
-              <span>Toolset</span>
-              <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
+              <span>toolset</span>
+              <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
                 .cloud
               </span>
             </h1>
@@ -43,8 +43,8 @@ export default function LoginPage() {
           <div className="lg:hidden text-center mb-8">
             <Link href="/">
               <h1 className="font-serif tracking-tight text-4xl sm:text-5xl leading-[0.95]">
-                <span>Toolset</span>
-                <span className="ml-1 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold">
+                <span>toolset</span>
+                <span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">
                   .cloud
                 </span>
               </h1>
@@ -54,7 +54,7 @@ export default function LoginPage() {
           {/* Header */}
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center lg:text-left">
-              Sign in to Toolset
+              Sign in to <span>toolset<span className="ml-0.5 inline-block bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 bg-clip-text text-transparent italic font-semibold pr-[10px]">.cloud</span></span>
             </h2>
             <p className="mt-2 text-base text-foreground/60 text-center lg:text-left">
               Unlock saved preferences, tool history, and AI-powered features.

@@ -181,10 +181,10 @@ export default function ResumeBuilderUI() {
             ) : (
               <div className="space-y-2">
                 {resumes.map((resume: Resume) => (
-                  <button
+                  <div
                     key={resume.id}
                     onClick={() => setActiveResume(resume)}
-                    className={`w-full text-left p-3 rounded-lg border transition-colors ${
+                    className={`w-full text-left p-3 rounded-lg border transition-colors cursor-pointer ${
                       activeResume?.id === resume.id
                         ? 'border-primary bg-primary/5'
                         : 'border-border hover:bg-muted'
@@ -211,7 +211,7 @@ export default function ResumeBuilderUI() {
                         <Trash2 className="w-3 h-3" />
                       </Button>
                     </div>
-                  </button>
+                  </div>
                 ))}
               </div>
             )}

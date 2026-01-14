@@ -1,0 +1,24 @@
+Contact: mailto:security@toolset.cloud
+Contact: https://toolset.cloud/contact
+Preferred-Languages: en
+Canonical: https://toolset.cloud/.well-known/security.txt
+Policy: https://toolset.cloud/privacy
+Hiring: https://toolset.cloud/about
+
+# Security Policy
+
+Thank you for helping keep toolset.cloud secure!
+
+If you discover a security vulnerability, please report it to:
+- Email: security@toolset.cloud
+- Alternative: privacy@toolset.cloud
+
+We take all security reports seriously and will respond within 24 hours.
+
+Please include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Any suggested fixes (optional)
+
+We appreciate responsible disclosure and will credit researchers upon request.

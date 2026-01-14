@@ -41,3 +41,9 @@ memory-bank/project/
 
 # batch planning documents
 BATCH*.md
+
+# setup and implementation guides (keep local only)
+ANALYTICS_SUMMARY.md
+SECURITY_COMPLIANCE.md
+UMAMI_SETUP_GUIDE.md
+docs/ANALYTICS_IMPLEMENTATION.md
