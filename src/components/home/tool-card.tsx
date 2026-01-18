@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Star, TrendingUp, Sparkles, Clock } from 'lucide-react'
+import { ArrowRight, Star, TrendingUp, Sparkles, Clock, Zap, Cpu, Cloud } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
@@ -29,6 +29,25 @@ export function ToolCard({ tool }: ToolCardProps) {
   const tagInfo = primaryTag ? tagConfig[primaryTag] : null
   const showAIIndicator = isAIPowered(tool)
   const comingSoon = isComingSoon(tool)
+
+  // Feature badges (limit to 2 max to prevent clutter)
+  const showWorkspaceBadge = tool.workspace?.workspaceFriendly
+  const showLocalBadge = tool.workspace?.runsLocally
+  const showAIBadge = tool.workspace?.usesAI
+  const showAPIBadge = tool.api?.apiReady || tool.api?.apiPlanned
+
+  type BadgeVariant = 'workspace-friendly' | 'runs-locally' | 'uses-ai' | 'api-available' | 'api-planned'
+
+  const featureBadges = [
+    showWorkspaceBadge ? { icon: Zap, text: 'Workspace', variant: 'workspace-friendly' as BadgeVariant } : null,
+    showLocalBadge ? { icon: Cpu, text: 'Runs locally', variant: 'runs-locally' as BadgeVariant } : null,
+    showAIBadge ? { icon: Sparkles, text: 'Uses AI', variant: 'uses-ai' as BadgeVariant } : null,
+    showAPIBadge ? {
+      icon: Cloud,
+      text: tool.api?.apiReady ? 'API' : 'API planned',
+      variant: (tool.api?.apiReady ? 'api-available' : 'api-planned') as BadgeVariant
+    } : null,
+  ].filter((badge): badge is NonNullable<typeof badge> => badge !== null).slice(0, 2)
 
   return (
     <Link
@@ -85,6 +104,18 @@ export function ToolCard({ tool }: ToolCardProps) {
         )}
       </div>
       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{tool.description}</p>
+
+      {/* Feature badges */}
+      {featureBadges.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {featureBadges.map((badge, i) => (
+            <Badge key={i} variant={badge.variant} className="text-[10px] py-0 px-2">
+              <badge.icon className="h-2.5 w-2.5" />
+              {badge.text}
+            </Badge>
+          ))}
+        </div>
+      )}
 
       {/* Action */}
       <div className="mt-auto flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">

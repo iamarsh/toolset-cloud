@@ -61,6 +61,7 @@ export interface ToolDefinition {
   status?: ToolStatus // 'live' or 'coming-soon' (defaults to 'coming-soon')
   icon: string // Icon name (e.g., 'FileText') - resolved client-side
   iconColor: string // Tailwind color class for icon background
+  listPriority?: number // Lower = earlier on /tools page (default: 100)
   seo: {
     title: string
     description: string
@@ -83,6 +84,18 @@ export interface ToolDefinition {
     features?: ToolFeatureCard[]
     steps?: ToolStepCard[]
     proTips?: string[]
+  }
+  // Workspace and API metadata
+  workspace?: {
+    workspaceFriendly?: boolean // Tool benefits from saved configs/repeat use
+    supportsEmail?: boolean // Can email results (coming soon)
+    runsLocally?: boolean // Runs in browser vs server-processed
+    usesAI?: boolean // Uses AI processing (token costs apply)
+  }
+  api?: {
+    apiReady?: boolean // API currently available
+    apiPlanned?: boolean // API in development roadmap
+    apiEndpoint?: string // API endpoint (when ready)
   }
 }
 

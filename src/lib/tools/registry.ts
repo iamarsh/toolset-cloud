@@ -14,6 +14,7 @@ const wordCounter: ToolDefinition = {
   category: 'text',
   icon: 'FileText',
   iconColor: 'bg-blue-500/10 text-blue-500',
+  listPriority: 3,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -92,7 +93,7 @@ const wordCounter: ToolDefinition = {
       'Use highlight-every to spot long runs or repeated structures.',
       'Reading time assumes ~200 wpm; adjust your content if technical.',
       'Keep clean-on-paste on when moving from docs or CMS exports.',
-      'Counts stay local—refreshing the page preserves your current session.',
+      'Counts stay local-refreshing the page preserves your current session.',
     ],
   },
 }
@@ -157,6 +158,7 @@ const caseConverter: ToolDefinition = {
   category: 'text',
   icon: 'Type',
   iconColor: 'bg-blue-500/10 text-blue-500',
+  listPriority: 21,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -170,7 +172,7 @@ const caseConverter: ToolDefinition = {
       headline: "About Case Converter",
       paragraphs: [
         "Case Converter is a fast, lightweight tool for transforming text between different case formats instantly in your browser. Whether you need sentence case for readability, title case for headers, or uppercase/lowercase for coding and data formatting, this tool handles all conversions with a single click.",
-        "Perfect for developers, content creators, and anyone working with text, Case Converter processes everything locally on your device—no data leaves your browser, ensuring complete privacy and offline functionality. Convert unlimited text with zero lag and no server dependencies.",
+        "Perfect for developers, content creators, and anyone working with text, Case Converter processes everything locally on your device-no data leaves your browser, ensuring complete privacy and offline functionality. Convert unlimited text with zero lag and no server dependencies.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -237,7 +239,7 @@ const loremGenerator: ToolDefinition = {
       { title: "Multiple Format Options", description: "Choose between paragraphs, sentences, or words to match any design requirement.", icon: 'Grid' },
       { title: "One-Click Copy", description: "Instantly copy generated text to your clipboard ready to paste anywhere.", icon: 'Copy' },
       { title: "Bulk Generation", description: "Create multiple variations of placeholder text in one go for faster prototyping.", icon: 'RefreshCw' },
-      { title: "Browser-Based Processing", description: "Everything runs locally in your browser—no uploads, no tracking, completely private.", icon: 'Shield' },
+      { title: "Browser-Based Processing", description: "Everything runs locally in your browser-no uploads, no tracking, completely private.", icon: 'Shield' },
     ],
     steps: [
       { step: 1, title: "Set Your Parameters", description: "Choose how many paragraphs, sentences, or words you need and select your preferred format.", icon: 'Settings' },
@@ -248,7 +250,7 @@ const loremGenerator: ToolDefinition = {
       "Use shorter word counts for tight UI spaces like buttons and headers, and longer paragraphs for body text and articles.",
       "Generate multiple variations and mix them together to create more natural-looking, diverse placeholder content.",
       "Set custom sentence counts to simulate realistic paragraph breaks and improve mockup authenticity.",
-      "Keep a few generated variations saved for quick iteration—you can regenerate instantly without losing previous versions.",
+      "Keep a few generated variations saved for quick iteration-you can regenerate instantly without losing previous versions.",
     ],
   },
 }
@@ -299,7 +301,7 @@ const textCompare: ToolDefinition = {
     proTips: [
       "Use the 'Ignore Whitespace' option when comparing code or formatted text to focus only on content changes, not spacing differences.",
       "Check character-level diffs for subtle changes like punctuation, capitalization, or single-word substitutions that line-view might miss.",
-      "Paste large documents directly into the tool—all processing happens locally, so size does not matter for privacy or speed.",
+      "Paste large documents directly into the tool-all processing happens locally, so size does not matter for privacy or speed.",
       "Export comparison results in unified diff format to share with team members or integrate with version control workflows.",
     ],
   },
@@ -326,7 +328,7 @@ const lineBreakRemover: ToolDefinition = {
       headline: "About Line Break Remover",
       paragraphs: [
         "Line Break Remover is a fast, privacy-focused tool designed to eliminate or replace unwanted line breaks in your text. Whether you are cleaning up copied content, formatting code, or preparing text for specific platforms, this tool handles it instantly in your browser without any data being sent to servers.",
-        "Perfect for writers, developers, and content creators who need to join multi-line text into single lines or replace breaks with custom separators. Use it to clean messy imports, flatten paragraphs, or normalize text formatting across different sources—all while keeping your data completely private.",
+        "Perfect for writers, developers, and content creators who need to join multi-line text into single lines or replace breaks with custom separators. Use it to clean messy imports, flatten paragraphs, or normalize text formatting across different sources-all while keeping your data completely private.",
       ],
       stats: [
         { value: "100% Local", label: "Privacy-safe processing", icon: 'ShieldCheck' },
@@ -351,7 +353,7 @@ const lineBreakRemover: ToolDefinition = {
     proTips: [
       "Use 'Replace with Custom Separator' to join lines with commas for CSV data or pipes for table formatting.",
       "Enable 'Preserve Paragraph Breaks' when cleaning text that needs to maintain its structure but remove formatting line breaks.",
-      "Copy the result immediately after processing—the tool updates in real-time as you adjust settings.",
+      "Copy the result immediately after processing-the tool updates in real-time as you adjust settings.",
       "Paste content from PDFs, word processors, or emails to quickly normalize inconsistent line break formatting.",
     ],
   },
@@ -378,7 +380,7 @@ const onlineClipboard: ToolDefinition = {
       headline: "About Online Clipboard",
       paragraphs: [
         "Online Clipboard is a fast, temporary storage solution for text, code snippets, and URLs without creating accounts or dealing with complex interfaces. Perfect for quick copy-paste operations across devices or keeping sensitive information out of your system clipboard.",
-        "All data is processed directly in your browser with zero server storage, ensuring complete privacy and security. Share temporary links with others or simply paste, copy, and move on—no data trails left behind.",
+        "All data is processed directly in your browser with zero server storage, ensuring complete privacy and security. Share temporary links with others or simply paste, copy, and move on-no data trails left behind.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -393,7 +395,7 @@ const onlineClipboard: ToolDefinition = {
       { title: "Syntax Highlighting", description: "Automatic code formatting for popular languages to make viewing and working with code easier.", icon: 'Code' },
       { title: "Share Temporary Links", description: "Generate shareable links for quick collaboration without exposing data to cloud storage services.", icon: 'Share2' },
       { title: "Clear on Exit", description: "Data automatically disappears when you close the tab or browser, ensuring no residual traces remain.", icon: 'Trash2' },
-      { title: "No Sign-up Required", description: "Start using immediately with zero friction—no accounts, passwords, or registration steps needed.", icon: 'Zap' },
+      { title: "No Sign-up Required", description: "Start using immediately with zero friction-no accounts, passwords, or registration steps needed.", icon: 'Zap' },
     ],
     steps: [
       { step: 1, title: "Paste Your Content", description: "Paste text, code, URLs, or any content into the clipboard area and it is instantly stored.", icon: 'Upload' },
@@ -403,8 +405,8 @@ const onlineClipboard: ToolDefinition = {
     proTips: [
       "Use this tool to safely paste sensitive information without it being logged in your system clipboard history.",
       "Generate temporary share links to collaborate with teammates without uploading to cloud storage services.",
-      "Leverage syntax highlighting by pasting code snippets—it auto-detects most common programming languages.",
-      "Bookmark this page to always have a quick clipboard handy for your workflow—no account needed, fully private.",
+      "Leverage syntax highlighting by pasting code snippets-it auto-detects most common programming languages.",
+      "Bookmark this page to always have a quick clipboard handy for your workflow-no account needed, fully private.",
     ],
   },
 }
@@ -454,7 +456,7 @@ const slugGenerator: ToolDefinition = {
     ],
     proTips: [
       "Use the length limit feature to keep URLs concise for better SEO performance and easier sharing.",
-      "Enable batch mode to convert entire lists of blog titles or page names at once—huge time saver for large projects.",
+      "Enable batch mode to convert entire lists of blog titles or page names at once-huge time saver for large projects.",
       "Keep slugs descriptive but concise; aim for 3-5 relevant keywords separated by hyphens for optimal search engine visibility.",
       "Test generated slugs in your actual CMS or URL structure before publishing to ensure they work with your specific requirements.",
     ],
@@ -505,7 +507,7 @@ const numberToWords: ToolDefinition = {
       { step: 3, title: "Copy or Download", description: "Get your converted text instantly and copy it or download as a file.", icon: 'Download' },
     ],
     proTips: [
-      "Use currency format when converting amounts for checks or invoices—it automatically adds 'dollars and cents' formatting.",
+      "Use currency format when converting amounts for checks or invoices-it automatically adds 'dollars and cents' formatting.",
       "Paste multiple numbers separated by line breaks to convert them all at once instead of one-by-one.",
       "For formal documents, copy the output directly into your text editor and adjust capitalization as needed.",
       "Bookmark this tool for quick access when writing contracts, proposals, or any document requiring spelled-out numbers.",
@@ -558,9 +560,9 @@ const regexTester: ToolDefinition = {
       { step: 3, title: "Review Matches Instantly", description: "Watch matches highlight in real-time, view capture groups, and copy results as needed.", icon: 'CheckCircle' },
     ],
     proTips: [
-      "Use the global 'g' flag to find all matches in your text, not just the first one—perfect for batch extraction tasks.",
+      "Use the global 'g' flag to find all matches in your text, not just the first one-perfect for batch extraction tasks.",
       "Test edge cases like empty strings, special characters, and multiline text to ensure your regex handles real-world scenarios.",
-      "Leverage capture groups (parentheses) to extract specific parts of matches—view exactly what was captured in the details panel.",
+      "Leverage capture groups (parentheses) to extract specific parts of matches-view exactly what was captured in the details panel.",
       "Start simple and build complexity gradually; test smaller patterns first, then combine them into larger expressions for better debugging.",
     ],
   },
@@ -574,9 +576,15 @@ const apiTester: ToolDefinition = {
   category: 'developer',
   icon: 'Code',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 1,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new', 'popular'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+  },
   seo: {
     title: 'API Tester - Free HTTP REST Client Online',
     description: 'Test REST APIs online with GET, POST, PUT, DELETE methods. Add custom headers and body. View formatted responses. Free API testing tool.',
@@ -626,6 +634,7 @@ const jsonFormatter: ToolDefinition = {
   category: 'developer',
   icon: 'Braces',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 2,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -661,7 +670,7 @@ const jsonFormatter: ToolDefinition = {
       },
       {
         title: 'Client-side only',
-        description: 'No uploads—payloads remain in your browser for privacy.',
+        description: 'No uploads-payloads remain in your browser for privacy.',
         icon: 'ShieldCheck',
       },
       {
@@ -701,7 +710,7 @@ const jsonFormatter: ToolDefinition = {
       },
     ],
     proTips: [
-      'Keep sensitive payloads safe—nothing is sent over the network.',
+      'Keep sensitive payloads safe-nothing is sent over the network.',
       'Use minify before embedding JSON in configs or query params.',
       'Set indentation to mirror your repo to avoid noisy diffs.',
     ],
@@ -716,6 +725,7 @@ const base64Encoder: ToolDefinition = {
   category: 'developer',
   icon: 'Binary',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 13,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -728,7 +738,7 @@ const base64Encoder: ToolDefinition = {
     about: {
       headline: 'About Base64 Encoder/Decoder',
       paragraphs: [
-        'Convert text to and from Base64 instantly in your browser. No uploads or servers involved—safe for snippets and configuration values.',
+        'Convert text to and from Base64 instantly in your browser. No uploads or servers involved-safe for snippets and configuration values.',
         'Great for quick API testing, email-safe payloads, and troubleshooting encoding issues across environments.',
       ],
       stats: [
@@ -793,7 +803,7 @@ const base64Encoder: ToolDefinition = {
     proTips: [
       'Use decode to verify payloads coming from APIs or email-safe transfers.',
       'Swap after decode to re-encode adjusted content without retyping.',
-      'Keep sensitive tokens local—nothing is sent over the network.',
+      'Keep sensitive tokens local-nothing is sent over the network.',
     ],
   },
 }
@@ -806,6 +816,7 @@ const uuidGenerator: ToolDefinition = {
   category: 'developer',
   icon: 'Hash',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 14,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -849,6 +860,7 @@ const hashGenerator: ToolDefinition = {
   category: 'developer',
   icon: 'KeyRound',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 15,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['trending'],
@@ -910,6 +922,7 @@ const passwordGenerator: ToolDefinition = {
   category: 'security',
   icon: 'Shield',
   iconColor: 'bg-red-500/10 text-red-500',
+  listPriority: 12,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -922,7 +935,7 @@ const passwordGenerator: ToolDefinition = {
     about: {
       headline: 'About Password Generator',
       paragraphs: [
-        'Create strong passwords with control over length and character sets. Everything runs in the browser—no passwords leave your device.',
+        'Create strong passwords with control over length and character sets. Everything runs in the browser-no passwords leave your device.',
         'Use it for accounts, API keys, or one-off secrets. Toggle symbols, numbers, and cases to meet policy requirements.',
       ],
       stats: [
@@ -955,6 +968,7 @@ const qrGenerator: ToolDefinition = {
   category: 'web',
   icon: 'QrCode',
   iconColor: 'bg-cyan-500/10 text-cyan-500',
+  listPriority: 16,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -1000,6 +1014,7 @@ const unitConverter: ToolDefinition = {
   category: 'calculators',
   icon: 'ArrowLeftRight',
   iconColor: 'bg-teal-500/10 text-teal-500',
+  listPriority: 19,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1044,6 +1059,7 @@ const bmiCalculator: ToolDefinition = {
   category: 'calculators',
   icon: 'Calculator',
   iconColor: 'bg-teal-500/10 text-teal-500',
+  listPriority: 20,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1125,7 +1141,7 @@ const ageCalculator: ToolDefinition = {
     ],
     proTips: [
       "Use the day-of-week feature to find fun facts about your birth day or cross-reference historical events.",
-      "Check the total days lived counter for motivation milestones—round number days make great reflection moments.",
+      "Check the total days lived counter for motivation milestones-round number days make great reflection moments.",
       "Save your results before leaving the page if you need them for official documentation or forms.",
       "The leap year calculator automatically handles February 29th births with perfect accuracy every time.",
     ],
@@ -1140,6 +1156,7 @@ const percentageCalculator: ToolDefinition = {
   category: 'calculators',
   icon: 'Percent',
   iconColor: 'bg-teal-500/10 text-teal-500',
+  listPriority: 30,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1194,6 +1211,7 @@ const temperatureConverter: ToolDefinition = {
   category: 'calculators',
   icon: 'Thermometer',
   iconColor: 'bg-teal-500/10 text-teal-500',
+  listPriority: 29,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1230,7 +1248,7 @@ const temperatureConverter: ToolDefinition = {
       { step: 3, title: "View & Copy Results", description: "See all three converted values and copy any result to your clipboard with one click.", icon: 'Copy' },
     ],
     proTips: [
-      "Use the slider control for quick temperature adjustments without typing—perfect for exploring temperature ranges.",
+      "Use the slider control for quick temperature adjustments without typing-perfect for exploring temperature ranges.",
       "Remember that Kelvin does not use degrees; 0K is absolute zero, approximately -273.15°C.",
       "For scientific work, increase decimal precision in settings to maintain accuracy across multiple conversions.",
       "Bookmark this tool for quick access during cooking, weather analysis, or chemistry calculations.",
@@ -1283,7 +1301,7 @@ const dateDiffCalculator: ToolDefinition = {
     ],
     proTips: [
       "Use the 'Business Days' filter when calculating project deadlines or work schedules to exclude weekends automatically.",
-      "Click the swap arrow to reverse your date selection without retyping—useful for comparing before/after scenarios.",
+      "Click the swap arrow to reverse your date selection without retyping-useful for comparing before/after scenarios.",
       "Save frequently-used date pairs by bookmarking results in your browser for quick access to recurring calculations.",
       "For age calculations, use today's date as the end date and set the start date to any birth date for instant age in years, months, and days.",
     ],
@@ -1312,7 +1330,7 @@ const countdownTimer: ToolDefinition = {
       headline: "About Countdown Timer",
       paragraphs: [
         "Countdown Timer is a simple, browser-based tool for setting precise time countdowns in hours, minutes, and seconds. Whether you are managing work intervals, cooking times, fitness routines, or study sessions, this timer helps you stay focused and on schedule without distractions.",
-        "All processing happens locally in your browser, ensuring complete privacy with no data collection or server uploads. Start timing instantly without any setup—perfect for productivity, time management, and keeping yourself accountable to deadlines.",
+        "All processing happens locally in your browser, ensuring complete privacy with no data collection or server uploads. Start timing instantly without any setup-perfect for productivity, time management, and keeping yourself accountable to deadlines.",
       ],
       stats: [
         { value: "100% Local", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -1336,7 +1354,7 @@ const countdownTimer: ToolDefinition = {
     ],
     proTips: [
       "Use full-screen mode for team workouts or group study sessions so everyone can see the remaining time clearly.",
-      "Combine multiple timers by opening additional browser tabs—each timer runs independently so you can manage multiple tasks.",
+      "Combine multiple timers by opening additional browser tabs-each timer runs independently so you can manage multiple tasks.",
       "Set round intervals like 25 minutes for Pomodoro technique work sprints to boost productivity with structured breaks.",
       "Bookmark the timer page in your browser or add it to your home screen for one-click access whenever you need to track time.",
     ],
@@ -1364,7 +1382,7 @@ const stopwatch: ToolDefinition = {
       headline: "About Online Stopwatch",
       paragraphs: [
         "Online Stopwatch is a precise, browser-based timing tool designed for athletes, coaches, students, and anyone who needs accurate time tracking. Whether you are timing workouts, measuring productivity intervals, or coordinating events, this stopwatch delivers millisecond precision without any downloads or installations required.",
-        "All processing happens locally in your browser, meaning your timing data never leaves your device—completely private and secure. The intuitive interface makes it easy to start, stop, and record lap times instantly, while the clean design keeps distractions to a minimum.",
+        "All processing happens locally in your browser, meaning your timing data never leaves your device-completely private and secure. The intuitive interface makes it easy to start, stop, and record lap times instantly, while the clean design keeps distractions to a minimum.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -1387,9 +1405,9 @@ const stopwatch: ToolDefinition = {
       { step: 3, title: "Stop and Review Results", description: "Click Stop to end the timer, then review all your lap times, export the data, or reset to start a new session.", icon: 'Download' },
     ],
     proTips: [
-      "Use lap times to track splits during workouts—each lap automatically calculates the time since the previous lap, helping you monitor pace consistency.",
+      "Use lap times to track splits during workouts-each lap automatically calculates the time since the previous lap, helping you monitor pace consistency.",
       "For quick intervals (Pomodoro, HIIT training), keep the window visible on a second screen or phone so you can glance at time without switching tabs.",
-      "Export your stopwatch results regularly to build a personal database of times—great for tracking improvement over weeks or months.",
+      "Export your stopwatch results regularly to build a personal database of times-great for tracking improvement over weeks or months.",
       "Reset between sessions to keep your lap list clean and manageable, or take a screenshot of results before clearing to maintain your own records.",
     ],
   },
@@ -1439,7 +1457,7 @@ const loanCalculator: ToolDefinition = {
       { step: 3, title: "Download or Adjust", description: "Export your results, try different scenarios, or compare multiple loan options.", icon: 'Download' },
     ],
     proTips: [
-      "Try adjusting the loan term or making extra payments to see dramatic interest savings—even small additional payments can cut years off your loan.",
+      "Try adjusting the loan term or making extra payments to see dramatic interest savings-even small additional payments can cut years off your loan.",
       "Use the comparison feature to evaluate different interest rates and terms; sometimes a shorter term saves more than you'd expect.",
       "Keep your amortization schedule handy for tax purposes if applicable, as some loan interest may be deductible.",
       "Compare the calculator results with official loan offers to ensure accuracy and catch any hidden fees or terms.",
@@ -1455,9 +1473,18 @@ const jsonCsvConverter: ToolDefinition = {
   category: 'developer',
   icon: 'FileJson',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 4,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'JSON to CSV Converter - Free Online Tool',
     description: 'Convert JSON arrays to CSV or CSV to JSON instantly.',
@@ -1491,7 +1518,7 @@ const jsonCsvConverter: ToolDefinition = {
       { step: 3, title: "Download Your Converted File", description: "Click Download to save your converted data as a properly formatted file ready to use.", icon: 'Download' },
     ],
     proTips: [
-      "For CSV to JSON conversion, ensure your first row contains headers—they'll become the JSON object keys.",
+      "For CSV to JSON conversion, ensure your first row contains headers-they'll become the JSON object keys.",
       "Use the preview panel to verify nested structures are flattening correctly before downloading large files.",
       "When converting arrays, each array element becomes a separate CSV row with matching column headers.",
       "Try semicolon delimiters if you are working with European spreadsheet applications that use comma as decimal separator.",
@@ -1507,6 +1534,7 @@ const colorPicker: ToolDefinition = {
   category: 'image',
   icon: 'Palette',
   iconColor: 'bg-pink-500/10 text-pink-500',
+  listPriority: 25,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1543,10 +1571,10 @@ const colorPicker: ToolDefinition = {
       { step: 3, title: "Copy and use", description: "Copy any format to your clipboard and paste directly into your design or code.", icon: 'Copy' },
     ],
     proTips: [
-      "Use the eyedropper on web pages to match existing colors perfectly—great for recreating brand palettes from competitor sites.",
+      "Use the eyedropper on web pages to match existing colors perfectly-great for recreating brand palettes from competitor sites.",
       "Save your most-used colors to a personal palette for quick reference across multiple projects.",
       "Adjust HSL sliders to generate color variations (tints and shades) from your base color instantly.",
-      "Copy RGB values directly into CSS or design tools—most modern applications support pasting colors in any format.",
+      "Copy RGB values directly into CSS or design tools-most modern applications support pasting colors in any format.",
     ],
   },
 }
@@ -1559,6 +1587,7 @@ const utmBuilder: ToolDefinition = {
   category: 'web',
   icon: 'Link2',
   iconColor: 'bg-cyan-500/10 text-cyan-500',
+  listPriority: 24,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1596,7 +1625,7 @@ const utmBuilder: ToolDefinition = {
     ],
     proTips: [
       "Use consistent naming conventions for source, medium, and campaign names across all your URLs so Google Analytics recognizes related traffic patterns.",
-      "Leverage the 'content' parameter to differentiate between multiple links in the same email or ad—great for A/B testing headlines or CTAs.",
+      "Leverage the 'content' parameter to differentiate between multiple links in the same email or ad-great for A/B testing headlines or CTAs.",
       "Generate QR codes for your UTM URLs to track offline-to-online traffic from print ads, posters, or event materials.",
       "Save your most-used parameter combinations as templates to speed up URL creation and maintain tracking consistency across campaigns.",
     ],
@@ -1677,7 +1706,7 @@ const pomodoroTimer: ToolDefinition = {
       headline: "About Pomodoro Timer",
       paragraphs: [
         "The Pomodoro Timer is a scientifically-backed productivity tool that breaks your work into focused 25-minute sessions followed by strategic breaks. This time-blocking technique helps you maintain peak concentration, reduce mental fatigue, and accomplish more in less time by leveraging the power of focused sprints.",
-        "Perfect for students, professionals, and anyone tackling challenging tasks, the Pomodoro method trains your brain to work in sustainable intervals. By running entirely in your browser with no data collection, you get a distraction-free timer that keeps your focus where it matters—on your work.",
+        "Perfect for students, professionals, and anyone tackling challenging tasks, the Pomodoro method trains your brain to work in sustainable intervals. By running entirely in your browser with no data collection, you get a distraction-free timer that keeps your focus where it matters-on your work.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -1716,6 +1745,7 @@ const htmlEncoder: ToolDefinition = {
   category: 'developer',
   icon: 'Code2',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 23,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1768,6 +1798,7 @@ const binaryConverter: ToolDefinition = {
   category: 'developer',
   icon: 'Binary',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 27,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1820,6 +1851,7 @@ const urlParser: ToolDefinition = {
   category: 'web',
   icon: 'Link2',
   iconColor: 'bg-cyan-500/10 text-cyan-500',
+  listPriority: 28,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -1833,7 +1865,7 @@ const urlParser: ToolDefinition = {
       headline: "About URL Parser",
       paragraphs: [
         "URL Parser is a lightweight browser-based tool that instantly breaks down any URL into its individual components, including protocol, domain, path, query parameters, and fragments. Whether you are debugging web applications, analyzing links, or learning how URLs are structured, this tool provides clear, organized insights without requiring any server-side processing.",
-        "Perfect for developers, marketers, and anyone working with web technologies, URL Parser helps you understand URL anatomy, extract specific parameters, identify UTM tracking codes, and troubleshoot malformed links—all while keeping your data completely private since everything runs locally in your browser.",
+        "Perfect for developers, marketers, and anyone working with web technologies, URL Parser helps you understand URL anatomy, extract specific parameters, identify UTM tracking codes, and troubleshoot malformed links-all while keeping your data completely private since everything runs locally in your browser.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -1910,7 +1942,7 @@ const aspectRatioCalculator: ToolDefinition = {
     proTips: [
       "Save commonly used aspect ratios as favorites for faster access when working on repeated project types.",
       "Use the preview feature to verify proportions match your platform requirements before resizing actual images.",
-      "Remember that aspect ratio maintains proportion but does not affect image quality—resize in your editor for best results.",
+      "Remember that aspect ratio maintains proportion but does not affect image quality-resize in your editor for best results.",
       "Convert between unit systems on the fly to match your design software's preferred measurements.",
     ],
   },
@@ -1924,6 +1956,7 @@ const markdownPreview: ToolDefinition = {
   category: 'developer',
   icon: 'FileCode',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 22,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: [],
@@ -2014,7 +2047,7 @@ const emailVerifier: ToolDefinition = {
       { step: 3, title: "View & Export Results", description: "Review detailed validation results and export clean, verified email lists for your records.", icon: 'Download' },
     ],
     proTips: [
-      "Batch upload CSV files to validate entire email lists at once—great for cleaning up contact databases before campaigns.",
+      "Batch upload CSV files to validate entire email lists at once-great for cleaning up contact databases before campaigns.",
       "Pay attention to the 'disposable' flag when building user registrations to prevent spam signups and fake accounts.",
       "Use the domain reputation insights to identify emails from risky or frequently-abused providers.",
       "Export your verification reports as JSON to integrate results directly into your applications and workflows.",
@@ -2066,7 +2099,7 @@ const safeLinkChecker: ToolDefinition = {
       { step: 3, title: "Review Results", description: "Get a detailed security report with risk level, threat type, and recommendations on whether it is safe to visit.", icon: 'CheckCircle' },
     ],
     proTips: [
-      "Check shortened URLs before clicking—services like bit.ly or tinyurl mask the true destination and are often used in phishing attacks.",
+      "Check shortened URLs before clicking-services like bit.ly or tinyurl mask the true destination and are often used in phishing attacks.",
       "Hover over email links to see the actual URL before clicking, then paste it here to verify before opening.",
       "Use batch checking to audit suspicious links from mailing lists, CSV files, or security reports in seconds.",
       "Bookmark this tool in your browser for quick access whenever you encounter unfamiliar or questionable links online.",
@@ -2106,7 +2139,7 @@ const videoThumbnailGrabber: ToolDefinition = {
     },
     features: [
       { title: "Multiple Resolution Options", description: "Access thumbnails in default, medium, high, and maximum quality formats to suit any need.", icon: 'Grid' },
-      { title: "One-Click Download", description: "Save thumbnails instantly with a single click—no ads, redirects, or unnecessary steps.", icon: 'Download' },
+      { title: "One-Click Download", description: "Save thumbnails instantly with a single click-no ads, redirects, or unnecessary steps.", icon: 'Download' },
       { title: "URL Validation", description: "Automatically detects and validates YouTube URLs, supporting standard and shortened link formats.", icon: 'CheckCircle' },
       { title: "Browser-Based Processing", description: "All extraction happens locally in your browser with zero server involvement or data collection.", icon: 'Shield' },
       { title: "Copy to Clipboard", description: "Quickly copy thumbnail image URLs directly to your clipboard for easy sharing and embedding.", icon: 'Copy' },
@@ -2121,7 +2154,7 @@ const videoThumbnailGrabber: ToolDefinition = {
       "Use the maximum quality option (1280x720) for print or large-scale designs to ensure sharpness and detail.",
       "Copy the image URL instead of downloading to directly embed thumbnails in websites, blogs, or presentations without local files.",
       "Batch multiple extractions by opening the tool in multiple browser tabs to work with several videos simultaneously.",
-      "YouTube thumbnails often contain important branding elements—save them for competitor research or content inspiration reference.",
+      "YouTube thumbnails often contain important branding elements-save them for competitor research or content inspiration reference.",
     ],
   },
 }
@@ -2134,6 +2167,7 @@ const imageCompressor: ToolDefinition = {
   category: 'image',
   icon: 'FileImage',
   iconColor: 'bg-pink-500/10 text-pink-500',
+  listPriority: 17,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['new', 'popular'],
@@ -2161,7 +2195,7 @@ const imageCompressor: ToolDefinition = {
       { title: "Real-Time Preview", description: "See the compressed result instantly before downloading to ensure quality meets your standards.", icon: 'Eye' },
       { title: "Batch Processing", description: "Compress multiple images at once with consistent quality settings applied to all files.", icon: 'Grid' },
       { title: "File Size Comparison", description: "View before and after file sizes with percentage reduction to track compression savings.", icon: 'ArrowLeftRight' },
-      { title: "Zero Data Upload", description: "All compression happens in your browser—images never leave your device or reach any server.", icon: 'Shield' },
+      { title: "Zero Data Upload", description: "All compression happens in your browser-images never leave your device or reach any server.", icon: 'Shield' },
       { title: "Quick Download", description: "Download compressed images individually or as a batch in seconds without delay.", icon: 'Download' },
     ],
     steps: [
@@ -2170,10 +2204,10 @@ const imageCompressor: ToolDefinition = {
       { step: 3, title: "Download Compressed Files", description: "Review the file size savings and download your optimized images individually or all at once.", icon: 'Download' },
     ],
     proTips: [
-      "Start with 75-80% quality for web images—most viewers will not notice quality loss while saving significant file size.",
+      "Start with 75-80% quality for web images-most viewers will not notice quality loss while saving significant file size.",
       "Use 85-90% quality for images you'll print or display on high-resolution screens to maintain visual fidelity.",
       "Compress images before uploading to social media to avoid platform re-compression that can degrade quality further.",
-      "Keep original files backed up before compression—lower quality settings are permanent once downloaded.",
+      "Keep original files backed up before compression-lower quality settings are permanent once downloaded.",
     ],
   },
 }
@@ -2199,7 +2233,7 @@ const smartCalculator: ToolDefinition = {
       headline: "About Smart Calculator",
       paragraphs: [
         "Smart Calculator is a powerful scientific calculator designed for students, engineers, and professionals who need advanced mathematical computations at their fingertips. Whether you are solving complex equations, performing statistical analysis, or working with trigonometric functions, this tool provides instant, accurate results without leaving your browser.",
-        "Built entirely in your browser, Smart Calculator keeps all your calculations private and secure—no data is sent to servers, and nothing is stored remotely. Work offline, calculate freely, and enjoy complete privacy while accessing professional-grade mathematical functions whenever you need them.",
+        "Built entirely in your browser, Smart Calculator keeps all your calculations private and secure-no data is sent to servers, and nothing is stored remotely. Work offline, calculate freely, and enjoy complete privacy while accessing professional-grade mathematical functions whenever you need them.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -2224,7 +2258,7 @@ const smartCalculator: ToolDefinition = {
     proTips: [
       "Use parentheses to group operations and ensure correct calculation order, especially in complex expressions.",
       "Store frequently used values in memory (M+) to speed up calculations that require the same number repeatedly.",
-      "Check your calculation history before starting new work—you might find a similar calculation you can modify.",
+      "Check your calculation history before starting new work-you might find a similar calculation you can modify.",
       "Use keyboard shortcuts for faster input: press 'C' to clear, 'Enter' to calculate, and use standard math operators (+, -, *, /).",
     ],
   },
@@ -2251,7 +2285,7 @@ const thumbnailTextDesigner: ToolDefinition = {
       headline: "About Thumbnail Text Designer",
       paragraphs: [
         "Thumbnail Text Designer lets you add eye-catching text overlays to images directly in your browser. Perfect for creating social media thumbnails, YouTube covers, blog headers, and promotional graphics without needing expensive design software.",
-        "All processing happens locally on your device, ensuring your images never leave your computer. Design stunning text overlays with full control over fonts, colors, positioning, and effects—then download your finished creation instantly.",
+        "All processing happens locally on your device, ensuring your images never leave your computer. Design stunning text overlays with full control over fonts, colors, positioning, and effects-then download your finished creation instantly.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -2274,7 +2308,7 @@ const thumbnailTextDesigner: ToolDefinition = {
       { step: 3, title: "Download Your Design", description: "Export your finished thumbnail in your preferred format and resolution.", icon: 'Download' },
     ],
     proTips: [
-      "Use high-contrast text colors against your background image—test readability at small sizes since thumbnails are often viewed tiny.",
+      "Use high-contrast text colors against your background image-test readability at small sizes since thumbnails are often viewed tiny.",
       "Limit text to 3-5 words maximum for thumbnails; short, punchy text gets better engagement than lengthy captions.",
       "Layer a semi-transparent dark or light rectangle behind your text to ensure readability over any background image.",
       "Export at 1280×720px or higher for YouTube thumbnails, and test your design on mobile to ensure it looks sharp across all devices.",
@@ -2329,7 +2363,7 @@ const cropImage: ToolDefinition = {
       "Use the preset ratios for social media to ensure your images display perfectly on each platform without distortion.",
       "Lock the aspect ratio toggle to maintain proportions while resizing, then unlock to set completely custom dimensions.",
       "Take advantage of the zoom controls to fine-tune your crop area and ensure important details are not cut off.",
-      "Keep a backup of your original image before cropping—the tool works on your device so originals are not stored anywhere.",
+      "Keep a backup of your original image before cropping-the tool works on your device so originals are not stored anywhere.",
     ],
   },
 }
@@ -2355,7 +2389,7 @@ const currencyConverter: ToolDefinition = {
       headline: "About Currency Converter",
       paragraphs: [
         "Currency Converter is a fast, private tool for converting between currencies using real-time exchange rates. Whether you are traveling, shopping internationally, or managing finances across borders, get accurate conversions instantly without leaving your browser.",
-        "Designed for travelers, freelancers, and anyone handling multiple currencies, this tool combines simplicity with reliability. All conversions happen locally on your device—your data never leaves your computer, ensuring complete privacy and lightning-fast results.",
+        "Designed for travelers, freelancers, and anyone handling multiple currencies, this tool combines simplicity with reliability. All conversions happen locally on your device-your data never leaves your computer, ensuring complete privacy and lightning-fast results.",
       ],
       stats: [
         { value: "150+", label: "Currencies Supported", icon: 'RefreshCw' },
@@ -2394,6 +2428,7 @@ const codeFormatter: ToolDefinition = {
   category: 'developer',
   icon: 'Code2',
   iconColor: 'bg-emerald-500/10 text-emerald-500',
+  listPriority: 26,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['new'],
@@ -2407,7 +2442,7 @@ const codeFormatter: ToolDefinition = {
       headline: "About Code Formatter",
       paragraphs: [
         "Code Formatter is a lightweight, browser-based tool designed to beautify and standardize your HTML, CSS, JavaScript, and JSON code instantly. Whether you are cleaning up minified code, organizing messy markup, or ensuring consistent formatting across your project, this tool handles it all without leaving your browser.",
-        "Perfect for developers, designers, and anyone working with code, Code Formatter improves readability, catches syntax issues, and maintains professional code standards. All processing happens locally on your device, ensuring your code never leaves your computer—complete privacy and security with zero server uploads.",
+        "Perfect for developers, designers, and anyone working with code, Code Formatter improves readability, catches syntax issues, and maintains professional code standards. All processing happens locally on your device, ensuring your code never leaves your computer-complete privacy and security with zero server uploads.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -2431,7 +2466,7 @@ const codeFormatter: ToolDefinition = {
     ],
     proTips: [
       "Use the minify option to compress production code and reduce bandwidth usage before deployment.",
-      "Set your indentation preference in settings once—it will persist across future formatting sessions.",
+      "Set your indentation preference in settings once-it will persist across future formatting sessions.",
       "Paste minified code to instantly expand it into readable format for easier debugging and maintenance.",
       "Copy formatted code directly to clipboard for instant use in your editor without downloading files.",
     ],
@@ -2535,7 +2570,7 @@ const websiteStatusChecker: ToolDefinition = {
     ],
     proTips: [
       "Add multiple URLs separated by commas to check several websites in one batch and compare their statuses side-by-side.",
-      "Use the response time data to identify slow-loading sites—times over 3 seconds may indicate performance issues worth investigating.",
+      "Use the response time data to identify slow-loading sites-times over 3 seconds may indicate performance issues worth investigating.",
       "Check the SSL certificate status for HTTPS sites to catch expired or invalid security certificates before they affect users.",
       "Save or export results regularly to track website availability trends and create historical records for uptime monitoring.",
     ],
@@ -2550,6 +2585,7 @@ const imageResizer: ToolDefinition = {
   category: 'image',
   icon: 'Maximize2',
   iconColor: 'bg-pink-500/10 text-pink-500',
+  listPriority: 18,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['popular'],
@@ -2586,7 +2622,7 @@ const imageResizer: ToolDefinition = {
       { step: 3, title: "Download Resized Image", description: "Preview your resized image and download it instantly to your device.", icon: 'Download' },
     ],
     proTips: [
-      "Use the aspect ratio lock when resizing to avoid stretching or squishing your images—maintain visual integrity every time.",
+      "Use the aspect ratio lock when resizing to avoid stretching or squishing your images-maintain visual integrity every time.",
       "Batch resize multiple images at once to save time; upload 10+ photos and process them all with identical dimensions.",
       "Convert to WebP format during resizing to reduce file sizes by up to 30% without noticeable quality loss for web use.",
       "Screenshot your preset dimensions workflow so you can quickly repeat the same resize settings for consistency across projects.",
@@ -2604,9 +2640,18 @@ const pdfTextExtractor: ToolDefinition = {
   category: 'pdf',
   icon: 'FileText',
   iconColor: 'bg-orange-500/10 text-orange-500',
+  listPriority: 11,
   tier: 'PUBLIC',
   runtime: 'CLIENT',
   tags: ['new', 'popular'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'PDF Text Extractor - Free Online PDF to Text Converter',
     description: 'Extract text from PDF files instantly. Free online PDF text extractor with page-by-page extraction and download options.',
@@ -2632,7 +2677,7 @@ const pdfTextExtractor: ToolDefinition = {
       { title: "Batch Processing", description: "Upload multiple PDFs at once and extract text from all documents in a single operation.", icon: 'Grid' },
       { title: "Copy & Download", description: "Instantly copy extracted text to clipboard or download as a clean text file for archiving.", icon: 'Download' },
       { title: "Search & Filter", description: "Find specific text within extracted content using built-in search functionality.", icon: 'Filter' },
-      { title: "Zero Data Retention", description: "Your PDFs and extracted text are never stored on any server—complete local-only processing.", icon: 'Shield' },
+      { title: "Zero Data Retention", description: "Your PDFs and extracted text are never stored on any server-complete local-only processing.", icon: 'Shield' },
     ],
     steps: [
       { step: 1, title: "Upload Your PDF", description: "Click the upload area or drag your PDF file directly into the tool to get started.", icon: 'Upload' },
@@ -2641,7 +2686,7 @@ const pdfTextExtractor: ToolDefinition = {
     ],
     proTips: [
       "For scanned PDFs with images, use OCR-enabled tools first to convert images to selectable text before extraction.",
-      "Select specific page ranges if you only need text from certain sections—saves time with large documents.",
+      "Select specific page ranges if you only need text from certain sections-saves time with large documents.",
       "Copy extracted text and paste into a text editor to clean up formatting or remove unwanted line breaks.",
       "Use the search feature to find specific keywords in extracted text before copying or downloading the full content.",
     ],
@@ -2656,9 +2701,18 @@ const pdfMerge: ToolDefinition = {
   category: 'pdf',
   icon: 'FilePlus',
   iconColor: 'bg-orange-500/10 text-orange-500',
+  listPriority: 5,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+  },
+  api: {
+    apiPlanned: false,
+  },
   seo: {
     title: 'PDF Merge - Free Online Combine PDF Files Tool',
     description: 'Merge multiple PDFs into one document. Free online PDF merger with drag-and-drop reordering and instant preview.',
@@ -2669,7 +2723,7 @@ const pdfMerge: ToolDefinition = {
       headline: "About PDF Merge",
       paragraphs: [
         "PDF Merge combines multiple PDF files into a single document with just a few clicks. Whether you are consolidating reports, combining receipts, or organizing scanned documents, this tool streamlines the process instantly in your browser.",
-        "All processing happens locally on your device, ensuring your documents remain private and secure. No uploads to servers, no data storage—just fast, efficient merging with complete control over your files.",
+        "All processing happens locally on your device, ensuring your documents remain private and secure. No uploads to servers, no data storage-just fast, efficient merging with complete control over your files.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -2689,7 +2743,7 @@ const pdfMerge: ToolDefinition = {
     steps: [
       { step: 1, title: "Upload PDFs", description: "Select multiple PDF files from your device or drag them into the upload area.", icon: 'Upload' },
       { step: 2, title: "Arrange and merge", description: "Reorder files as needed, select specific pages if desired, then click merge to combine them.", icon: 'Wrench' },
-      { step: 3, title: "Download result", description: "Your merged PDF is ready instantly—download it to your device in seconds.", icon: 'Download' },
+      { step: 3, title: "Download result", description: "Your merged PDF is ready instantly-download it to your device in seconds.", icon: 'Download' },
     ],
     proTips: [
       "Sort PDFs by dragging before merging to control the final page order without editing each file individually.",
@@ -2708,9 +2762,18 @@ const splitPDF: ToolDefinition = {
   category: 'pdf',
   icon: 'Scissors',
   iconColor: 'bg-orange-500/10 text-orange-500',
+  listPriority: 6,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+  },
+  api: {
+    apiPlanned: false,
+  },
   seo: {
     title: 'Split PDF - Free Online PDF Splitter Tool',
     description: 'Split PDF files into individual pages or custom ranges. Free online PDF splitter with extract and download options.',
@@ -2741,10 +2804,10 @@ const splitPDF: ToolDefinition = {
     steps: [
       { step: 1, title: "Upload Your PDF", description: "Click to select or drag your PDF file into the tool. Your document loads instantly in the browser.", icon: 'Upload' },
       { step: 2, title: "Select Pages to Split", description: "Choose individual pages, ranges, or let the tool split into one page per file automatically.", icon: 'CheckCircle' },
-      { step: 3, title: "Download Results", description: "Export your split PDFs individually or as a batch—all processed locally on your device.", icon: 'Download' },
+      { step: 3, title: "Download Results", description: "Export your split PDFs individually or as a batch-all processed locally on your device.", icon: 'Download' },
     ],
     proTips: [
-      "Use the preview thumbnail feature to verify page numbers before splitting—saves time when working with large documents.",
+      "Use the preview thumbnail feature to verify page numbers before splitting-saves time when working with large documents.",
       "For splitting into individual pages, select 'Auto-split' to automatically create separate files for each page.",
       "Define ranges like '1-5, 10-12, 25' to extract non-consecutive pages in a single operation.",
       "Combine Split PDF with other tools like Merge PDF to reorganize multiple documents into custom collections.",
@@ -2773,7 +2836,7 @@ const protectPDF: ToolDefinition = {
       headline: "About Protect PDF",
       paragraphs: [
         "Protect PDF lets you secure your documents with password protection and professional watermarks, all processed directly in your browser. Whether you are sharing sensitive files, protecting intellectual property, or adding branding to documents, this tool gives you complete control over your PDF security without uploading files to external servers.",
-        "Perfect for business professionals, educators, and organizations that need to safeguard confidential information, prevent unauthorized copying, or maintain brand consistency across documents. Process unlimited PDFs with complete privacy—everything stays on your device.",
+        "Perfect for business professionals, educators, and organizations that need to safeguard confidential information, prevent unauthorized copying, or maintain brand consistency across documents. Process unlimited PDFs with complete privacy-everything stays on your device.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -2902,7 +2965,7 @@ const eSignDocument: ToolDefinition = {
     proTips: [
       "Use consistent signature placement near the document's bottom-right corner to maintain professional appearance across all documents.",
       "Enable browser notifications so you do not miss reminders about documents awaiting signature.",
-      "Keep signatures simple and consistent—overly complex signatures can be harder to verify as authentic.",
+      "Keep signatures simple and consistent-overly complex signatures can be harder to verify as authentic.",
       "Always review the timestamp and signature details before downloading to ensure accuracy and completeness.",
     ],
   },
@@ -2985,7 +3048,7 @@ const fileShare: ToolDefinition = {
       headline: "About File Share",
       paragraphs: [
         "File Share lets you securely share files with expiring links, giving you complete control over access. Perfect for sending sensitive documents, large files, or confidential information to colleagues and clients without worrying about permanent copies floating around.",
-        "All processing happens in your browser—files never touch our servers, ensuring your data stays completely private and under your control. Set custom expiration times, track link access, and revoke sharing instantly whenever you need to.",
+        "All processing happens in your browser-files never touch our servers, ensuring your data stays completely private and under your control. Set custom expiration times, track link access, and revoke sharing instantly whenever you need to.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -2995,9 +3058,9 @@ const fileShare: ToolDefinition = {
       ],
     },
     features: [
-      { title: "Expiring Links", description: "Set custom expiration times from minutes to days—links automatically expire and become inaccessible.", icon: 'Clock' },
+      { title: "Expiring Links", description: "Set custom expiration times from minutes to days-links automatically expire and become inaccessible.", icon: 'Clock' },
       { title: "Instant Revoke", description: "Immediately disable any shared link at any time, even before expiration.", icon: 'Lock' },
-      { title: "Zero Server Upload", description: "Files are processed entirely in your browser—nothing is stored on servers.", icon: 'Shield' },
+      { title: "Zero Server Upload", description: "Files are processed entirely in your browser-nothing is stored on servers.", icon: 'Shield' },
       { title: "Shareable URLs", description: "Generate secure URLs that recipients can open directly without needing an account.", icon: 'Link' },
       { title: "Access Tracking", description: "See when and how many times your shared links have been accessed.", icon: 'Eye' },
       { title: "Multiple File Support", description: "Share single files or batch multiple files in one secure link.", icon: 'Share2' },
@@ -3008,7 +3071,7 @@ const fileShare: ToolDefinition = {
       { step: 3, title: "Share & Manage", description: "Send the link to recipients, monitor access, and revoke at any time.", icon: 'Send' },
     ],
     proTips: [
-      "Set shorter expiration times for highly sensitive files—even 1-2 hours is often enough for urgent sharing.",
+      "Set shorter expiration times for highly sensitive files-even 1-2 hours is often enough for urgent sharing.",
       "Use the access tracking feature to confirm recipients actually downloaded your files before the link expires.",
       "Generate a new link for each recipient group to maintain better control and tracking of who has access.",
       "Revoke links immediately after the recipient confirms they've downloaded the file for maximum security.",
@@ -3060,7 +3123,7 @@ const checklistMaker: ToolDefinition = {
       { step: 3, title: "Track Progress", description: "Monitor your progress with visual indicators and completion percentages as you work through your tasks.", icon: 'Award' },
     ],
     proTips: [
-      "Use priority tags strategically—mark only 2-3 items as high priority per checklist to maintain focus and avoid overwhelm.",
+      "Use priority tags strategically-mark only 2-3 items as high priority per checklist to maintain focus and avoid overwhelm.",
       "Create checklists by project or area of life rather than mixing everything together for better organization and faster navigation.",
       "Regularly review completed checklists to celebrate wins and identify patterns in your productivity over time.",
       "Break large projects into smaller, actionable tasks with clear completion criteria for better progress tracking and motivation.",
@@ -3089,7 +3152,7 @@ const focusMusic: ToolDefinition = {
       headline: "About Focus Music",
       paragraphs: [
         "Focus Music generates customizable ambient soundscapes designed to enhance concentration and productivity. Whether you are working, studying, or creative writing, these scientifically-inspired soundscapes help mask distractions and create an optimal auditory environment for deep work.",
-        "All processing happens locally in your browser with zero data collection or external servers involved. Enjoy unlimited soundscape generation with complete privacy—no accounts, tracking, or personal information required.",
+        "All processing happens locally in your browser with zero data collection or external servers involved. Enjoy unlimited soundscape generation with complete privacy-no accounts, tracking, or personal information required.",
       ],
       stats: [
         { value: "100% Local", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3112,10 +3175,10 @@ const focusMusic: ToolDefinition = {
       { step: 3, title: "Generate & Play", description: "Create your soundscape instantly, play it immediately in your browser, or download for offline use.", icon: 'Music' },
     ],
     proTips: [
-      "Experiment with combining 2-3 sound layers for depth—try pairing rain with subtle binaural beats for enhanced focus without overwhelming.",
+      "Experiment with combining 2-3 sound layers for depth-try pairing rain with subtle binaural beats for enhanced focus without overwhelming.",
       "Create different presets for different tasks: lower intensity for creative work, higher intensity for analytical tasks requiring deep concentration.",
       "Download a 1-hour soundscape as a backup when internet might be unreliable during important work sessions.",
-      "Switch soundscapes every 90 minutes to prevent habituation—your brain adapts to repetitive audio, so variety maintains focus effectiveness.",
+      "Switch soundscapes every 90 minutes to prevent habituation-your brain adapts to repetitive audio, so variety maintains focus effectiveness.",
     ],
   },
 }
@@ -3141,7 +3204,7 @@ const urlShortener: ToolDefinition = {
       headline: "About URL Shortener",
       paragraphs: [
         "URL Shortener transforms long, unwieldy links into clean, memorable short URLs that are perfect for sharing across social media, emails, and messaging platforms. Whether you are managing marketing campaigns, sharing research, or distributing content, shortened URLs are easier to remember, more professional-looking, and take up less space.",
-        "All processing happens directly in your browser, meaning your URLs and click data never leave your device—complete privacy and security by default. Track clicks in real-time, monitor engagement patterns, and gain insights into how your links perform without worrying about your data being stored on external servers.",
+        "All processing happens directly in your browser, meaning your URLs and click data never leave your device-complete privacy and security by default. Track clicks in real-time, monitor engagement patterns, and gain insights into how your links perform without worrying about your data being stored on external servers.",
       ],
       stats: [
         { value: "100%", label: "Local Privacy", icon: 'ShieldCheck' },
@@ -3164,7 +3227,7 @@ const urlShortener: ToolDefinition = {
       { step: 3, title: "Share & Track Clicks", description: "Copy the link and share it anywhere, then watch real-time click analytics update as people interact with it.", icon: 'Share2' },
     ],
     proTips: [
-      "Use memorable custom aliases for important links—they are easier to share verbally and look more professional in print.",
+      "Use memorable custom aliases for important links-they are easier to share verbally and look more professional in print.",
       "Generate QR codes for your short URLs to bridge digital and physical marketing materials seamlessly.",
       "Monitor click patterns over time to identify peak engagement hours and refine your sharing strategy.",
       "Keep your browser cache and storage enabled to maintain your full URL history and click data across sessions.",
@@ -3216,10 +3279,10 @@ const linkPreview: ToolDefinition = {
       { step: 3, title: "Export and Share", description: "Copy the preview code or metadata to your clipboard and use it in your content management system or social media post.", icon: 'Download' },
     ],
     proTips: [
-      "Test your links across multiple platforms using the platform selector—preview cards look different on Twitter, Facebook, and LinkedIn, so optimize accordingly.",
-      "Add custom descriptions if the extracted text is generic or too long—concise, compelling descriptions drive higher click-through rates.",
+      "Test your links across multiple platforms using the platform selector-preview cards look different on Twitter, Facebook, and LinkedIn, so optimize accordingly.",
+      "Add custom descriptions if the extracted text is generic or too long-concise, compelling descriptions drive higher click-through rates.",
       "Use high-quality images in your previews; square images (1:1 ratio) tend to perform better on most social platforms than landscape or portrait formats.",
-      "Check the Open Graph validation results to ensure your website has proper metadata tags—this improves how all your links preview across the web.",
+      "Check the Open Graph validation results to ensure your website has proper metadata tags-this improves how all your links preview across the web.",
     ],
   },
 }
@@ -3245,7 +3308,7 @@ const codeShare: ToolDefinition = {
       headline: "About Code Share",
       paragraphs: [
         "Code Share is a lightweight tool for quickly sharing and showcasing code snippets with beautiful syntax highlighting. Perfect for developers who need to share examples, collaborate on solutions, or document code patterns without the overhead of full project repositories.",
-        "All processing happens directly in your browser, ensuring your code stays private and secure on your device. No uploads, no server storage, no tracking—just pure code sharing convenience with instant syntax highlighting across 50+ programming languages.",
+        "All processing happens directly in your browser, ensuring your code stays private and secure on your device. No uploads, no server storage, no tracking-just pure code sharing convenience with instant syntax highlighting across 50+ programming languages.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3269,7 +3332,7 @@ const codeShare: ToolDefinition = {
     ],
     proTips: [
       "Use the language dropdown to manually select the syntax highlighting language if auto-detection is not perfect for your code.",
-      "Toggle dark and light themes based on your presentation context—light themes work better for projectors and printed documents.",
+      "Toggle dark and light themes based on your presentation context-light themes work better for projectors and printed documents.",
       "Combine line numbers with the copy feature to reference specific lines when discussing code with teammates.",
       "Export snippets as files to include in documentation, README files, or knowledge base articles with formatting intact.",
     ],
@@ -3297,7 +3360,7 @@ const studyPlanner: ToolDefinition = {
       headline: "About Study Planner",
       paragraphs: [
         "Study Planner helps you organize and optimize your learning sessions with intelligent scheduling and real-time tracking. Whether you are preparing for exams, mastering new skills, or working through coursework, this tool ensures you stay on track and make the most of your study time.",
-        "All your study data is stored locally in your browser, giving you complete privacy and control. Track your progress, identify your most productive study patterns, and adjust your schedule on the fly—all without your data leaving your device.",
+        "All your study data is stored locally in your browser, giving you complete privacy and control. Track your progress, identify your most productive study patterns, and adjust your schedule on the fly-all without your data leaving your device.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3340,9 +3403,19 @@ const meetingNotes: ToolDefinition = {
   category: 'productivity',
   icon: 'Users',
   iconColor: 'bg-blue-500/10 text-blue-500',
+  listPriority: 10,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: true,
+    supportsEmail: true,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'Meeting Notes - Free Online Meeting Minutes Tool',
     description: 'Take meeting notes online with attendee tracking and action items. Create professional meeting minutes with task management. Free meeting notes tool.',
@@ -3353,7 +3426,7 @@ const meetingNotes: ToolDefinition = {
       headline: "About Meeting Notes",
       paragraphs: [
         "Meeting Notes helps you capture and organize important discussions, decisions, and action items in real-time. Whether you are in a team standup, client call, or strategic planning session, this tool keeps your meeting details structured and actionable without requiring any setup or cloud uploads.",
-        "All your notes stay in your browser, giving you complete privacy and instant access. Organize attendees, track action items with ownership, and export your notes whenever you need them—perfect for teams that value both productivity and data control.",
+        "All your notes stay in your browser, giving you complete privacy and instant access. Organize attendees, track action items with ownership, and export your notes whenever you need them-perfect for teams that value both productivity and data control.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3376,10 +3449,10 @@ const meetingNotes: ToolDefinition = {
       { step: 3, title: "Export & Share", description: "Download your completed meeting notes as a file and share with your team or save for future reference.", icon: 'Share2' },
     ],
     proTips: [
-      "Use the action item section to assign tasks immediately during the meeting—this increases accountability and follow-through rates.",
+      "Use the action item section to assign tasks immediately during the meeting-this increases accountability and follow-through rates.",
       "Format key decisions and outcomes in bold or lists so they stand out when you review notes later or share them with absent team members.",
       "Set due dates on action items and export your notes right after the meeting to send reminders while the discussion is fresh.",
-      "Organize recurring meetings by keeping a consistent template for attendees and note sections—copy and modify your previous notes to save time.",
+      "Organize recurring meetings by keeping a consistent template for attendees and note sections-copy and modify your previous notes to save time.",
     ],
   },
 }
@@ -3392,9 +3465,19 @@ const invoiceGenerator: ToolDefinition = {
   category: 'productivity',
   icon: 'FileText',
   iconColor: 'bg-green-500/10 text-green-500',
+  listPriority: 9,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: false,
+    supportsEmail: true,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'Invoice Generator - Free Online Invoice Maker Tool',
     description: 'Generate professional invoices online with automatic calculations. Create invoices with line items, tax, and export to text. Free invoice maker.',
@@ -3404,7 +3487,7 @@ const invoiceGenerator: ToolDefinition = {
     about: {
       headline: "About Invoice Generator",
       paragraphs: [
-        "Invoice Generator is a streamlined tool for creating professional, customized invoices directly in your browser. Whether you are a freelancer, small business owner, or contractor, this tool helps you generate polished invoices with line items, tax calculations, and client details in minutes—no software installation required.",
+        "Invoice Generator is a streamlined tool for creating professional, customized invoices directly in your browser. Whether you are a freelancer, small business owner, or contractor, this tool helps you generate polished invoices with line items, tax calculations, and client details in minutes-no software installation required.",
         "All processing happens locally on your device, ensuring your financial data and client information remain completely private and secure. Generate unlimited invoices, download them instantly as PDFs, and maintain full control over your billing documents without any data leaving your browser.",
       ],
       stats: [
@@ -3431,7 +3514,7 @@ const invoiceGenerator: ToolDefinition = {
       "Save your company details as a template to instantly populate future invoices and save time on repetitive information.",
       "Use descriptive line item names and include quantity units (e.g., 'hours", "units') to make invoices crystal clear to clients.",
       "Set up a custom invoice number format with your preferred prefix (e.g., INV-, 2024-) to maintain professional consistency.",
-      "Keep track of due dates by adding payment terms—clearly state whether payment is due upon receipt, Net 30, or another timeline.",
+      "Keep track of due dates by adding payment terms-clearly state whether payment is due upon receipt, Net 30, or another timeline.",
     ],
   },
 }
@@ -3444,9 +3527,19 @@ const resumeBuilder: ToolDefinition = {
   category: 'productivity',
   icon: 'FileUser',
   iconColor: 'bg-purple-500/10 text-purple-500',
+  listPriority: 7,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: true,
+    supportsEmail: true,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'Resume Builder - Free Online CV Maker Tool',
     description: 'Build professional resumes online with work experience, education, and skills. Create and export your CV instantly. Free resume builder.',
@@ -3457,7 +3550,7 @@ const resumeBuilder: ToolDefinition = {
       headline: "About Resume Builder",
       paragraphs: [
         "Resume Builder helps you create a polished, professional resume in minutes without leaving your browser. Whether you are job hunting, changing careers, or updating your qualifications, this tool guides you through building a resume that stands out to employers and applicant tracking systems.",
-        "All your resume data stays on your device—nothing is uploaded to servers. You maintain complete control over your personal information while building, editing, and exporting your resume in multiple formats for any job application.",
+        "All your resume data stays on your device-nothing is uploaded to servers. You maintain complete control over your personal information while building, editing, and exporting your resume in multiple formats for any job application.",
       ],
       stats: [
         { value: "100% Local", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3481,7 +3574,7 @@ const resumeBuilder: ToolDefinition = {
     ],
     proTips: [
       "Use action verbs like 'Led,' 'Increased,' and 'Developed' in your work experience descriptions to make your achievements stand out to recruiters.",
-      "Tailor your professional summary and skills section to match the specific job description you are applying for—this improves ATS scoring.",
+      "Tailor your professional summary and skills section to match the specific job description you are applying for-this improves ATS scoring.",
       "Include quantifiable metrics in your experience (percentages, revenue, team size) to demonstrate measurable impact.",
       "Keep your resume to one page if you have less than 5 years of experience; use tight spacing and concise bullet points to maximize readability.",
     ],
@@ -3509,7 +3602,7 @@ const budgetTracker: ToolDefinition = {
       headline: "About Budget Tracker",
       paragraphs: [
         "Budget Tracker helps you take control of your finances by organizing income and expenses into customizable categories. Whether you are managing personal finances, tracking business expenses, or working toward a savings goal, this tool provides clear visibility into where your money is going without requiring any account setup or data storage.",
-        "All your financial data stays on your device with complete privacy and security. Get instant insights through visual analytics, identify spending patterns, and make informed decisions about your budget—all processed directly in your browser with no data ever leaving your computer.",
+        "All your financial data stays on your device with complete privacy and security. Get instant insights through visual analytics, identify spending patterns, and make informed decisions about your budget-all processed directly in your browser with no data ever leaving your computer.",
       ],
       stats: [
         { value: "100% Local", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3561,7 +3654,7 @@ const habitTracker: ToolDefinition = {
       headline: "About Habit Tracker",
       paragraphs: [
         "Habit Tracker helps you build lasting routines by monitoring daily habits with visual streaks and completion rates. Whether you are establishing exercise routines, reading habits, meditation practices, or productivity goals, this tool keeps you accountable and motivated with real-time progress tracking.",
-        "All your habit data stays private and secure on your device—no cloud syncing, no data collection. Track multiple habits simultaneously, view your consistency patterns, and celebrate milestones as you build the life you want, one day at a time.",
+        "All your habit data stays private and secure on your device-no cloud syncing, no data collection. Track multiple habits simultaneously, view your consistency patterns, and celebrate milestones as you build the life you want, one day at a time.",
       ],
       stats: [
         { value: "100%", label: "Privacy Protected", icon: 'ShieldCheck' },
@@ -3574,19 +3667,19 @@ const habitTracker: ToolDefinition = {
       { title: "Daily Streak Counter", description: "Automatically track consecutive days of habit completion with visual streak indicators and milestone celebrations.", icon: 'CheckCircle' },
       { title: "Completion Rate Analytics", description: "View percentage-based completion rates over customizable time periods to identify your consistency patterns.", icon: 'Calculator' },
       { title: "Multiple Habit Management", description: "Create and organize unlimited habits with custom names, descriptions, and individual tracking timelines.", icon: 'Grid' },
-      { title: "Quick Daily Checkoff", description: "Mark habits complete with a single tap or click—minimal friction keeps you engaged daily.", icon: 'CheckCircle' },
+      { title: "Quick Daily Checkoff", description: "Mark habits complete with a single tap or click-minimal friction keeps you engaged daily.", icon: 'CheckCircle' },
       { title: "Visual Progress Calendar", description: "See your complete history with a calendar view showing which days you completed each habit at a glance.", icon: 'Calendar' },
       { title: "Reset & Edit Flexibility", description: "Modify habit details, reset streaks when needed, or remove habits entirely with full control over your data.", icon: 'RefreshCw' },
     ],
     steps: [
-      { step: 1, title: "Create Your Habits", description: "Add a new habit by entering a name and optional description—set up as many habits as you want to track simultaneously.", icon: 'Edit' },
+      { step: 1, title: "Create Your Habits", description: "Add a new habit by entering a name and optional description-set up as many habits as you want to track simultaneously.", icon: 'Edit' },
       { step: 2, title: "Check Off Daily", description: "Each day, mark completed habits with a quick action to build your streak and maintain your consistency chain.", icon: 'CheckCircle' },
       { step: 3, title: "Review Your Progress", description: "Monitor streaks, completion rates, and calendar history to celebrate wins and identify patterns worth improving.", icon: 'Award' },
     ],
     proTips: [
-      "Start with 2-3 core habits instead of overwhelming yourself—consistency beats ambition, and small wins build momentum.",
+      "Start with 2-3 core habits instead of overwhelming yourself-consistency beats ambition, and small wins build momentum.",
       "Check off habits at the same time daily (morning routine, evening review) to make it automatic and less dependent on willpower.",
-      "Use the calendar view weekly to spot patterns—if you are missing specific days, adjust your environment or reminders accordingly.",
+      "Use the calendar view weekly to spot patterns-if you are missing specific days, adjust your environment or reminders accordingly.",
       "Do not obsess over single missed days; focus on maintaining your average completion rate rather than perfect streaks.",
     ],
   },
@@ -3665,7 +3758,7 @@ const timeTracker: ToolDefinition = {
       headline: "About Time Tracker",
       paragraphs: [
         "Time Tracker is a simple, privacy-first tool for monitoring how you spend your time on projects and tasks. Whether you are a freelancer billing clients, a team member tracking productivity, or someone managing personal projects, this tool helps you capture accurate time data without complexity.",
-        "All your time tracking data stays on your device—nothing is sent to servers or stored in the cloud. Start timers, pause when needed, and generate reports to understand your work patterns and improve time management.",
+        "All your time tracking data stays on your device-nothing is sent to servers or stored in the cloud. Start timers, pause when needed, and generate reports to understand your work patterns and improve time management.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -3689,7 +3782,7 @@ const timeTracker: ToolDefinition = {
     ],
     proTips: [
       "Use descriptive project names and add notes to sessions so you can quickly recall what you were working on when reviewing history.",
-      "Pause your timer during breaks or context switches—accurate tracking comes from stopping when you are not actively working.",
+      "Pause your timer during breaks or context switches-accurate tracking comes from stopping when you are not actively working.",
       "Export your data weekly or monthly to back it up locally and create an archive for invoicing or performance reviews.",
       "Create separate projects for different clients or work types to get clearer insights into how you allocate your time across responsibilities.",
     ],
@@ -3716,7 +3809,7 @@ const goalPlanner: ToolDefinition = {
     about: {
       headline: "About Goal Planner",
       paragraphs: [
-        "Goal Planner helps you set ambitious goals and break them down into manageable milestones. Track your progress in real-time with visual dashboards, stay motivated with achievement notifications, and maintain momentum toward your objectives—all without leaving your browser.",
+        "Goal Planner helps you set ambitious goals and break them down into manageable milestones. Track your progress in real-time with visual dashboards, stay motivated with achievement notifications, and maintain momentum toward your objectives-all without leaving your browser.",
         "Whether you are pursuing personal development, fitness targets, career advancement, or project completion, Goal Planner keeps everything organized and accessible. Your data stays local on your device, giving you complete privacy while you focus on what matters most.",
       ],
       stats: [
@@ -3741,7 +3834,7 @@ const goalPlanner: ToolDefinition = {
     ],
     proTips: [
       "Set milestone deadlines 5-10% closer than you think necessary to build in buffer time and maintain momentum.",
-      "Review your goals weekly and update milestones based on what you've learned—flexibility keeps you on track.",
+      "Review your goals weekly and update milestones based on what you've learned-flexibility keeps you on track.",
       "Use categories consistently (Work, Health, Learning) to easily filter goals and maintain work-life balance.",
       "Export your completed goals quarterly to celebrate wins and identify patterns in what types of goals you achieve most.",
     ],
@@ -3773,7 +3866,7 @@ const signatureMaker: ToolDefinition = {
       headline: "About Digital Signature Maker",
       paragraphs: [
         "Digital Signature Maker lets you create professional signatures in seconds using drawing, typing, or image upload. Whether you need to sign documents, agreements, or forms, this tool provides a fast, secure way to add your personal mark without leaving your browser.",
-        "Perfect for remote work, contract signing, and document authentication, your signatures are processed locally on your device with zero server storage. Create unlimited signatures, customize appearance, and download in multiple formats—all while maintaining complete privacy.",
+        "Perfect for remote work, contract signing, and document authentication, your signatures are processed locally on your device with zero server storage. Create unlimited signatures, customize appearance, and download in multiple formats-all while maintaining complete privacy.",
       ],
       stats: [
         { value: "100%", label: "Browser-based processing", icon: 'ShieldCheck' },
@@ -3797,9 +3890,9 @@ const signatureMaker: ToolDefinition = {
     ],
     proTips: [
       "For a natural freehand signature, use slow, deliberate strokes and adjust pen thickness before drawing to match your preferred signing style.",
-      "Try the text option with cursive fonts for a more formal appearance—experiment with different typefaces until you find one that matches your personal brand.",
+      "Try the text option with cursive fonts for a more formal appearance-experiment with different typefaces until you find one that matches your personal brand.",
       "Upload a high-resolution image of your existing signature for best results; JPG or PNG at 300+ DPI ensures crisp, professional output.",
-      "Create multiple signature variations (formal, casual, initials) and save them—switch between different versions depending on the document context.",
+      "Create multiple signature variations (formal, casual, initials) and save them-switch between different versions depending on the document context.",
     ],
   },
 }
@@ -3848,7 +3941,7 @@ const audioJoiner: ToolDefinition = {
       { step: 3, title: "Export Your Mix", description: "Download your merged audio file instantly in your preferred format.", icon: 'Download' },
     ],
     proTips: [
-      "Use fade overlaps to create smooth DJ-style transitions between tracks—overlap fade-outs and fade-ins by 1-2 seconds for professional results.",
+      "Use fade overlaps to create smooth DJ-style transitions between tracks-overlap fade-outs and fade-ins by 1-2 seconds for professional results.",
       "Normalize all audio levels before joining to avoid jarring volume jumps between clips and ensure consistent playback across your mix.",
       "Preview individual transitions before finalizing to catch timing issues early and save export time.",
       "Export as WAV for maximum quality when archiving, then convert to MP3 only when sharing to preserve original fidelity.",
@@ -3864,9 +3957,18 @@ const resumeParser: ToolDefinition = {
   category: 'pdf',
   icon: 'FileUser',
   iconColor: 'bg-blue-500/10 text-blue-500',
+  listPriority: 8,
   tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
+  workspace: {
+    workspaceFriendly: true,
+    runsLocally: true,
+    usesAI: true,
+  },
+  api: {
+    apiPlanned: true,
+  },
   seo: {
     title: 'Resume Parser - Free Online CV Data Extractor',
     description: 'Parse resumes online to extract contact info, skills, education, and experience. Free resume parser for PDF and TXT files with JSON/CSV export.',
@@ -3877,7 +3979,7 @@ const resumeParser: ToolDefinition = {
       headline: "About Resume Parser",
       paragraphs: [
         "Resume Parser extracts and organizes key information from your resumes instantly using advanced text recognition. Whether you are a recruiter managing hundreds of applications or a job seeker organizing your experience, this tool transforms unstructured resume documents into clean, structured data you can use immediately.",
-        "All processing happens locally in your browser, meaning your sensitive career information never leaves your device. Extract contact details, work history, education, skills, and certifications with a single upload—no servers, no storage, complete privacy.",
+        "All processing happens locally in your browser, meaning your sensitive career information never leaves your device. Extract contact details, work history, education, skills, and certifications with a single upload-no servers, no storage, complete privacy.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -3895,15 +3997,15 @@ const resumeParser: ToolDefinition = {
       { title: "Copy & Export Results", description: "Instantly copy extracted data to clipboard or export organized results for use in other applications.", icon: 'Download' },
     ],
     steps: [
-      { step: 1, title: "Upload Your Resume", description: "Select a PDF or text file from your device. Drag and drop or click to browse—the file stays on your computer.", icon: 'Upload' },
+      { step: 1, title: "Upload Your Resume", description: "Select a PDF or text file from your device. Drag and drop or click to browse-the file stays on your computer.", icon: 'Upload' },
       { step: 2, title: "Parser Extracts Data", description: "The tool analyzes your resume and automatically identifies contact info, work history, education, skills, and certifications.", icon: 'RefreshCw' },
       { step: 3, title: "Review & Export", description: "View the structured results, copy individual fields, or download the complete parsed data for your records.", icon: 'Download' },
     ],
     proTips: [
-      "Use consistent formatting in your resume (dates, job titles, company names) for more accurate parsing—the tool recognizes common patterns better.",
-      "Copy individual sections to populate forms or databases—the parser preserves formatting so pasting is seamless.",
-      "Parse multiple resumes to compare candidates side-by-side—extract data from each and organize in your own spreadsheet.",
-      "Keep your original resume file unchanged—the parser works from a copy, so you can safely re-upload and re-parse anytime without data loss.",
+      "Use consistent formatting in your resume (dates, job titles, company names) for more accurate parsing-the tool recognizes common patterns better.",
+      "Copy individual sections to populate forms or databases-the parser preserves formatting so pasting is seamless.",
+      "Parse multiple resumes to compare candidates side-by-side-extract data from each and organize in your own spreadsheet.",
+      "Keep your original resume file unchanged-the parser works from a copy, so you can safely re-upload and re-parse anytime without data loss.",
     ],
   },
 }
@@ -3956,7 +4058,7 @@ const pdfEditor: ToolDefinition = {
       { step: 3, title: "Download your file", description: "Save your edited PDF back to your computer with all changes applied.", icon: 'Download' },
     ],
     proTips: [
-      "Use different highlight colors to categorize information—assign yellow for key points, green for approvals, and red for action items.",
+      "Use different highlight colors to categorize information-assign yellow for key points, green for approvals, and red for action items.",
       "Layer your annotations strategically; add text boxes first, then highlights, so text remains readable over colored backgrounds.",
       "Take advantage of the zoom feature to work on small text or detailed sections with precision before zooming out to see the full page.",
       "Regularly save your progress by downloading intermediate versions, especially when making extensive edits to important documents.",
@@ -3989,7 +4091,7 @@ const documentConverter: ToolDefinition = {
       headline: "About Document Converter",
       paragraphs: [
         "Document Converter transforms your files between six popular formats instantly in your browser, with no uploads to external servers. Whether you need to convert DOCX to PDF, Markdown to HTML, or any combination between DOCX, PDF, TXT, RTF, HTML, and Markdown, this tool handles it seamlessly and securely.",
-        "Perfect for writers, developers, students, and professionals who need format flexibility without complicated software. Process multiple documents quickly, maintain formatting quality, and keep your sensitive content completely private—all processing happens locally on your device.",
+        "Perfect for writers, developers, students, and professionals who need format flexibility without complicated software. Process multiple documents quickly, maintain formatting quality, and keep your sensitive content completely private-all processing happens locally on your device.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -4000,7 +4102,7 @@ const documentConverter: ToolDefinition = {
     },
     features: [
       { title: "6-Format Support", description: "Convert between DOCX, PDF, TXT, RTF, HTML, and Markdown with full compatibility.", icon: 'ArrowLeftRight' },
-      { title: "Client-Side Processing", description: "All conversions happen in your browser—your files never leave your device.", icon: 'ShieldCheck' },
+      { title: "Client-Side Processing", description: "All conversions happen in your browser-your files never leave your device.", icon: 'ShieldCheck' },
       { title: "Batch Conversion", description: "Process multiple documents at once to save time on large conversion projects.", icon: 'CheckCircle' },
       { title: "Formatting Preservation", description: "Maintain text styling, structure, and layout during conversions for professional results.", icon: 'FileText' },
       { title: "Instant Downloads", description: "Get converted files immediately after processing completes with one click.", icon: 'Download' },
@@ -4065,7 +4167,7 @@ const videoCompressor: ToolDefinition = {
     ],
     proTips: [
       "Start with the 'Medium' quality preset to balance file size and visual quality, then adjust based on your needs.",
-      "For social media uploads, set resolution to 1080p or 720p—most platforms re-compress anyway, so extra resolution is wasted.",
+      "For social media uploads, set resolution to 1080p or 720p-most platforms re-compress anyway, so extra resolution is wasted.",
       "Use batch processing to compress multiple clips from a project with identical settings for consistency.",
       "Test one video first by downloading and playing it back before compressing large files to ensure quality meets your standards.",
     ],
@@ -4093,7 +4195,7 @@ const backgroundRemover: ToolDefinition = {
       headline: "About Background Remover",
       paragraphs: [
         "Background Remover instantly eliminates image backgrounds with precision, delivering clean transparent PNG files ready for any project. Whether you are creating product photos, designing graphics, or preparing images for web use, this tool handles the tedious work in seconds without leaving your browser.",
-        "Process images completely locally with zero uploads to servers—your data stays private and secure on your device. Perfect for e-commerce, social media, design work, and professional photography, Background Remover gives you publication-quality results without the learning curve of complex editing software.",
+        "Process images completely locally with zero uploads to servers-your data stays private and secure on your device. Perfect for e-commerce, social media, design work, and professional photography, Background Remover gives you publication-quality results without the learning curve of complex editing software.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -4108,7 +4210,7 @@ const backgroundRemover: ToolDefinition = {
       { title: "Edge Refinement", description: "Fine-tune subject edges for professional-quality results with intelligent border smoothing.", icon: 'Edit' },
       { title: "Batch Processing", description: "Process multiple images sequentially to streamline workflows for large projects.", icon: 'Grid' },
       { title: "Real-time Preview", description: "See results instantly as you work with live preview of your transparent background.", icon: 'Eye' },
-      { title: "Zero Data Upload", description: "All processing happens locally in your browser—your images never leave your device.", icon: 'Shield' },
+      { title: "Zero Data Upload", description: "All processing happens locally in your browser-your images never leave your device.", icon: 'Shield' },
     ],
     steps: [
       { step: 1, title: "Upload Your Image", description: "Click to upload or drag-and-drop your image file (JPG, PNG, or WebP supported).", icon: 'Upload' },
@@ -4116,10 +4218,10 @@ const backgroundRemover: ToolDefinition = {
       { step: 3, title: "Download as PNG", description: "Download your result as a transparent PNG file ready for immediate use.", icon: 'Download' },
     ],
     proTips: [
-      "For best results, use images with clear subject-to-background contrast—the AI performs better when subjects are well-defined.",
+      "For best results, use images with clear subject-to-background contrast-the AI performs better when subjects are well-defined.",
       "Download as PNG to preserve transparency; other formats will fill transparent areas with a solid color.",
       "If edges look rough after removal, use the edge refinement tool to smooth and perfect your subject outline.",
-      "Process multiple images in sequence and keep them organized—the tool works quickly without requiring re-uploads.",
+      "Process multiple images in sequence and keep them organized-the tool works quickly without requiring re-uploads.",
     ],
   },
 }
@@ -4168,10 +4270,10 @@ const imageUpscaler: ToolDefinition = {
       { step: 3, title: "Download Your Result", description: "Preview the upscaled image and download it in your preferred format.", icon: 'Download' },
     ],
     proTips: [
-      "For best results, start with the highest quality source image available—upscaling works best on clear originals.",
+      "For best results, start with the highest quality source image available-upscaling works best on clear originals.",
       "Use 2x upscaling for subtle improvements and faster processing; reserve 4x for dramatic size increases or printing.",
       "Compare the preview closely before downloading; zoom in to inspect fine details like text or faces.",
-      "Upscaled images work great for prints, web thumbnails, and social media—save in the appropriate format for each use.",
+      "Upscaled images work great for prints, web thumbnails, and social media-save in the appropriate format for each use.",
     ],
   },
 }
@@ -4223,7 +4325,7 @@ const watermarkRemover: ToolDefinition = {
       "Use smaller brush sizes for detailed watermarks and larger sizes for broad overlays to maintain edge quality.",
       "Feather your selection edges slightly to ensure smooth blending between the removed area and surrounding content.",
       "For text watermarks, make multiple passes with smaller selections rather than one large selection for better results.",
-      "Test with a duplicate image first—save your original and experiment with different removal intensities to find the best balance.",
+      "Test with a duplicate image first-save your original and experiment with different removal intensities to find the best balance.",
     ],
   },
 }
@@ -4272,7 +4374,7 @@ const subtitleGenerator: ToolDefinition = {
       { step: 3, title: "Download & Deploy", description: "Export your finished subtitles in SRT or VTT format and integrate them directly into your video player.", icon: 'Download' },
     ],
     proTips: [
-      "Use the timeline visualizer to quickly spot timing conflicts before exporting—overlap detection helps prevent subtitle playback issues.",
+      "Use the timeline visualizer to quickly spot timing conflicts before exporting-overlap detection helps prevent subtitle playback issues.",
       "Batch edit repetitive text like speaker names or recurring phrases to save time on large subtitle projects.",
       "Preview your subtitles with different background colors and transparency settings to ensure readability across all video backgrounds.",
       "Convert between SRT and VTT formats mid-project to test compatibility with different platforms before finalizing.",
@@ -4328,7 +4430,7 @@ const htmlEntityEncoder: ToolDefinition = {
       { step: 3, title: "Copy or Download Result", description: "Copy the converted output to clipboard instantly or download as a file for use in your project.", icon: 'Download' },
     ],
     proTips: [
-      "Use named entities for better code readability—&amp; is clearer than &#38; in source code.",
+      "Use named entities for better code readability-&amp; is clearer than &#38; in source code.",
       "When copying HTML into databases, encode it first to prevent parsing errors and injection vulnerabilities.",
       "Hexadecimal entities (&#x...) are useful for rare Unicode characters that do not have named entity equivalents.",
       "Always preview decoded HTML in a browser to verify special characters render correctly before deploying to production.",
@@ -4357,7 +4459,7 @@ const passwordStrengthChecker: ToolDefinition = {
       headline: "About Password Strength Checker",
       paragraphs: [
         "Password Strength Checker analyzes your passwords to evaluate their security resilience against modern cracking techniques. It provides instant feedback on vulnerability levels, estimated crack times, and actionable recommendations to help you create stronger passwords that protect your accounts from unauthorized access.",
-        "This tool is perfect for security-conscious individuals, IT professionals, and anyone looking to audit their password practices. All analysis happens locally in your browser—your passwords never leave your device, ensuring complete privacy while you strengthen your digital security.",
+        "This tool is perfect for security-conscious individuals, IT professionals, and anyone looking to audit their password practices. All analysis happens locally in your browser-your passwords never leave your device, ensuring complete privacy while you strengthen your digital security.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -4432,10 +4534,10 @@ const jwtDecoder: ToolDefinition = {
       { step: 3, title: "Review & Copy Results", description: "Inspect claims, check expiration status, and copy any decoded values or sections you need for further use.", icon: 'Copy' },
     ],
     proTips: [
-      "Check the expiration time immediately after decoding—if it shows red/expired, the token is no longer valid and will not authenticate.",
+      "Check the expiration time immediately after decoding-if it shows red/expired, the token is no longer valid and will not authenticate.",
       "Use the payload section to verify custom claims your application relies on, ensuring they match expected values.",
       "Copy individual claim values to compare them across multiple tokens or paste into logs for debugging authentication flows.",
-      "Bookmark this tool for quick reference during API development—decode tokens to understand claim structure before writing validation logic.",
+      "Bookmark this tool for quick reference during API development-decode tokens to understand claim structure before writing validation logic.",
     ],
   },
 }
@@ -4485,7 +4587,7 @@ const audioTrimmer: ToolDefinition = {
     ],
     proTips: [
       "Use the waveform zoom to get a closer view of quiet sections and dialogue boundaries for ultra-precise cuts.",
-      "Apply fade effects even to short clips—a 200ms fade can eliminate harsh clicks and pops from abrupt cuts.",
+      "Apply fade effects even to short clips-a 200ms fade can eliminate harsh clicks and pops from abrupt cuts.",
       "Preview your entire edit before exporting to catch timing issues; playback speed can help verify fade smoothness.",
       "For consistent results across multiple files, use batch processing mode to apply the same trim and fade settings automatically.",
     ],
@@ -4513,7 +4615,7 @@ const audioConverter: ToolDefinition = {
       headline: "About Audio Converter",
       paragraphs: [
         "Audio Converter enables you to transform audio files between popular formats like MP3, WAV, FLAC, OGG, and AAC with complete control over quality and bitrate settings. Whether you are optimizing files for specific devices, reducing storage space, or ensuring compatibility with your preferred media player, this tool handles conversions quickly and efficiently.",
-        "All processing happens directly in your browser—your audio files never leave your device, ensuring complete privacy and security. No uploads, no servers, no tracking: just fast, local conversion that respects your data while delivering professional results.",
+        "All processing happens directly in your browser-your audio files never leave your device, ensuring complete privacy and security. No uploads, no servers, no tracking: just fast, local conversion that respects your data while delivering professional results.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -4533,11 +4635,11 @@ const audioConverter: ToolDefinition = {
     steps: [
       { step: 1, title: "Select Audio File", description: "Click the upload area or drag and drop your audio file into the converter to begin the process.", icon: 'Upload' },
       { step: 2, title: "Choose Format & Settings", description: "Select your target format, adjust bitrate, sample rate, and other quality parameters to suit your needs.", icon: 'Sliders' },
-      { step: 3, title: "Download Converted File", description: "Click Download to save your converted audio file directly to your device—conversion is instant and private.", icon: 'Download' },
+      { step: 3, title: "Download Converted File", description: "Click Download to save your converted audio file directly to your device-conversion is instant and private.", icon: 'Download' },
     ],
     proTips: [
       "Use High Quality (320 kbps) for music archival and Standard (192 kbps) for streaming and everyday listening to balance quality and file size.",
-      "Convert to FLAC if you want lossless audio compression for archival—it reduces file size while maintaining perfect quality.",
+      "Convert to FLAC if you want lossless audio compression for archival-it reduces file size while maintaining perfect quality.",
       "Batch convert large music libraries by selecting multiple files at once to save time instead of converting one at a time.",
       "Check the preview before converting to confirm sample rate and channel information match your device requirements, especially for audiobooks or podcasts.",
     ],
@@ -4565,7 +4667,7 @@ const videoTrimmer: ToolDefinition = {
       headline: "About Video Trimmer",
       paragraphs: [
         "Video Trimmer lets you preview and set precise trim points for your video files directly in your browser. Whether you are cutting out unwanted footage, extracting clips, or preparing videos for social media, you can see exactly what you are keeping before processing.",
-        "All processing happens locally on your device, so your videos never leave your computer. This means faster performance, complete privacy, and no file size limitations—work with videos as large as your browser can handle.",
+        "All processing happens locally on your device, so your videos never leave your computer. This means faster performance, complete privacy, and no file size limitations-work with videos as large as your browser can handle.",
       ],
       stats: [
         { value: "Local only", label: "Privacy-safe", icon: 'ShieldCheck' },
@@ -4590,7 +4692,7 @@ const videoTrimmer: ToolDefinition = {
     proTips: [
       "Use the Play/Pause button (spacebar) to freeze on exact frames, then use arrow keys to move frame-by-frame for pixel-perfect trim points.",
       "Hover over the timeline to see a scrubber preview of each frame, making it easier to find the exact moment you want to trim.",
-      "Set your in-point first, then your out-point—you can always adjust either one by dragging the handles on the timeline.",
+      "Set your in-point first, then your out-point-you can always adjust either one by dragging the handles on the timeline.",
       "For best results with longer videos, zoom in on the timeline section where you need to trim to get finer control over your cut points.",
     ],
   },
@@ -4617,7 +4719,7 @@ const gifMaker: ToolDefinition = {
       headline: "About GIF Maker",
       paragraphs: [
         "GIF Maker transforms your videos into optimized GIFs with precise control over frame rate and resolution. Whether you are creating social media content, capturing gaming moments, or sharing quick clips, this tool gives you the flexibility to customize every aspect of your GIF right in your browser.",
-        "All processing happens locally on your device, ensuring your videos never leave your computer. Create unlimited GIFs with full privacy, no uploads, no accounts needed—just fast, client-side conversion at your fingertips.",
+        "All processing happens locally on your device, ensuring your videos never leave your computer. Create unlimited GIFs with full privacy, no uploads, no accounts needed-just fast, client-side conversion at your fingertips.",
       ],
       stats: [
         { value: "100%", label: "Local Processing", icon: 'ShieldCheck' },
@@ -4635,12 +4737,12 @@ const gifMaker: ToolDefinition = {
       { title: "One-Click Download", description: "Export your finished GIF instantly without waiting for server processing.", icon: 'Download' },
     ],
     steps: [
-      { step: 1, title: "Upload Your Video", description: "Select a video file from your device—supports MP4, WebM, MOV, and other common formats.", icon: 'Upload' },
+      { step: 1, title: "Upload Your Video", description: "Select a video file from your device-supports MP4, WebM, MOV, and other common formats.", icon: 'Upload' },
       { step: 2, title: "Configure Settings", description: "Set your desired frame rate, resolution, and trim the video to your preferred time range.", icon: 'Sliders' },
       { step: 3, title: "Generate & Download", description: "Click create to convert your video to an optimized GIF and download it instantly.", icon: 'Download' },
     ],
     proTips: [
-      "Lower frame rates (10-15 FPS) reduce file size significantly while still looking smooth—perfect for social media.",
+      "Lower frame rates (10-15 FPS) reduce file size significantly while still looking smooth-perfect for social media.",
       "Trim your video before conversion to avoid creating huge GIFs; shorter clips = smaller files.",
       "Test different resolutions on your target platform; 480-720px works great for most social feeds.",
       "Use 60 FPS only for action sequences that really need smoothness; 20-30 FPS is ideal for most content.",
@@ -4745,7 +4847,7 @@ const textToSpeech: ToolDefinition = {
     steps: [
       { step: 1, title: "Paste or Type Your Text", description: "Enter the text you want to convert in the input field, or paste content from any source.", icon: 'Edit' },
       { step: 2, title: "Configure Voice Settings", description: "Select your preferred voice, adjust speed and pitch, then click play to preview the audio.", icon: 'Settings' },
-      { step: 3, title: "Download or Share", description: "Save your audio file or share it directly—all processing stays on your device for complete privacy.", icon: 'Download' },
+      { step: 3, title: "Download or Share", description: "Save your audio file or share it directly-all processing stays on your device for complete privacy.", icon: 'Download' },
     ],
     proTips: [
       "Use slightly slower speeds (0.8-0.9x) for clarity and professionalism when recording voiceovers for videos.",
@@ -4795,15 +4897,15 @@ const wordCloudGenerator: ToolDefinition = {
       { title: "Real-Time Preview", description: "See your word cloud update instantly as you paste text and adjust settings without any delays.", icon: 'Eye' },
     ],
     steps: [
-      { step: 1, title: "Paste Your Text", description: "Enter or paste any text content into the editor—articles, documents, transcripts, or any written material.", icon: 'FileText' },
+      { step: 1, title: "Paste Your Text", description: "Enter or paste any text content into the editor-articles, documents, transcripts, or any written material.", icon: 'FileText' },
       { step: 2, title: "Customize Settings", description: "Adjust colors, word count, remove stop words, and fine-tune the appearance to your preferences in real-time.", icon: 'Wrench' },
       { step: 3, title: "Download Your Cloud", description: "Export your finished word cloud as PNG or SVG and use it immediately in presentations, reports, or social media.", icon: 'Download' },
     ],
     proTips: [
-      "Remove common stop words to reveal the truly important concepts—disable them selectively to keep context-specific words like 'product' or 'customer' when they are relevant to your analysis.",
+      "Remove common stop words to reveal the truly important concepts-disable them selectively to keep context-specific words like 'product' or 'customer' when they are relevant to your analysis.",
       "Reduce the word count to 25-40 words for presentations to avoid cluttering your slides and keep focus on main themes.",
       "Paste content from multiple sources together to compare what topics are emphasized across different documents or time periods.",
-      "Export as SVG format for editable clouds—you can adjust colors and styling further in design tools like Figma or Illustrator.",
+      "Export as SVG format for editable clouds-you can adjust colors and styling further in design tools like Figma or Illustrator.",
     ],
   },
 }
@@ -4904,10 +5006,10 @@ const sqlBeautifier: ToolDefinition = {
       { step: 3, title: "Copy and use", description: "View the beautifully formatted SQL on the right, then copy to clipboard or download the file.", icon: 'Copy' },
     ],
     proTips: [
-      "Use 'uppercase keywords' mode for queries that will be reviewed in documentation—it is easier to spot logical structure at a glance.",
+      "Use 'uppercase keywords' mode for queries that will be reviewed in documentation-it is easier to spot logical structure at a glance.",
       "Enable 'align operators' to quickly spot missing commas or syntax errors in large SELECT statements and WHERE clauses.",
-      "Save your preferred formatting settings as a profile if you format SQL regularly—saves time across multiple queries.",
-      "Paste incomplete or malformed SQL to see where formatting breaks down—it helps identify syntax errors before running queries.",
+      "Save your preferred formatting settings as a profile if you format SQL regularly-saves time across multiple queries.",
+      "Paste incomplete or malformed SQL to see where formatting breaks down-it helps identify syntax errors before running queries.",
     ],
   },
 }
@@ -4956,10 +5058,10 @@ const cronExpressionGenerator: ToolDefinition = {
       { step: 3, title: "Copy & Deploy", description: "Copy the expression to your clipboard and paste it into your cron job, scheduler, or application configuration.", icon: 'Copy' },
     ],
     proTips: [
-      "Use asterisks (*) to match any value in a field—great for 'every day' or 'every hour' scenarios without manual entry.",
+      "Use asterisks (*) to match any value in a field-great for 'every day' or 'every hour' scenarios without manual entry.",
       "Leverage the 'Next Run' preview to test your expression before deploying it to production systems.",
       "Use common presets for standard schedules like midnight daily (0 0 * * *) rather than building from scratch.",
-      "Remember the field order: minute, hour, day-of-month, month, day-of-week—validation catches mistakes automatically.",
+      "Remember the field order: minute, hour, day-of-month, month, day-of-week-validation catches mistakes automatically.",
     ],
   },
 }
@@ -5008,7 +5110,7 @@ const openGraphPreview: ToolDefinition = {
       { step: 3, title: "Copy & Implement", description: "Copy the generated meta tags and paste them into your website's HTML head section, or download as a file.", icon: 'Copy' },
     ],
     proTips: [
-      "Use images between 1200x630px and under 5MB for best results across all platforms—Open Graph Preview will validate your dimensions.",
+      "Use images between 1200x630px and under 5MB for best results across all platforms-Open Graph Preview will validate your dimensions.",
       "Include relevant keywords in your title and description to improve click-through rates when your content is shared.",
       "Test with real URLs using social platform debuggers (Facebook Share Debugger, LinkedIn Post Inspector) to verify your tags are live.",
       "Set og:type correctly (article, website, video, music) to unlock platform-specific rich media features and enhanced previews.",
@@ -5060,7 +5162,7 @@ const emailSignatureGenerator: ToolDefinition = {
       { step: 3, title: "Copy and Deploy", description: "Preview your signature, copy the HTML code with one click, and paste it into your email client's signature settings.", icon: 'Copy' },
     ],
     proTips: [
-      "Keep your signature concise—limit it to 4-5 lines of text to avoid cluttering recipient inboxes and ensure mobile compatibility.",
+      "Keep your signature concise-limit it to 4-5 lines of text to avoid cluttering recipient inboxes and ensure mobile compatibility.",
       "Use your company brand colors and fonts to reinforce brand identity and make your signature instantly recognizable.",
       "Test your signature in multiple email clients (Gmail, Outlook, Apple Mail) before deploying to catch rendering differences.",
       "Include a clear call-to-action like 'Schedule a Call' or your most important contact method to drive engagement.",
@@ -5112,10 +5214,10 @@ const faviconGenerator: ToolDefinition = {
       { step: 3, title: "Download & Deploy", description: "Download your complete favicon package as a ZIP file and integrate it into your website's HTML head section.", icon: 'Download' },
     ],
     proTips: [
-      "Use square images (1:1 aspect ratio) for best results—the tool will handle rectangular images but square ensures perfect clarity at all sizes.",
+      "Use square images (1:1 aspect ratio) for best results-the tool will handle rectangular images but square ensures perfect clarity at all sizes.",
       "Upload at least 512x512 pixels for maximum quality; larger source images reduce pixelation when scaled down to tiny sizes.",
       "Test your favicon in multiple browsers after deployment, as some caches favicons aggressively and may need a hard refresh.",
-      "Include both ICO and PNG formats in your HTML head for maximum compatibility—use ICO as fallback for older browsers and PNG for modern ones.",
+      "Include both ICO and PNG formats in your HTML head for maximum compatibility-use ICO as fallback for older browsers and PNG for modern ones.",
     ],
   },
 }
@@ -5164,7 +5266,7 @@ const colorGradientGenerator: ToolDefinition = {
       { step: 3, title: "Copy or Export Your Code", description: "Click copy to grab the CSS code to your clipboard, or download it as a file ready to use in your project.", icon: 'Copy' },
     ],
     proTips: [
-      "Use the angle slider to rotate linear gradients precisely—values from 0° to 360° give you full control over direction.",
+      "Use the angle slider to rotate linear gradients precisely-values from 0° to 360° give you full control over direction.",
       "Stack multiple color stops close together to create sharp color transitions instead of smooth blends.",
       "Preview your gradient on different backgrounds by toggling the background color in the editor.",
       "Save your favorite custom gradients by bookmarking the tool state or documenting the CSS code for future projects.",
@@ -5216,9 +5318,9 @@ const randomNameGenerator: ToolDefinition = {
       { step: 3, title: "Generate & Copy", description: "Click generate to create names instantly, then copy your favorites directly to clipboard.", icon: 'Sparkles' },
     ],
     proTips: [
-      "Generate in bulk (50-100 names) then filter manually—you'll discover unexpected gems that spark better ideas.",
+      "Generate in bulk (50-100 names) then filter manually-you'll discover unexpected gems that spark better ideas.",
       "Combine multiple name types: generate person names for characters, then create business names for their fictional companies.",
-      "Use the style filters to match your brand voice—modern tech names feel different than traditional luxury brands.",
+      "Use the style filters to match your brand voice-modern tech names feel different than traditional luxury brands.",
       "Save screenshots of your favorite name batches for future reference and to track inspiration across projects.",
     ],
   },
@@ -5245,7 +5347,7 @@ const decisionMaker: ToolDefinition = {
       headline: "About Decision Maker",
       paragraphs: [
         "Decision Maker is your go-to tool for making quick, unbiased choices when you are stuck between multiple options. Whether you are deciding what to eat, which project to tackle first, or settling a friendly debate, this tool eliminates decision fatigue by letting chance decide for you.",
-        "All processing happens instantly in your browser with zero data collection—your choices stay completely private. Add spinning wheel animation for fun, or use quick-pick mode for instant results. Perfect for teams, classrooms, or anyone who needs a fair way to make decisions.",
+        "All processing happens instantly in your browser with zero data collection-your choices stay completely private. Add spinning wheel animation for fun, or use quick-pick mode for instant results. Perfect for teams, classrooms, or anyone who needs a fair way to make decisions.",
       ],
       stats: [
         { value: "Instant", label: "No loading time", icon: 'Zap' },
@@ -5255,7 +5357,7 @@ const decisionMaker: ToolDefinition = {
       ],
     },
     features: [
-      { title: "Add Multiple Options", description: "Input as many choices as you need—no limits on how many options you can add to your decision pool.", icon: 'Settings' },
+      { title: "Add Multiple Options", description: "Input as many choices as you need-no limits on how many options you can add to your decision pool.", icon: 'Settings' },
       { title: "Spin Wheel Animation", description: "Watch options spin in a satisfying visual wheel before landing on your random choice for extra drama.", icon: 'RefreshCw' },
       { title: "Quick Pick Mode", description: "Skip the animation and get instant results with one click for fast decision-making.", icon: 'Zap' },
       { title: "Edit & Manage Choices", description: "Easily add, remove, or modify your options anytime before or after spinning.", icon: 'Edit' },
@@ -5268,7 +5370,7 @@ const decisionMaker: ToolDefinition = {
       { step: 3, title: "Get Your Result", description: "View your randomly selected choice and decide whether to accept it or spin again for a different answer.", icon: 'CheckCircle' },
     ],
     proTips: [
-      "Use weighted probabilities to favor certain options subtly—great for making decisions feel fair while still leaning toward your preference.",
+      "Use weighted probabilities to favor certain options subtly-great for making decisions feel fair while still leaning toward your preference.",
       "Save your frequently-used decision lists (restaurants, movie genres, exercise routines) to quickly reuse them without re-entering options.",
       "Enable the spin animation when deciding with groups for entertainment value; use quick-pick for solo decisions when speed matters.",
       "Add a 'Skip this round' option if you want the tool to occasionally give you a break from the current decision set.",

@@ -11,11 +11,16 @@ import { getAllTools, categories, getDisplayCategories } from '@/lib/tools'
 import { Icon } from '@/lib/icons'
 import type { CategoryId } from '@/lib/tools/types'
 
-type SortOption = 'name' | 'popular' | 'trending' | 'new' | 'ai-first'
+type SortOption = 'name' | 'popular' | 'trending' | 'new' | 'ai-first' | 'priority'
 
-// Helper to check if a tool uses AI
-const isAIPowered = (tool: { tier: string; category: string }) => {
-  return tool.tier === 'AUTH' || tool.tier === 'PAID' || tool.category === 'ai'
+// Helper to check if a tool uses AI (based on workspace metadata)
+const isAIPowered = (tool: { workspace?: { usesAI?: boolean } }) => {
+  return tool.workspace?.usesAI === true
+}
+
+// Helper to check if tool has API access (ready or planned)
+const hasAPIAccess = (tool: { api?: { apiReady?: boolean; apiPlanned?: boolean } }) => {
+  return tool.api?.apiReady === true || tool.api?.apiPlanned === true
 }
 
 interface ToolsDirectoryProps {
@@ -28,7 +33,8 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all')
   const [showAIOnly, setShowAIOnly] = useState(defaultShowAIOnly)
-  const [sortBy, setSortBy] = useState<SortOption>(prioritizeAI ? 'ai-first' : 'popular')
+  const [showAPIOnly, setShowAPIOnly] = useState(false)
+  const [sortBy, setSortBy] = useState<SortOption>(prioritizeAI ? 'ai-first' : 'priority')
 
   const allTools = getAllTools()
   const displayCategories = getDisplayCategories() // Excludes 'ai' category
@@ -56,8 +62,22 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
       result = result.filter((tool) => isAIPowered(tool))
     }
 
+    // API filter
+    if (showAPIOnly) {
+      result = result.filter((tool) => hasAPIAccess(tool))
+    }
+
     // Sort
     switch (sortBy) {
+      case 'priority':
+        result.sort((a, b) => {
+          const pa = a.listPriority ?? 100
+          const pb = b.listPriority ?? 100
+          if (pa !== pb) return pa - pb
+          // Stable fallback by name
+          return a.name.localeCompare(b.name)
+        })
+        break
       case 'name':
         result.sort((a, b) => a.name.localeCompare(b.name))
         break
@@ -97,16 +117,17 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
     }
 
     return result
-  }, [allTools, search, selectedCategory, showAIOnly, sortBy])
+  }, [allTools, search, selectedCategory, showAIOnly, showAPIOnly, sortBy])
 
   const clearFilters = () => {
     setSearch('')
     setSelectedCategory('all')
     setShowAIOnly(false)
-    setSortBy('popular')
+    setShowAPIOnly(false)
+    setSortBy('priority')
   }
 
-  const hasActiveFilters = search || selectedCategory !== 'all' || showAIOnly
+  const hasActiveFilters = search || selectedCategory !== 'all' || showAIOnly || showAPIOnly
 
   return (
     <div className={showWelcome ? "py-14 md:py-20" : "py-8 md:py-12"} id="tools">
@@ -146,18 +167,33 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
 
         {/* Unified Filter Section */}
         <div className="max-w-5xl mx-auto mb-8 space-y-4">
-          {/* Row 1: AI Toggle */}
-          <div className="flex justify-center gap-2">
+          {/* Row 1: Feature Filters */}
+          <div className="flex justify-center gap-2 flex-wrap">
             <FilterChip
               label="All tools"
-              active={!showAIOnly}
-              onClick={() => setShowAIOnly(false)}
+              active={!showAIOnly && !showAPIOnly}
+              onClick={() => {
+                setShowAIOnly(false)
+                setShowAPIOnly(false)
+              }}
             />
             <FilterChip
               label="AI-powered"
               icon={<Sparkles className="h-3.5 w-3.5" />}
               active={showAIOnly}
-              onClick={() => setShowAIOnly(true)}
+              onClick={() => {
+                setShowAIOnly(true)
+                setShowAPIOnly(false)
+              }}
+            />
+            <FilterChip
+              label="API-ready"
+              icon={<Icon name="Cloud" className="h-3.5 w-3.5" />}
+              active={showAPIOnly}
+              onClick={() => {
+                setShowAPIOnly(true)
+                setShowAIOnly(false)
+              }}
             />
           </div>
 
@@ -192,6 +228,7 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="h-9 rounded-lg border border-border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
               >
+                <option value="priority">Recommended</option>
                 {prioritizeAI && <option value="ai-first">AI-Powered First</option>}
                 <option value="popular">Popular</option>
                 <option value="trending">Trending</option>
@@ -220,6 +257,12 @@ export function ToolsDirectory({ showWelcome = true, prioritizeAI = false, defau
               <Badge variant="secondary" className="gap-1">
                 <Sparkles className="h-3 w-3" />
                 AI
+              </Badge>
+            )}
+            {showAPIOnly && (
+              <Badge variant="secondary" className="gap-1">
+                <Icon name="Cloud" className="h-3 w-3" />
+                API
               </Badge>
             )}
             <Button variant="ghost" size="sm" onClick={clearFilters}>
