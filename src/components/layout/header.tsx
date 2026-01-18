@@ -19,18 +19,11 @@ const publicNavItems = [
 ]
 
 const getAuthenticatedNavItems = (userPlan?: string) => {
-  const baseItems = [
+  return [
     { href: '/workspace', label: 'Workspace' },
-    { href: '/history', label: 'History' },
-    { href: '/saved-configs', label: 'Saved' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/api-info', label: 'API' },
   ]
-
-  // Show pricing for free users (not Pro)
-  if (userPlan !== 'PRO') {
-    baseItems.push({ href: '/pricing', label: 'Upgrade' })
-  }
-
-  return baseItems
 }
 
 export function Header() {

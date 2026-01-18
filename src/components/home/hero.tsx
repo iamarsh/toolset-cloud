@@ -8,10 +8,10 @@ export function Hero() {
   const tools = getAllTools()
   const metrics = [
     { value: '100+', label: 'Tools & growing' },
-    { value: 'Secure', label: 'Client-side first' },
-    { value: 'Workspace', label: 'Designed for repeat use' },
+    { value: 'Workspace', label: 'Save & reuse configs' },
+    { value: 'API layer', label: 'Coming soon' },
   ]
-  
+
   return (
     <section className="relative overflow-hidden py-20 md:py-32">
       {/* Subtle ambient background */}
@@ -29,29 +29,28 @@ export function Hero() {
             </h1>
             <div className="mt-5 h-1 w-16 rounded-full bg-primary/90" />
           </div>
-          
-          {/* Tagline - emphasizing workspace, repeat use, continuity */}
+
+          {/* Tagline - emphasizing workspace and API layer */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 text-balance">
-            Save presets, pick up where you left off, and rerun common tasks in seconds. Most tools work instantly. AI is available when it clearly helps.
+            Your workspace and API layer for practical tools. Run instantly in-browser, save configurations, and pick up where you left off.
           </p>
 
           {/* Helper text */}
           <p className="text-sm text-muted-foreground/80 mb-10">
-            No hype. No pressure. Tools that behave predictably.
+            API access coming soon for workspace-friendly tools.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button asChild size="lg" className="gap-2">
-              <Link href="/tools">
-                Browse tools
+              <Link href="/login?callbackUrl=/workspace">
+                Open my workspace
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2">
-              <Link href="/features">
-                <Sparkles className="h-4 w-4" />
-                How it works
+            <Button asChild variant="outline" size="lg">
+              <Link href="/tools">
+                Browse all tools
               </Link>
             </Button>
           </div>

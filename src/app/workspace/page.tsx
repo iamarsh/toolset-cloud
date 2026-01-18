@@ -4,6 +4,7 @@ import { auth } from '@/lib/auth'
 import { hasToolRunHistory } from '@/lib/db/queries'
 import { WelcomeSection } from '@/components/dashboard/welcome-section'
 import { WorkspaceShortcuts } from '@/components/workspace/workspace-shortcuts'
+import { ApiAccessPanel } from '@/components/workspace/api-access-panel'
 import { ToolsDirectory } from '@/components/tools-directory'
 
 export const metadata: Metadata = {
@@ -21,11 +22,13 @@ export default async function WorkspacePage() {
 
   // Check if this is a returning user
   const isReturningUser = await hasToolRunHistory(session.user.id)
+  const userPlan = session.user.plan || 'FREE_ACCOUNT'
 
   return (
     <>
       <WelcomeSection user={session.user} isReturningUser={isReturningUser} />
       <WorkspaceShortcuts />
+      {userPlan === 'PRO' && <ApiAccessPanel />}
       <ToolsDirectory showWelcome={false} prioritizeAI={true} defaultShowAIOnly={true} />
     </>
   )
