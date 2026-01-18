@@ -29,7 +29,11 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
-  // Required for SharedArrayBuffer support (improves background removal performance)
+]
+
+// Stricter headers for pages that need SharedArrayBuffer
+// (e.g., background removal tool)
+const sharedArrayBufferHeaders = [
   {
     key: 'Cross-Origin-Opener-Policy',
     value: 'same-origin',
@@ -42,12 +46,18 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  
+
   async headers() {
     return [
       {
+        // Apply standard security headers to all pages
         source: '/:path*',
         headers: securityHeaders,
+      },
+      {
+        // Apply stricter COEP/COOP headers only to specific tools that need SharedArrayBuffer
+        source: '/tools/background-remover',
+        headers: [...securityHeaders, ...sharedArrayBufferHeaders],
       },
     ]
   },
