@@ -59,6 +59,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '**.toolset.cloud',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
     ],
   },
 
