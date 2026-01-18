@@ -26,7 +26,7 @@ export function AccessLevelsSection() {
         'Save your work',
         'Access history',
         'Reuse configurations',
-        'Limited AI usage'
+        'AI tools included'
       ],
     },
     {
@@ -37,7 +37,7 @@ export function AccessLevelsSection() {
       features: [
         'Batch workflows',
         'Higher limits',
-        'AI-powered workflows at scale',
+        'Higher AI usage limits',
         'Email delivery for long-running jobs'
       ]
     }
@@ -51,7 +51,7 @@ export function AccessLevelsSection() {
             How Toolset works
           </h2>
           <p className="text-muted-foreground">
-            Upgrades exist to make workflows better — not to block basic use.
+            Upgrades exist to make workflows better - not to block basic use.
           </p>
         </div>
 

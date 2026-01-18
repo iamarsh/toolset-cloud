@@ -7,19 +7,19 @@ export function CoreValuesSection() {
     {
       icon: History,
       title: 'Pick up where you left off',
-      description: 'Most tools work once and forget everything. Toolset is designed to remember. With an account, you can see your recently used tools, access your history, save configurations you use often, and resume work without starting over. This is especially useful when tasks repeat weekly, daily, or across projects.',
+      description: 'Most tools work once and forget everything. Toolset is designed to remember. With an account, you can see your recently used tools, access your history, save configurations you use often, and resume work without starting over.',
       iconColor: 'text-primary'
     },
     {
       icon: Save,
-      title: 'Run the same task again — without redoing the setup',
+      title: 'Run the same task again - without redoing the setup',
       description: 'Real work is repetitive. Good tools make repetition easier. Toolset supports repeatable workflows: re-run tools with the same settings, process multiple inputs in one go, keep outputs consistent across runs, and reduce manual setup for common tasks. Pro features focus on scale and convenience, not locking access.',
       iconColor: 'text-primary'
     },
     {
       icon: Sparkles,
       title: 'Optional AI assistance',
-      description: 'AI is useful — but only when applied carefully. Toolset uses AI where it reduces manual effort, improves clarity or speed, and handles tasks that are annoying to do by hand. We avoid AI where it adds noise, unpredictability, or cost without benefit. When AI is used, usage is transparent, limits are clear, and behavior is predictable. AI is a capability here, not the product.',
+      description: 'AI is useful - but only when applied carefully. Toolset uses AI where it reduces manual effort, improves clarity or speed, and handles tasks that are annoying to do by hand. We avoid AI where it adds noise, unpredictability, or cost without benefit. When AI is used, usage is transparent, limits are clear, and behavior is predictable. AI is a capability here, not the product.',
       iconColor: 'text-primary'
     },
     {

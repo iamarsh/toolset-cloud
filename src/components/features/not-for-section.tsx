@@ -13,7 +13,7 @@ export function NotForSection() {
     },
     {
       title: 'A bloated SaaS dashboard',
-      description: 'No unnecessary complexity, charts, or gamification. Focus on your work.'
+      description: 'Simple interface focused on getting work done, not engagement metrics.'
     }
   ]
 

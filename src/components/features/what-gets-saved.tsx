@@ -38,7 +38,7 @@ export function WhatGetsSaved() {
             What gets saved
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Your workspace remembers context so you don't have to start from scratch every time.
+            Your workspace saves configurations so you can rerun tasks without setting up again.
           </p>
         </div>
 
