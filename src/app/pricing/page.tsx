@@ -377,7 +377,7 @@ export default function PricingPage() {
                   <span className="text-foreground/40 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-foreground/70 mt-3 leading-relaxed">
-                  Yes, we offer a 14-day money-back guarantee for Pro subscriptions. If you&apos;re not satisfied within the first 14 days, contact us for a full refund—no questions asked.
+                  Yes, we offer a 14-day money-back guarantee for Pro subscriptions. If you&apos;re not satisfied within the first 14 days, contact us for a full refund-no questions asked.
                 </p>
               </details>
 

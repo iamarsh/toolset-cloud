@@ -37,7 +37,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-2xl font-bold mb-3">Our Mission</h2>
               <p className="text-foreground/80 leading-relaxed text-lg">
-                To provide everyone with free, easy-to-use productivity tools that respect your privacy. We believe powerful software doesn't have to be expensive, complicated, or invasive. Every tool is designed to work locally in your browser, keeping your data where it belongs—with you.
+                To provide everyone with free, easy-to-use productivity tools that respect your privacy. We believe powerful software doesn't have to be expensive, complicated, or invasive. Every tool is designed to work locally in your browser, keeping your data where it belongs-with you.
               </p>
             </div>
           </div>

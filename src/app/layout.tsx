@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://toolset.cloud'),
   title: {
-    default: 'Toolset.cloud — Your workspace for repeatable tasks',
+    default: 'Toolset.cloud - Your workspace for repeatable tasks',
     template: '%s | Toolset.cloud',
   },
   description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://toolset.cloud',
     siteName: 'Toolset.cloud',
-    title: 'Toolset.cloud — Your workspace for repeatable tasks',
+    title: 'Toolset.cloud - Your workspace for repeatable tasks',
     description:
       'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toolset.cloud — Your workspace for repeatable tasks',
+    title: 'Toolset.cloud - Your workspace for repeatable tasks',
     description:
       'Your workspace for tasks you run more than once. Pick up where you left off with saved work, recent tools, and optional AI assistance. Secure by design.',
     creator: '@toolsetcloud',

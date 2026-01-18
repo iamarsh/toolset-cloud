@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             <div>
               <h3 className="font-semibold text-lg mb-2">Privacy-First Design</h3>
               <p className="text-foreground/80 leading-relaxed">
-                At toolset.cloud, we believe in privacy by design. Most of our tools process your data entirely in your browser—meaning your files and information never leave your device. We only collect the minimum data necessary to provide you with a great experience.
+                At toolset.cloud, we believe in privacy by design. Most of our tools process your data entirely in your browser-meaning your files and information never leave your device. We only collect the minimum data necessary to provide you with a great experience.
               </p>
             </div>
           </div>

@@ -52,9 +52,12 @@ export function Footer() {
                   </span>
                 </span>
               </Link>
-              <p className="text-muted-foreground text-sm mb-6 max-w-sm">
+              <p className="text-muted-foreground text-sm mb-4 max-w-sm">
                 Simple, reliable tools for everyday tasks. Free to start today, with account and Pro options as they launch.
               </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-medium">
+                Public alpha - stable core tools, features evolving weekly
+              </div>
             </div>
 
             {/* Links */}
