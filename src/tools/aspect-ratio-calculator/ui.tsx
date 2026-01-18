@@ -67,7 +67,7 @@ export default function AspectRatioCalculatorUI() {
           <div className="space-y-2">
             <label className="text-xs text-muted-foreground">New Height</label>
             <div className="px-4 py-2 rounded-lg border border-border bg-muted/50 font-mono">
-              {calculatedHeight || '—'}
+              {calculatedHeight || '-'}
             </div>
           </div>
         </div>

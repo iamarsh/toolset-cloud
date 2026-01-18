@@ -36,7 +36,7 @@ export default function BmiCalculatorUI() {
       <div className="rounded-lg border border-border bg-card p-4 flex items-center justify-between">
         <div>
           <p className="text-sm text-muted-foreground">BMI</p>
-          <p className="text-2xl font-semibold">{bmi ? bmi.toFixed(1) : '—'}</p>
+          <p className="text-2xl font-semibold">{bmi ? bmi.toFixed(1) : '-'}</p>
         </div>
         <div className="text-right">
           <p className="text-sm text-muted-foreground">Category</p>

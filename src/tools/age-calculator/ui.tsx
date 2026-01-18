@@ -23,7 +23,7 @@ export default function AgeCalculatorUI() {
           <div>
             <p className="text-sm text-muted-foreground">Age</p>
             <p className="text-xl font-semibold">
-              {age.years || age.months || age.days ? `${age.years}y ${age.months}m ${age.days}d` : '—'}
+              {age.years || age.months || age.days ? `${age.years}y ${age.months}m ${age.days}d` : '-'}
             </p>
           </div>
         </div>

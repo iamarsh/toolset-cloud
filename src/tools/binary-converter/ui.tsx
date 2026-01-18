@@ -64,7 +64,7 @@ export default function BinaryConverterUI() {
             <div className="flex-1 min-w-0">
               <div className="text-xs text-muted-foreground">{label}</div>
               <div className="font-mono text-lg truncate">
-                {prefix}{results[key] || '—'}
+                {prefix}{results[key] || '-'}
               </div>
             </div>
             <Button

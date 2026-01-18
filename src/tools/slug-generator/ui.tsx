@@ -38,7 +38,7 @@ export default function SlugGeneratorUI() {
           >
             <div className="flex-1 min-w-0">
               <div className="text-xs text-muted-foreground mb-1">{label}</div>
-              <div className="font-mono text-lg truncate">{slug || '—'}</div>
+              <div className="font-mono text-lg truncate">{slug || '-'}</div>
             </div>
             <Button
               size="sm"

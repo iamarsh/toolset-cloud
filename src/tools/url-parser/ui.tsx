@@ -57,7 +57,7 @@ export default function URLParserUI() {
             >
               <div className="flex-1 min-w-0">
                 <div className="text-xs text-muted-foreground">{label}</div>
-                <div className="font-mono text-sm truncate">{value || '—'}</div>
+                <div className="font-mono text-sm truncate">{value || '-'}</div>
               </div>
               {value && (
                 <Button size="sm" variant="ghost" onClick={() => handleCopy(value, key)}>
