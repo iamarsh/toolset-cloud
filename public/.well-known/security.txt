@@ -1,4 +1,4 @@
-Contact: mailto:security@toolset.cloud
+Contact: mailto:contact@iamarsh.com
 Contact: https://toolset.cloud/contact
 Preferred-Languages: en
 Canonical: https://toolset.cloud/.well-known/security.txt
@@ -10,8 +10,8 @@ Hiring: https://toolset.cloud/about
 Thank you for helping keep toolset.cloud secure!
 
 If you discover a security vulnerability, please report it to:
-- Email: security@toolset.cloud
-- Alternative: privacy@toolset.cloud
+- Email: contact@iamarsh.com
+- Alternative: contact@iamarsh.com
 
 We take all security reports seriously and will respond within 24 hours.
 

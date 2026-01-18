@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 import GitHub from "next-auth/providers/github"
 import { SupabaseAdapter } from "@auth/supabase-adapter"
+import { createClient } from "@supabase/supabase-js"
 
 /**
  * NextAuth.js v5 Configuration with Supabase
@@ -48,8 +49,28 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       // Add user ID and plan to session
       if (user && session.user) {
         session.user.id = user.id
-        // @ts-ignore - plan exists on our extended user model
-        session.user.plan = user.plan || 'FREE_ACCOUNT'
+
+        // Check for active subscription in Supabase
+        const supabase = createClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!,
+          {
+            auth: {
+              autoRefreshToken: false,
+              persistSession: false,
+            }
+          }
+        )
+
+        const { data: subscription } = await supabase
+          .from('subscriptions')
+          .select('plan, status')
+          .eq('user_id', user.id)
+          .in('status', ['active', 'past_due']) // Allow past_due to give grace period
+          .single()
+
+        // Set plan based on active subscription or default to FREE_ACCOUNT
+        session.user.plan = subscription?.plan || 'FREE_ACCOUNT'
       }
       return session
     },
