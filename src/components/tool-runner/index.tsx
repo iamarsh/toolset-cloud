@@ -145,7 +145,7 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
     .slice(0, 3)
   const accessLabel =
     tool.tier === 'PUBLIC'
-      ? 'Free to start in-browser'
+      ? 'Free to use'
       : tool.tier === 'AUTH'
       ? (session.authenticated ? 'Free with account' : 'Sign in to unlock')
       : 'Pro access'
@@ -207,19 +207,15 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
                 <span>{category.name}</span>
               </div>
             )}
-            {tool.tier === 'AUTH' && !session.authenticated && (
-              <Badge variant="outline" className="gap-1">
-                <Lock className="h-3 w-3" />
-                Sign in required
-              </Badge>
-            )}
             {tool.tier === 'PAID' && (
               <Badge variant="outline" className="gap-1">
                 <CreditCard className="h-3 w-3" />
                 Pro
               </Badge>
             )}
-            <FavoriteToolButton toolId={tool.id} toolSlug={tool.slug} toolName={tool.name} />
+            {session.authenticated && (
+              <FavoriteToolButton toolId={tool.id} toolSlug={tool.slug} toolName={tool.name} />
+            )}
           </div>
         </div>
 
