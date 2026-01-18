@@ -1,4 +1,4 @@
-import { Hero, ToolSection, PromoBanner, WhoWeServe, WhyChoose, FeaturedWorkflows, TrustSection } from '@/components/home'
+import { Hero, ToolSection, PromoBanner, WhoWeServe, WhyChoose, FeaturedWorkflows, TrustSection, WorkspaceApiTools } from '@/components/home'
 import { ClosingCTA } from '@/components/features'
 import { categories, getToolsByCategory, getAllTools, getCategoriesWithTools } from '@/lib/tools'
 
@@ -13,6 +13,7 @@ export default function HomePage() {
       <Hero />
       <WhyChoose />
       <WhoWeServe />
+      <WorkspaceApiTools />
       <FeaturedWorkflows />
       <PromoBanner />
 
