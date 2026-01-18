@@ -152,8 +152,8 @@ export default function SecurityPage() {
             <h2 className="text-2xl font-semibold mb-4">Questions?</h2>
             <p className="text-muted-foreground">
               If you have security questions or concerns, please reach out to{' '}
-              <a href="mailto:arshdeepsingh983@gmail.com" className="text-primary hover:underline">
-                arshdeepsingh983@gmail.com
+              <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">
+                contact@iamarsh.com
               </a>
             </p>
           </section>

@@ -204,8 +204,8 @@ export default function StatusPage() {
           </p>
           <p className="mt-2">
             Subscribe to status updates (coming soon) or report issues to{' '}
-            <a href="mailto:arshdeepsingh983@gmail.com" className="text-primary hover:underline">
-              arshdeepsingh983@gmail.com
+            <a href="mailto:contact@iamarsh.com" className="text-primary hover:underline">
+              contact@iamarsh.com
             </a>
           </p>
         </footer>
