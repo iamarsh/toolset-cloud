@@ -13,6 +13,7 @@ import { getToolsByCategory } from '@/lib/tools'
 import { ToolTitle, ToolStatus } from '@/components/typography'
 import { ToolAboutSection, ToolFeaturesSection, ToolStepsSection } from '@/components/tool/sections'
 import { FavoriteToolButton } from '@/components/workspace/favorite-tool-button'
+import { useToolVisitTracker } from '@/hooks/use-tool-visit-tracker'
 import type { ToolDefinition, Category } from '@/lib/tools/types'
 
 // Dynamic tool component imports
@@ -134,6 +135,9 @@ interface ToolRunnerProps {
 }
 
 export function ToolRunner({ tool, category }: ToolRunnerProps) {
+  // Track tool visit for history
+  useToolVisitTracker(tool.slug)
+
   const session = useSession()
   const entitlement = checkToolEntitlement(tool, session)
   const relatedTools = getToolsByCategory(tool.category)

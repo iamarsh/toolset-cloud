@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { auth } from '@/lib/auth'
 import { Container } from '@/components/ui/container'
-import { HistoryList } from '@/components/workspace/history-list'
+import { ToolVisitHistory } from '@/components/workspace/tool-visit-history'
 
 export const metadata: Metadata = {
-  title: 'History',
-  description: 'Your tool execution history',
+  title: 'History - Toolset.cloud',
+  description: 'Your recently visited tools',
 }
 
 export default async function HistoryPage() {
@@ -14,7 +14,7 @@ export default async function HistoryPage() {
 
   // Redirect to login if not authenticated
   if (!session?.user) {
-    redirect('/login')
+    redirect('/login?callbackUrl=/history')
   }
 
   return (
@@ -22,14 +22,14 @@ export default async function HistoryPage() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-semibold font-serif mb-2">
-            History
+            Recently Visited Tools
           </h1>
           <p className="text-muted-foreground">
-            Your recent tool executions
+            Quick access to the tools you've been using
           </p>
         </div>
 
-        <HistoryList userId={session.user.id} />
+        <ToolVisitHistory />
       </div>
     </Container>
   )

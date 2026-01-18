@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
-import { User, LogOut, Settings, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+import { User, LogOut, Settings, ChevronDown, CreditCard } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function UserMenu() {
@@ -42,6 +43,7 @@ export function UserMenu() {
   const userImage = session.user?.image
   const userName = session.user?.name || 'User'
   const userEmail = session.user?.email || ''
+  const userPlan = session.user?.plan || 'FREE_ACCOUNT'
   const initials = userName
     .split(' ')
     .map((n) => n[0])
@@ -57,10 +59,13 @@ export function UserMenu() {
         aria-label="User menu"
       >
         {userImage ? (
-          <img
+          <Image
             src={userImage}
             alt={userName}
+            width={32}
+            height={32}
             className="h-8 w-8 rounded-full object-cover"
+            unoptimized
           />
         ) : (
           <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-medium text-primary">
@@ -89,6 +94,16 @@ export function UserMenu() {
               <Settings className="h-4 w-4 text-muted-foreground" />
               Settings
             </Link>
+            {userPlan === 'PRO' && (
+              <Link
+                href="/subscription"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors"
+              >
+                <CreditCard className="h-4 w-4 text-muted-foreground" />
+                Subscription
+              </Link>
+            )}
           </div>
 
           {/* Sign Out */}

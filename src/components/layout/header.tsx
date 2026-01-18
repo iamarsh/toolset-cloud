@@ -18,17 +18,28 @@ const publicNavItems = [
   { href: '/pricing', label: 'Pricing' },
 ]
 
-const authenticatedNavItems = [
-  { href: '/workspace', label: 'Workspace' },
-  { href: '/tools', label: 'Tools' },
-  { href: '/history', label: 'History' },
-  { href: '/saved-configs', label: 'Saved' },
-]
+const getAuthenticatedNavItems = (userPlan?: string) => {
+  const baseItems = [
+    { href: '/workspace', label: 'Workspace' },
+    { href: '/tools', label: 'Tools' },
+    { href: '/history', label: 'History' },
+    { href: '/saved-configs', label: 'Saved' },
+  ]
+
+  // Show pricing for free users (not Pro)
+  if (userPlan !== 'PRO') {
+    baseItems.push({ href: '/pricing', label: 'Upgrade' })
+  }
+
+  return baseItems
+}
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { data: session } = useSession()
-  const navItems = session ? authenticatedNavItems : publicNavItems
+  const navItems = session
+    ? getAuthenticatedNavItems(session.user?.plan)
+    : publicNavItems
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
