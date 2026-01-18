@@ -1,15 +1,52 @@
 'use client'
 
 import Link from 'next/link'
-import { Check, X, Sparkles, Zap, Shield, ArrowRight } from 'lucide-react'
+import { Check, X, Sparkles, Zap, Shield, ArrowRight, Loader2 } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { useState } from 'react'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly')
+  const [isLoading, setIsLoading] = useState(false)
+  const { data: session, status } = useSession()
+  const router = useRouter()
+
+  const handleUpgradeToPro = async () => {
+    // Redirect to login if not authenticated
+    if (status === 'unauthenticated') {
+      router.push('/login?callbackUrl=/pricing')
+      return
+    }
+
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('/api/billing/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: billingCycle }),
+      })
+
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.error || 'Failed to create checkout session')
+      }
+
+      const { url } = await response.json()
+
+      // Redirect to Lemon Squeezy checkout
+      window.location.href = url
+    } catch (error) {
+      console.error('Checkout error:', error)
+      alert('Failed to start checkout. Please try again.')
+      setIsLoading(false)
+    }
+  }
 
   const plans = [
     {
@@ -70,11 +107,11 @@ export default function PricingPage() {
         { name: 'API access', included: true },
         { name: 'Priority support', included: true },
       ],
-      cta: 'Coming soon',
+      cta: status === 'authenticated' ? 'Upgrade to Pro' : 'Sign in to upgrade',
       ctaHref: '#',
       ctaVariant: 'default' as const,
       popular: true,
-      comingSoon: true,
+      comingSoon: false,
     },
   ]
 
@@ -219,34 +256,57 @@ export default function PricingPage() {
                 </ul>
 
                 {/* CTA Button */}
-                <Button
-                  asChild={!plan.comingSoon}
-                  variant={plan.ctaVariant}
-                  size="lg"
-                  className="w-full"
-                  disabled={plan.comingSoon}
-                >
-                  {plan.comingSoon ? (
-                    <span>{plan.cta}</span>
-                  ) : (
+                {plan.tier === 'PRO' ? (
+                  <Button
+                    variant={plan.ctaVariant}
+                    size="lg"
+                    className="w-full"
+                    onClick={handleUpgradeToPro}
+                    disabled={isLoading || status === 'loading'}
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Redirecting...
+                      </>
+                    ) : (
+                      <>
+                        {plan.cta}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                ) : (
+                  <Button
+                    asChild
+                    variant={plan.ctaVariant}
+                    size="lg"
+                    className="w-full"
+                  >
                     <Link href={plan.ctaHref}>
                       {plan.cta}
-                      {!plan.comingSoon && <ArrowRight className="ml-2 h-4 w-4" />}
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
-                  )}
-                </Button>
+                  </Button>
+                )}
               </Card>
             ))}
           </div>
 
-          {/* Pro Launch Notice */}
+          {/* Pro Available Notice */}
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground">
-              Pro subscriptions launching soon. Join our{' '}
-              <Link href="/login" className="text-primary hover:underline">
-                free account
-              </Link>{' '}
-              to be notified when Pro is available.
+              🎉 Pro subscriptions are now available!{' '}
+              {status === 'unauthenticated' ? (
+                <>
+                  <Link href="/login" className="text-primary hover:underline">
+                    Sign in
+                  </Link>{' '}
+                  to upgrade and unlock unlimited access.
+                </>
+              ) : (
+                'Choose your billing cycle above to get started.'
+              )}
             </p>
           </div>
         </Container>
@@ -283,11 +343,11 @@ export default function PricingPage() {
 
               <details className="p-5 rounded-lg border border-foreground/10 bg-foreground/5 group">
                 <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
-                  <span>When will Pro subscriptions be available?</span>
+                  <span>How do I upgrade to Pro?</span>
                   <span className="text-foreground/40 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-foreground/70 mt-3 leading-relaxed">
-                  Pro subscriptions are launching soon! They&apos;ll include unlimited AI usage, batch operations, large file support (up to 100MB), and API access. Sign up for a free account to be notified when Pro launches.
+                  Simply click the &quot;Upgrade to Pro&quot; button above, choose your billing cycle (monthly or yearly), and you&apos;ll be redirected to our secure checkout powered by Lemon Squeezy. After completing payment, your account will be instantly upgraded with all Pro features.
                 </p>
               </details>
 
