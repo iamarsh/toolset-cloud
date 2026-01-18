@@ -41,7 +41,7 @@ export function WhyChoose() {
                 <div className="w-16 sm:w-20 h-1 bg-primary" />
                 <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Toolset remembers your context so you can focus on getting work done.
-                  Saved configurations, recent tools, and optional AI assistance—all in one place you return to.
+                  Saved configurations, recent tools, and optional AI assistance - all in one place you return to.
                 </p>
               </div>
               
@@ -68,7 +68,7 @@ export function WhyChoose() {
             {/* Right: Stats */}
             <div className="text-center">
               <div className="text-6xl sm:text-7xl md:text-8xl font-black mb-3 md:mb-4 text-primary">
-                {tools.length}+
+                100+
               </div>
               <div className="text-lg sm:text-xl font-bold mb-1 md:mb-2 text-gray-900 dark:text-white">
                 TOOLS & GROWING
