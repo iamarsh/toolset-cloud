@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, DollarSign } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 
@@ -16,7 +16,7 @@ export function ClosingCTA() {
           </h2>
 
           <p className="text-lg text-muted-foreground mb-10">
-            Toolset is built to be that place.
+            Toolset is built to be that place. Free to use, forever.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -27,9 +27,9 @@ export function ClosingCTA() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
-              <Link href="/pricing">
-                <DollarSign className="h-4 w-4" />
-                See pricing
+              <Link href="/login">
+                Get Started
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
           </div>

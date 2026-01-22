@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('Track tool run error:', error)
+    // Silently handle tracking errors - tracking is non-critical
     return NextResponse.json({ error: 'Failed to track run' }, { status: 500 })
   }
 }

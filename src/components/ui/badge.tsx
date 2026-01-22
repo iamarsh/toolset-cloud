@@ -13,6 +13,7 @@ const badgeVariants = cva(
         popular: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
         trending: 'border-orange-500/20 bg-orange-500/10 text-orange-600 dark:text-orange-400',
         new: 'border-blue-500/20 bg-blue-500/10 text-blue-600 dark:text-blue-400',
+        beta: 'border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400',
         destructive: 'border-transparent bg-destructive text-destructive-foreground',
         'workspace-friendly': 'border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400',
         'runs-locally': 'border-teal-500/20 bg-teal-500/10 text-teal-600 dark:text-teal-400',

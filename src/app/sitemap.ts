@@ -43,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages - medium priority
   const staticRoutes: MetadataRoute.Sitemap = [
     '/features',
-    '/pricing',
     '/security',
     '/status',
   ].map((route) => ({

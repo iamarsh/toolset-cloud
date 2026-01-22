@@ -257,25 +257,14 @@ export function ToolRunner({ tool, category }: ToolRunnerProps) {
               </h3>
               <p className="text-muted-foreground mb-6">{entitlement.reason}</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                {tool.tier === 'AUTH' ? (
-                  <>
-                    <Button asChild>
-                      <Link href="/login">Sign In</Link>
-                    </Button>
-                    <Button asChild variant="secondary">
-                      <Link href="/signup">Create Free Account</Link>
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Button asChild>
-                      <Link href="/pricing">Upgrade to Pro</Link>
-                    </Button>
-                    <Button asChild variant="secondary">
-                      <Link href="/tools">Browse Free Tools</Link>
-                    </Button>
-                  </>
-                )}
+                <>
+                  <Button asChild>
+                    <Link href="/login">Sign In</Link>
+                  </Button>
+                  <Button asChild variant="secondary">
+                    <Link href="/signup">Create Free Account</Link>
+                  </Button>
+                </>
               </div>
             </div>
           )}

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Star, TrendingUp, Sparkles, Clock, Zap, Cpu, Cloud } from 'lucide-react'
+import { ArrowRight, Star, TrendingUp, Sparkles, Clock, Zap, Cpu, Cloud, FlaskConical } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Icon } from '@/lib/icons'
 import { cn } from '@/lib/utils'
@@ -11,10 +11,11 @@ interface ToolCardProps {
   tool: ToolDefinition
 }
 
-const tagConfig: Record<ToolTag, { icon: typeof Star; variant: 'popular' | 'trending' | 'new' }> = {
+const tagConfig: Record<ToolTag, { icon: typeof Star; variant: 'popular' | 'trending' | 'new' | 'beta' }> = {
   popular: { icon: Star, variant: 'popular' },
   trending: { icon: TrendingUp, variant: 'trending' },
   new: { icon: Sparkles, variant: 'new' },
+  beta: { icon: FlaskConical, variant: 'beta' },
 }
 
 // Helper to check if a tool uses AI (AUTH/PAID tier or in ai category)

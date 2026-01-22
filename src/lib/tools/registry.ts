@@ -2927,7 +2927,7 @@ const eSignDocument: ToolDefinition = {
   category: 'pdf',
   icon: 'PenTool',
   iconColor: 'bg-orange-500/10 text-orange-500',
-  tier: 'PAID',
+  tier: 'AUTH',
   runtime: 'CLIENT',
   tags: ['new'],
   seo: {
@@ -3960,7 +3960,7 @@ const resumeParser: ToolDefinition = {
   listPriority: 8,
   tier: 'AUTH',
   runtime: 'CLIENT',
-  tags: ['new'],
+  tags: ['new', 'beta'],
   workspace: {
     workspaceFriendly: true,
     runsLocally: true,
@@ -4080,7 +4080,7 @@ const documentConverter: ToolDefinition = {
   iconColor: 'bg-orange-500/10 text-orange-500',
   tier: 'AUTH',
   runtime: 'CLIENT',
-  tags: ['new', 'popular'],
+  tags: ['new', 'popular', 'beta'],
   seo: {
     title: 'Document Converter - Free Online File Format Tool',
     description: 'Convert documents between DOCX, PDF, TXT, RTF, HTML, and Markdown formats online. Free document converter with format preservation.',

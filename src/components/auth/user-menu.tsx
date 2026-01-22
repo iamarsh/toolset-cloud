@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { User, LogOut, Settings, ChevronDown, CreditCard, Sparkles } from 'lucide-react'
+import { User, LogOut, Settings, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
@@ -90,16 +90,6 @@ export function UserMenu() {
 
           {/* Menu Items */}
           <div className="py-1">
-            {userPlan === 'FREE_ACCOUNT' && (
-              <Link
-                href="/pricing"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors text-primary font-medium"
-              >
-                <Sparkles className="h-4 w-4" />
-                Upgrade to Pro ($9.99/mo)
-              </Link>
-            )}
             <Link
               href="/settings"
               onClick={() => setIsOpen(false)}
@@ -108,16 +98,6 @@ export function UserMenu() {
               <Settings className="h-4 w-4 text-muted-foreground" />
               Settings
             </Link>
-            {userPlan === 'PRO' && (
-              <Link
-                href="/subscription"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-4 py-2 text-sm hover:bg-muted transition-colors"
-              >
-                <CreditCard className="h-4 w-4 text-muted-foreground" />
-                Subscription
-              </Link>
-            )}
           </div>
 
           {/* Sign Out */}

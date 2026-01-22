@@ -15,13 +15,11 @@ const publicNavItems = [
   { href: '/', label: 'Home' },
   { href: '/tools', label: 'Tools' },
   { href: '/features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
 ]
 
 const getAuthenticatedNavItems = (userPlan?: string) => {
   return [
     { href: '/workspace', label: 'Workspace' },
-    { href: '/pricing', label: 'Pricing' },
     { href: '/api-info', label: 'API' },
   ]
 }

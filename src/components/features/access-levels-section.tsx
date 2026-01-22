@@ -26,21 +26,12 @@ export function AccessLevelsSection() {
         'Save your work',
         'Access history',
         'Reuse configurations',
-        'AI tools included'
-      ],
-    },
-    {
-      tier: 'PRO',
-      badge: '$9.99/month',
-      badgeVariant: 'default' as const,
-      badgeHref: '/pricing',
-      features: [
+        'AI tools included',
         'Batch workflows',
         'Higher limits',
-        'Higher AI usage limits',
-        'Email delivery for long-running jobs'
-      ]
-    }
+        'All premium features'
+      ],
+    },
   ]
 
   return (
@@ -51,11 +42,11 @@ export function AccessLevelsSection() {
             How Toolset works
           </h2>
           <p className="text-muted-foreground">
-            Upgrades exist to make workflows better - not to block basic use.
+            Start with public tools. Create a free account to unlock everything.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {levels.map((level) => (
             <div
               key={level.tier}

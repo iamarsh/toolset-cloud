@@ -11,7 +11,7 @@ export type ToolRuntime = 'CLIENT' | 'SERVER'
 /**
  * Tool tag for discovery and filtering
  */
-export type ToolTag = 'popular' | 'trending' | 'new'
+export type ToolTag = 'popular' | 'trending' | 'new' | 'beta'
 
 /**
  * Category identifier (consolidated to 10 categories)

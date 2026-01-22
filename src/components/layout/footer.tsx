@@ -11,7 +11,6 @@ export function Footer() {
     { href: '/', label: 'Home' },
     { href: '/tools', label: 'Tools' },
     { href: '/features', label: 'Features' },
-    { href: '/pricing', label: 'Pricing' },
   ]
 
   const resourceLinks = [

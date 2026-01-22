@@ -104,15 +104,14 @@ export default function ApiInfoPage() {
         <div className="max-w-3xl mx-auto mt-16 text-center p-8 rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
           <h2 className="text-2xl font-semibold mb-4">Stay updated</h2>
           <p className="text-muted-foreground mb-6">
-            Pro users will get early access to the API when it launches.
-            In the meantime, explore workspace features to save configurations you'll be able to trigger programmatically.
+            The API is coming soon. In the meantime, explore workspace features to save configurations you'll be able to trigger programmatically.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild>
-              <Link href="/pricing">View Pro plan</Link>
+              <Link href="/workspace">Open workspace</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/workspace">Open workspace</Link>
+              <Link href="/login">Get Started</Link>
             </Button>
           </div>
         </div>
