@@ -98,8 +98,8 @@ export function Hero() {
                   index > 0 ? 'md:border-l md:border-border/40' : ''
                 }`}
               >
-                <div className="text-sm md:text-base font-medium tracking-tight">{pillar.value}</div>
-                <div className="text-xs text-muted-foreground/70 mt-1 tracking-wide">{pillar.label}</div>
+                <div className="text-base md:text-lg font-medium tracking-tight">{pillar.value}</div>
+                <div className="text-sm md:text-base text-muted-foreground/70 mt-1 tracking-wide">{pillar.label}</div>
               </div>
             ))}
           </div>
