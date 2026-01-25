@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
-    "@aws-sdk/client-bedrock-runtime": "^3.966.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.975.0",
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.2",
+    "@types/react": "^19.2.9",
     "@types/react-dom": "^19.0.2",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.1.3",
